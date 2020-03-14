@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>关于 | 小虾米的记录</title>
+<title>C++ | 小虾米的记录</title>
 <meta name="description" content="努力成就自我">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -81,30 +81,150 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>关于</h1>
+            <h1>C++</h1>
             <p class="article-meta">
-              2019-01-25
+              2020-03-14
               
             </p>
             
             <div class="post-content">
-              <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<!-- more -->
-<p>用来记录一些学习中的东西</p>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<p>一个小虾米</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<p>看动漫，打游戏，逛A站</p>
-<h2 id="联系我呀">📬 联系我呀</h2>
-<p>xmweijh@foxmail.com</p>
+              <p>C++比C更丰富</p>
+<p>(1).支持面向对象，将问题域和方法域统一化。宏观面向对象，微观面向过程。</p>
+<p>(2).支持泛型编程。</p>
+<pre><code>int add (int a, int b) { ... }
+
+template\&lt;typename T&gt;
+
+T add (T a, T b) { ... }
+</code></pre>
+<p>(3).支持异常机制。</p>
+<pre><code>int func (void) {
+
+  ...
+
+}
+</code></pre>
+<pre><code>int main (void) {
+
+  if (func () == -1) {
+
+​    //错误处理;
+
+  }
+
+}
+</code></pre>
+<p>(4).操作符重载</p>
+<p>不再使用scanf/printf而是cin/cout。</p>
+<p>头文件：#include\大多数标准库头文件没有.h后缀。</p>
+<p>输出：cout – 标准输出对象</p>
+<p>输入运算符：&lt;&lt;</p>
+<p>提取输出运算符：&gt;&gt;</p>
+<pre><code>\#include &lt;iostream&gt;
+ int main (void) {
+   std::cout &lt;&lt; &quot;Hello, World !&quot; &lt;&lt; std::endl;
+   int i;
+   double d;
+   char s[256];
+ //  scanf (&quot;%d%lf%s&quot;, &amp;i, &amp;d, s);
+   std::cin &gt;&gt; i &gt;&gt; d &gt;&gt; s;
+ //  printf (&quot;%d %lf %s\n&quot;, i, d, s);
+   std::cout &lt;&lt; i &lt;&lt; ' ' &lt;&lt; d &lt;&lt; ' ' &lt;&lt; s &lt;&lt; '\n';
+   return 0;
+ }
+</code></pre>
+<p>A. 结构</p>
+<p>定义结构型变量时，可以省略struct关键字。</p>
+<p>1)结构内部可以定义函数——成员函数。</p>
+<p>2)sizeof(空结构) -&gt; 1</p>
+<p>C++层面上引用和指针存在以下不同：</p>
+<p>(a). 指针是实体变量，但是引用不是实体变量。</p>
+<pre><code> int&amp; a=b;
+ sizeof (a);//4
+ double&amp; d=f;
+ sizeof (d);//8
+</code></pre>
+<p>(b). 指针可以不初始化，但是引用必须初始化。</p>
+<p>(c). 指针的目标可以修改，但是引用的目标的不能修改。</p>
+<p>(d). 可以定义指针的指针，但是不能定义引用的指针。</p>
+<pre><code> int a;
+ int* p = &amp;a;
+ int** pp = &amp;p;//ok
+ int&amp; r = a;
+ int&amp;* pr = &amp;r;//ERROR
+</code></pre>
+<p>(e). 可以定义指针的引用，但是不能定义引用的引用。</p>
+<pre><code> int a;
+ int* p = &amp;a;
+ int*&amp; q = p;//ok
+ int&amp; r = a;
+ int&amp;&amp; s = r;//ERROR
+</code></pre>
+<p>(f). 可以定义指针的数组，但不能定义引用的数组。</p>
+<pre><code> int a, b, c;
+ int* parr[] = {&amp;a,&amp;b,&amp;c};/ok
+ int&amp; rarr[] = {a,b,c};//ERROR
+ //可以定义数组的引用。
+ int arr[] = {1 ,2,3};
+</code></pre>
+<p><strong>建议</strong>:</p>
+<p>(1). 少用宏，多用const，enum和inline。</p>
+<pre><code>\#define PAI 3.14159 
+
+ const double PAI = 3.14159;
+
+ #define ERORR_FILE -1;
+
+ #defile ERORR_MEM -2;
+
+ enum {
+
+ ERORR_FILE = -1,
+
+ ERORR_MEM = -2
+
+ };
+
+ #define max(a,b) ((a) &gt; (b) ? (a) : (b))
+
+ inline int double max (double a,double b){return a &gt; b ? a : b;}
+</code></pre>
+<p>(2). 变量随用随时声明同时初始化。</p>
+<p>(3). 少用malloc/free,多用new/delete。</p>
+<p>(4). 少用C风格的强制类型转换，多用类型转换运算符。</p>
+<p>(5). 少用C风格的字符串，多用string。</p>
+<p>(6). 树立面向对象的编程思想。</p>
+<p>类和对象</p>
+<p>什么是对象</p>
+<p>1 万物皆对象</p>
+<p>程序就是一组对象，对象之间通过消息交换信息</p>
+<p>类就是对对象的描述和抽象，对象就是类的具体化和实例化。</p>
+<p>2 通过类描述对象</p>
+<p>属性：姓名、年龄、学号</p>
+<p>行为：吃饭、睡觉、学习</p>
+<p>类就是从属性和行为两个方面对对象进行抽象。</p>
+<p>3 面向对象程序设计（OOP）</p>
+<p>现实世界 虚拟世界</p>
+<p>对象 -&gt; 抽象 -&gt; 类 -&gt; 对象</p>
+<p>至少掌握一种OOP编程语言</p>
+<p>精通一种面向对象的元语言—UML</p>
+<p>研究设计模式，GOF</p>
 
             </div>
           </article>
         </div>
         <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://xmweijh.github.io/post/hui-bian-yu-yan-de-yi-xie-ji-chu-zhi-shi/">
+                <h3 class="post-title">
+                  汇编语言的一些基础知识
+                </h3>
+              </a>
+            </div>
           
         </div>
         

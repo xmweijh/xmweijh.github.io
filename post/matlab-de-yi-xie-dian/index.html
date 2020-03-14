@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>文章归档 | 小虾米的记录</title>
+<title>Matlab的一些点 | 小虾米的记录</title>
 <meta name="description" content="努力成就自我">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,6 +23,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://xmweijh.github.io/">小虾米的记录</a></h3>
@@ -76,66 +77,58 @@
   </div>
 </nav>
 
-    
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          
+          <article class="article">
+            <h1>Matlab的一些点</h1>
+            <p class="article-meta">
+              2020-03-14
+              
+            </p>
+            
+            <div class="post-content">
+              <p>用mod时，不管被除数是正是负，余数的符号与除数相同，rem反之。</p>
+<p>直接输入用中括号，同行空格或者逗号不同行用；号。</p>
+<p>冒号表达式格式： 初始值：步长：终止值</p>
+<p>linspace（第一个元素，最后一个元素，元素总数）</p>
+<p>matlab元素按列储存，先第一列在第二列。</p>
+<p>矩阵拆分用：号</p>
+<p>~=是不等于</p>
+<p>fix朝零方向取整，如fix(-1.3)=-1; fix(1.3)=1;</p>
+<p>floor，顾名思义，就是地板，所以是取比它小的整数，即朝负无穷方向取整，如floor(-1.3)=-2; floor(1.3)=1;floor(-1.8)=-2，floor(1.8)=1</p>
+<p>ceil，与floor相反，它的意思是天花板，也就是取比它大的最小整数，即朝正无穷方向取整，如ceil(-1.3)=-1; ceil(1.3)=2;ceil(-1.8)=-1，ceil(1.8)=2</p>
+<p>round四舍五入到最近的整数，如round(-1.3)=-1;round(-1.52)=-2;round(1.3)=1;round(1.52)=2。</p>
+<p>在进行矩阵之间的运算时“.<em>”和“</em>”的意义就有所不同了。假设a，b表示两个矩阵，a*b表示矩阵a与矩阵b进行矩阵相乘，a.*b表示矩阵a中的元素与矩阵b中的元素按位置依次相乘，得到的结果将作为新矩阵中相同位置的元素</p>
+<p>a:c:b表示[a,a+c,……,a+n*c],其中n=fix((b-a)/c)</p>
+<p>Syms 变量间不打符号</p>
+<p>abs函数求实数的绝对值，复数的模，字符串的asc||</p>
+<p>在plot写完后 加上axis([0 1 2 3])</p>
+<p>则表明图线的x轴范围为0<sub>1y轴范围为2</sub>3</p>
+<p>hold on是当前轴及图像保持而不被刷新，准备接受此后将绘制的图形，多图共存</p>
+<p>即，启动图形保持功能，当前坐标轴和图形都将保持，从此绘制的图形都将添加在这个图形的基础上，并自动调整坐标轴的范围。</p>
+<p>hold off使当前轴及图像不再具备被刷新的性质，新图出现时，取消原图。即，关闭图形保持功能。</p>
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
-            
-              <h3 class="year" data-aos-delay="500">2020</h3>
-              
-                
-                  <article class="post">
-                    <a href="https://xmweijh.github.io/post/matlab-de-yi-xie-dian/">
-                      <h4 class="post-title">
-                        Matlab的一些点
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://xmweijh.github.io/post/c/">
-                      <h4 class="post-title">
-                        C++
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://xmweijh.github.io/post/hui-bian-yu-yan-de-yi-xie-ji-chu-zhi-shi/">
-                      <h4 class="post-title">
-                        汇编语言的一些基础知识
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://xmweijh.github.io/post/c-yu-yan-de-yi-xie-bi-ji/">
-                      <h4 class="post-title">
-                        C语言的一些笔记
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-            
-          </div>
+            </div>
+          </article>
         </div>
-        <div class="row flex-edges">
-  
-  
-</div>
-
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://xmweijh.github.io/post/c/">
+                <h3 class="post-title">
+                  C++
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://xmweijh.github.io//images/avatar.png?v=1584190113130" class="no-responsive avatar">
@@ -207,6 +200,8 @@
   </div>
 </div>
 
+
+    </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 

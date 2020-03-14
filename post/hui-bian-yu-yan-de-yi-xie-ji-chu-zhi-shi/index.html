@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>文章归档 | 小虾米的记录</title>
+<title>汇编语言的一些基础知识 | 小虾米的记录</title>
 <meta name="description" content="努力成就自我">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,6 +23,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://xmweijh.github.io/">小虾米的记录</a></h3>
@@ -76,66 +77,72 @@
   </div>
 </nav>
 
-    
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          
+          <article class="article">
+            <h1>汇编语言的一些基础知识</h1>
+            <p class="article-meta">
+              2020-03-14
+              
+            </p>
+            
+            <div class="post-content">
+              <h2 id=""></h2>
+<pre><code>Int add_a_and_b(int a,int b){
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
-            
-              <h3 class="year" data-aos-delay="500">2020</h3>
-              
-                
-                  <article class="post">
-                    <a href="https://xmweijh.github.io/post/matlab-de-yi-xie-dian/">
-                      <h4 class="post-title">
-                        Matlab的一些点
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://xmweijh.github.io/post/c/">
-                      <h4 class="post-title">
-                        C++
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://xmweijh.github.io/post/hui-bian-yu-yan-de-yi-xie-ji-chu-zhi-shi/">
-                      <h4 class="post-title">
-                        汇编语言的一些基础知识
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://xmweijh.github.io/post/c-yu-yan-de-yi-xie-bi-ji/">
-                      <h4 class="post-title">
-                        C语言的一些笔记
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-            
-          </div>
+returna+b;
+
+}
+
+Int main(){
+
+returnadd_a_and_b(2,3);
+
+}
+</code></pre>
+<pre><code>_add_a_and_b:
+
+ push%ebx mov%eax,
+
+[%esp+8]mov%ebx,
+
+[%esp+12]add%eax,%ebx 
+
+pop%ebx
+
+ ret _main:push3 push2 call _add_a_and_b add%esp,8ret
+</code></pre>
+<p>针对8086CPU，有14个寄存器，分别为： AX, BX, CX, DX, SI, DI, SP, BP, IP, CS, SS, DS, ES, PSW。</p>
+<p>ABCD-X，通用寄存器，存储一般性数据。 不过，在汇编中，CX 有个特殊功能，用于存储 loop的循环次数。 这里的寄存器都有分高低位，H、L分别表示高低。示例：</p>
+<p>mov ax, 11  ; 将11送入寄存器ax<br>
+mov bl, 3    ; 将3送入bl寄存器<br>
+add ax, 5    ; 将ax寄存器的值加3</p>
+<p>CS、IP 是最关键的两个寄存器，它们指示了当前 要读取指令的地址，CS是段地址，IP是指令指针寄存器。 CSx16+IP 就是CPU当前要执行的指令。换个通俗的话，要让CPU执行什么命令，只要改变这两个寄存器的值，就可以做到了。（有一种皇帝的感觉，哈哈），但是CPU不可能提供 mov cs, 11h 等命令操作，使用jmp cs:ip 进行更改值，从而跳转到想执行的命令处。</p>
+<p>DS 寄存器是用于存储数据的段地址，比如要读取某段数据中的值，那么就要先DS指向那里的地址，再加上偏移地址 [...]，就可以进行数据读取了（ES作为附加段寄存器，与DS功能一致，在段太多的情况，可以视情况选用即可）</p>
+<p>SS, SP, BP 是栈相关寄存器。CPU提供的栈机制</p>
+<p>在语言层面表现出来就是，push, pop 两个命令，任意时刻，SS:SP都指向栈顶元素。 push 时， SP=SP-2，pop时，如果有接收的寄存器则先将栈顶值送入，然后 SP=SP+2，指向下面一个单元。 这有什么用呢？ 当然有用，它可以用来临时保存各种数据，然后再插入功能执行完成后，进行现场的恢复，事实上，大部分时候是这么用的。</p>
+
+            </div>
+          </article>
         </div>
-        <div class="row flex-edges">
-  
-  
-</div>
-
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://xmweijh.github.io/post/c-yu-yan-de-yi-xie-bi-ji/">
+                <h3 class="post-title">
+                  C语言的一些笔记
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://xmweijh.github.io//images/avatar.png?v=1584190113130" class="no-responsive avatar">
@@ -207,6 +214,8 @@
   </div>
 </div>
 
+
+    </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
