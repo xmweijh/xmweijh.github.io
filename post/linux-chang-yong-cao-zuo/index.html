@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>汇编语言的一些基础知识 | 小虾米的记录</title>
+<title>Linux常用操作 | 小虾米的记录</title>
 <meta name="description" content="努力成就自我">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -81,9 +81,9 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>汇编语言的一些基础知识</h1>
+            <h1>Linux常用操作</h1>
             <p class="article-meta">
-              2020-03-14
+              2020-03-21
               
                 <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="badge warning">
                   其他
@@ -92,40 +92,26 @@
             </p>
             
             <div class="post-content">
-              <h2 id=""></h2>
-<pre><code>Int add_a_and_b(int a,int b){
-
-returna+b;
-
-}
-
-Int main(){
-
-returnadd_a_and_b(2,3);
-
-}
+              <h3 id="目录">目录</h3>
+<pre><code> shiyanlou:~/ $   
 </code></pre>
-<pre><code>_add_a_and_b:
-
- push%ebx mov%eax,
-
-[%esp+8]mov%ebx,
-
-[%esp+12]add%eax,%ebx 
-
-pop%ebx
-
- ret _main:push3 push2 call _add_a_and_b add%esp,8ret
-</code></pre>
-<p>针对8086CPU，有14个寄存器，分别为： AX, BX, CX, DX, SI, DI, SP, BP, IP, CS, SS, DS, ES, PSW。</p>
-<p>ABCD-X，通用寄存器，存储一般性数据。 不过，在汇编中，CX 有个特殊功能，用于存储 loop的循环次数。 这里的寄存器都有分高低位，H、L分别表示高低。示例：</p>
-<p>mov ax, 11  ; 将11送入寄存器ax<br>
-mov bl, 3    ; 将3送入bl寄存器<br>
-add ax, 5    ; 将ax寄存器的值加3</p>
-<p>CS、IP 是最关键的两个寄存器，它们指示了当前 要读取指令的地址，CS是段地址，IP是指令指针寄存器。 CSx16+IP 就是CPU当前要执行的指令。换个通俗的话，要让CPU执行什么命令，只要改变这两个寄存器的值，就可以做到了。（有一种皇帝的感觉，哈哈），但是CPU不可能提供 mov cs, 11h 等命令操作，使用jmp cs:ip 进行更改值，从而跳转到想执行的命令处。</p>
-<p>DS 寄存器是用于存储数据的段地址，比如要读取某段数据中的值，那么就要先DS指向那里的地址，再加上偏移地址 [...]，就可以进行数据读取了（ES作为附加段寄存器，与DS功能一致，在段太多的情况，可以视情况选用即可）</p>
-<p>SS, SP, BP 是栈相关寄存器。CPU提供的栈机制</p>
-<p>在语言层面表现出来就是，push, pop 两个命令，任意时刻，SS:SP都指向栈顶元素。 push 时， SP=SP-2，pop时，如果有接收的寄存器则先将栈顶值送入，然后 SP=SP+2，指向下面一个单元。 这有什么用呢？ 当然有用，它可以用来临时保存各种数据，然后再插入功能执行完成后，进行现场的恢复，事实上，大部分时候是这么用的。</p>
+<p>当前所处的目录位置  shiiyanlou： 用户名   $命令提示符</p>
+<p>**ls ：**查找目录中的内容    （蓝字目录，白字内容）</p>
+<p><strong>cd:</strong> 进入目录</p>
+<p>上下键可以快速选择前面输过的命令</p>
+<p>**cd ..**可以回到上一级目录（中间有空格）</p>
+<p>**cd -**上次所在的目录</p>
+<p>**cd ~**回到主目录</p>
+<p>**cd /**进入根目录</p>
+<h3 id="文件">文件</h3>
+<p><strong>tree</strong> 列出文件夹下所有子文件和文件（树形结构）</p>
+<p><strong>Ctrl + c</strong> 停止</p>
+<p><strong>pwd</strong> 获得当前目录的绝对路径</p>
+<p><strong>mkdir</strong> 创建目录  加入**-p**一次性创建多级目录</p>
+<p><strong>touch</strong> 新建文件   		<strong>cp</strong> 复制文件到指定目录</p>
+<p><strong>cp -r</strong> 复制目录 		<strong>rm</strong> 删除文件 删除目录加 <strong>-r</strong></p>
+<p><strong>mv</strong>移动文件或者目录  还可以用来重命名</p>
+<p><strong>cat</strong> 将文件内容打印到屏幕 <strong>cat -n</strong>带上行号</p>
 
             </div>
           </article>
@@ -136,9 +122,9 @@ add ax, 5    ; 将ax寄存器的值加3</p>
               <div class="next">
                 下一篇
               </div>
-              <a href="https://xmweijh.github.io/post/c-yu-yan-de-yi-xie-bi-ji/">
+              <a href="https://xmweijh.github.io/post/matlab-de-yi-xie-dian/">
                 <h3 class="post-title">
-                  C语言的一些笔记
+                  Matlab的一些点
                 </h3>
               </a>
             </div>
@@ -223,11 +209,11 @@ add ax, 5    ; 将ax寄存器的值加3</p>
     </div>
     <div class="row">
       
-        <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="badge ">
+        <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="badge secondary">
           其他
         </a>
       
-        <a href="https://xmweijh.github.io/tag/3AyLbslIy/" class="badge secondary">
+        <a href="https://xmweijh.github.io/tag/3AyLbslIy/" class="badge ">
           C/C++
         </a>
       

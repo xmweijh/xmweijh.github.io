@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>汇编语言的一些基础知识 | 小虾米的记录</title>
+<title>Git | 小虾米的记录</title>
 <meta name="description" content="努力成就自我">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -81,9 +81,9 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>汇编语言的一些基础知识</h1>
+            <h1>Git</h1>
             <p class="article-meta">
-              2020-03-14
+              2020-03-21
               
                 <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="badge warning">
                   其他
@@ -92,40 +92,48 @@
             </p>
             
             <div class="post-content">
-              <h2 id=""></h2>
-<pre><code>Int add_a_and_b(int a,int b){
+              <p>git init  将一个已存在的文件夹，置于Git的控制管理之下</p>
+<p>git add  将创建或修改的文件添加到本地的暂存区</p>
+<p><code>git add .</code> 命令全部添加到暂存区。</p>
+<p>撤销暂存区的修改执行 <code>git reset -- [文件名]</code> 或者 <code>git rm --cached [文件名]</code> 命令即可</p>
+<p>git commit  提交文件到本体仓库----每当完成一些工作，都可以创建一次提交，保存当前的版本</p>
+<p>提交之前，设置名字和email   相当于签名，每次提交会包含这些信息  git config  配置</p>
+<p><code>git config -l</code> 可以查看配置信息</p>
+<pre><code>$ git config --global user.name &quot;YourName&quot;
+$ git config --global user.email &quot;YourEmail@xxx.com&quot;
 
-returna+b;
-
-}
-
-Int main(){
-
-returnadd_a_and_b(2,3);
-
-}
+git commit -m &quot;first commit&quot;   -m&quot;注释&quot;
 </code></pre>
-<pre><code>_add_a_and_b:
-
- push%ebx mov%eax,
-
-[%esp+8]mov%ebx,
-
-[%esp+12]add%eax,%ebx 
-
-pop%ebx
-
- ret _main:push3 push2 call _add_a_and_b add%esp,8ret
+<p>提交加注释辨别不同版本，便于理解对代码做了什么修改</p>
+<p>git push 同步到远端仓库</p>
+<p>git status 监测当前目录和缓存区的状态</p>
+<pre><code>git remote add origin 仓库链接
+git push origin master  （origin为仓库名）
 </code></pre>
-<p>针对8086CPU，有14个寄存器，分别为： AX, BX, CX, DX, SI, DI, SP, BP, IP, CS, SS, DS, ES, PSW。</p>
-<p>ABCD-X，通用寄存器，存储一般性数据。 不过，在汇编中，CX 有个特殊功能，用于存储 loop的循环次数。 这里的寄存器都有分高低位，H、L分别表示高低。示例：</p>
-<p>mov ax, 11  ; 将11送入寄存器ax<br>
-mov bl, 3    ; 将3送入bl寄存器<br>
-add ax, 5    ; 将ax寄存器的值加3</p>
-<p>CS、IP 是最关键的两个寄存器，它们指示了当前 要读取指令的地址，CS是段地址，IP是指令指针寄存器。 CSx16+IP 就是CPU当前要执行的指令。换个通俗的话，要让CPU执行什么命令，只要改变这两个寄存器的值，就可以做到了。（有一种皇帝的感觉，哈哈），但是CPU不可能提供 mov cs, 11h 等命令操作，使用jmp cs:ip 进行更改值，从而跳转到想执行的命令处。</p>
-<p>DS 寄存器是用于存储数据的段地址，比如要读取某段数据中的值，那么就要先DS指向那里的地址，再加上偏移地址 [...]，就可以进行数据读取了（ES作为附加段寄存器，与DS功能一致，在段太多的情况，可以视情况选用即可）</p>
-<p>SS, SP, BP 是栈相关寄存器。CPU提供的栈机制</p>
-<p>在语言层面表现出来就是，push, pop 两个命令，任意时刻，SS:SP都指向栈顶元素。 push 时， SP=SP-2，pop时，如果有接收的寄存器则先将栈顶值送入，然后 SP=SP+2，指向下面一个单元。 这有什么用呢？ 当然有用，它可以用来临时保存各种数据，然后再插入功能执行完成后，进行现场的恢复，事实上，大部分时候是这么用的。</p>
+<p>git clone 拷贝一个Git仓库到本地，让自己能够查看修改。</p>
+<p><code>git diff</code>用来查看工作区被跟踪的文件的修改详情</p>
+<p><code>git diff --cached</code> 查看暂存区的全部修改</p>
+<p><code>git log</code>，它用来查看版本区的提交历史记录</p>
+<ul>
+<li>
+<p><code>git log [分支名]</code> 查看某分支的提交历史，不写分支名查看当前所在分支</p>
+</li>
+<li>
+<p><code>git log --oneline</code> 一行显示提交历史</p>
+</li>
+<li>
+<p><code>git log -n</code> 其中 n 是数字，查看最近 n 个提交</p>
+</li>
+<li>
+<p><code>git log --author [贡献者名字]</code> 查看指定贡献者的提交记录</p>
+</li>
+<li>
+<p><code>git log --graph</code> 图示法显示提交历史</p>
+<p><code>git log</code> 查看提交记录  时间正序排列的信息，那么可以使用 <code>git log --reverse</code> 命令。 (按q退出此界面)</p>
+<p><code>git branch -avv</code>，它用来查看全部分支信息</p>
+<p><code>git reset --soft HEAD^</code> 撤销最近的一次提交，将修改还原到暂存区。  <code>--soft</code> 表示软退回，对应的还有 <code>--hard</code> 硬退，HEAD^<code>表示撤销一次提交，</code>HEAD^^<code>表示撤销两次提交，撤销 n 次可以简写为</code>HEAD~n`。</p>
+</li>
+</ul>
 
             </div>
           </article>
@@ -136,9 +144,9 @@ add ax, 5    ; 将ax寄存器的值加3</p>
               <div class="next">
                 下一篇
               </div>
-              <a href="https://xmweijh.github.io/post/c-yu-yan-de-yi-xie-bi-ji/">
+              <a href="https://xmweijh.github.io/post/linux-chang-yong-cao-zuo/">
                 <h3 class="post-title">
-                  C语言的一些笔记
+                  Linux常用操作
                 </h3>
               </a>
             </div>
@@ -227,7 +235,7 @@ add ax, 5    ; 将ax寄存器的值加3</p>
           其他
         </a>
       
-        <a href="https://xmweijh.github.io/tag/3AyLbslIy/" class="badge secondary">
+        <a href="https://xmweijh.github.io/tag/3AyLbslIy/" class="badge warning">
           C/C++
         </a>
       

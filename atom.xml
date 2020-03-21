@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xmweijh.github.io/</id>
     <title>小虾米的记录</title>
-    <updated>2020-03-14T13:10:42.817Z</updated>
+    <updated>2020-03-21T10:39:49.767Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xmweijh.github.io/"/>
     <link rel="self" href="https://xmweijh.github.io/atom.xml"/>
@@ -10,6 +10,84 @@
     <logo>https://xmweijh.github.io/images/avatar.png</logo>
     <icon>https://xmweijh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 小虾米的记录</rights>
+    <entry>
+        <title type="html"><![CDATA[Git]]></title>
+        <id>https://xmweijh.github.io/post/git/</id>
+        <link href="https://xmweijh.github.io/post/git/">
+        </link>
+        <updated>2020-03-21T10:38:26.000Z</updated>
+        <content type="html"><![CDATA[<p>git init  将一个已存在的文件夹，置于Git的控制管理之下</p>
+<p>git add  将创建或修改的文件添加到本地的暂存区</p>
+<p><code>git add .</code> 命令全部添加到暂存区。</p>
+<p>撤销暂存区的修改执行 <code>git reset -- [文件名]</code> 或者 <code>git rm --cached [文件名]</code> 命令即可</p>
+<p>git commit  提交文件到本体仓库----每当完成一些工作，都可以创建一次提交，保存当前的版本</p>
+<p>提交之前，设置名字和email   相当于签名，每次提交会包含这些信息  git config  配置</p>
+<p><code>git config -l</code> 可以查看配置信息</p>
+<pre><code>$ git config --global user.name &quot;YourName&quot;
+$ git config --global user.email &quot;YourEmail@xxx.com&quot;
+
+git commit -m &quot;first commit&quot;   -m&quot;注释&quot;
+</code></pre>
+<p>提交加注释辨别不同版本，便于理解对代码做了什么修改</p>
+<p>git push 同步到远端仓库</p>
+<p>git status 监测当前目录和缓存区的状态</p>
+<pre><code>git remote add origin 仓库链接
+git push origin master  （origin为仓库名）
+</code></pre>
+<p>git clone 拷贝一个Git仓库到本地，让自己能够查看修改。</p>
+<p><code>git diff</code>用来查看工作区被跟踪的文件的修改详情</p>
+<p><code>git diff --cached</code> 查看暂存区的全部修改</p>
+<p><code>git log</code>，它用来查看版本区的提交历史记录</p>
+<ul>
+<li>
+<p><code>git log [分支名]</code> 查看某分支的提交历史，不写分支名查看当前所在分支</p>
+</li>
+<li>
+<p><code>git log --oneline</code> 一行显示提交历史</p>
+</li>
+<li>
+<p><code>git log -n</code> 其中 n 是数字，查看最近 n 个提交</p>
+</li>
+<li>
+<p><code>git log --author [贡献者名字]</code> 查看指定贡献者的提交记录</p>
+</li>
+<li>
+<p><code>git log --graph</code> 图示法显示提交历史</p>
+<p><code>git log</code> 查看提交记录  时间正序排列的信息，那么可以使用 <code>git log --reverse</code> 命令。 (按q退出此界面)</p>
+<p><code>git branch -avv</code>，它用来查看全部分支信息</p>
+<p><code>git reset --soft HEAD^</code> 撤销最近的一次提交，将修改还原到暂存区。  <code>--soft</code> 表示软退回，对应的还有 <code>--hard</code> 硬退，HEAD^<code>表示撤销一次提交，</code>HEAD^^<code>表示撤销两次提交，撤销 n 次可以简写为</code>HEAD~n`。</p>
+</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux常用操作]]></title>
+        <id>https://xmweijh.github.io/post/linux-chang-yong-cao-zuo/</id>
+        <link href="https://xmweijh.github.io/post/linux-chang-yong-cao-zuo/">
+        </link>
+        <updated>2020-03-21T10:37:35.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="目录">目录</h3>
+<pre><code> shiyanlou:~/ $   
+</code></pre>
+<p>当前所处的目录位置  shiiyanlou： 用户名   $命令提示符</p>
+<p>**ls ：**查找目录中的内容    （蓝字目录，白字内容）</p>
+<p><strong>cd:</strong> 进入目录</p>
+<p>上下键可以快速选择前面输过的命令</p>
+<p>**cd ..**可以回到上一级目录（中间有空格）</p>
+<p>**cd -**上次所在的目录</p>
+<p>**cd ~**回到主目录</p>
+<p>**cd /**进入根目录</p>
+<h3 id="文件">文件</h3>
+<p><strong>tree</strong> 列出文件夹下所有子文件和文件（树形结构）</p>
+<p><strong>Ctrl + c</strong> 停止</p>
+<p><strong>pwd</strong> 获得当前目录的绝对路径</p>
+<p><strong>mkdir</strong> 创建目录  加入**-p**一次性创建多级目录</p>
+<p><strong>touch</strong> 新建文件   		<strong>cp</strong> 复制文件到指定目录</p>
+<p><strong>cp -r</strong> 复制目录 		<strong>rm</strong> 删除文件 删除目录加 <strong>-r</strong></p>
+<p><strong>mv</strong>移动文件或者目录  还可以用来重命名</p>
+<p><strong>cat</strong> 将文件内容打印到屏幕 <strong>cat -n</strong>带上行号</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Matlab的一些点]]></title>
         <id>https://xmweijh.github.io/post/matlab-de-yi-xie-dian/</id>
