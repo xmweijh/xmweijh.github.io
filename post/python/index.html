@@ -1,22 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://xmweijh.github.io/</id>
-    <title>小虾米的记录</title>
-    <updated>2020-04-04T03:03:15.656Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://xmweijh.github.io/"/>
-    <link rel="self" href="https://xmweijh.github.io/atom.xml"/>
-    <subtitle>努力成就自我</subtitle>
-    <logo>https://xmweijh.github.io/images/avatar.png</logo>
-    <icon>https://xmweijh.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 小虾米的记录</rights>
-    <entry>
-        <title type="html"><![CDATA[Python]]></title>
-        <id>https://xmweijh.github.io/post/python/</id>
-        <link href="https://xmweijh.github.io/post/python/">
-        </link>
-        <updated>2020-04-04T03:00:25.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="基础知识">基础知识</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Python | 小虾米的记录</title>
+<meta name="description" content="努力成就自我">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://xmweijh.github.io//favicon.ico?v=1585969390769">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://xmweijh.github.io//styles/main.css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://xmweijh.github.io/">小虾米的记录</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>Python</h1>
+            <p class="article-meta">
+              2020-04-04
+              
+                <a href="https://xmweijh.github.io/tag/xHTgICqZ2/" class="badge secondary">
+                  Python
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <h2 id="基础知识">基础知识</h2>
 <p>print括号中可以单引号或者双引号</p>
 <p>多行打印时,使用三个引号</p>
 <pre><code>print('''
@@ -672,344 +748,143 @@ Before call
 After call
 4
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Git]]></title>
-        <id>https://xmweijh.github.io/post/git/</id>
-        <link href="https://xmweijh.github.io/post/git/">
-        </link>
-        <updated>2020-03-21T10:38:26.000Z</updated>
-        <content type="html"><![CDATA[<p>git init  将一个已存在的文件夹，置于Git的控制管理之下</p>
-<p>git add  将创建或修改的文件添加到本地的暂存区</p>
-<p><code>git add .</code> 命令全部添加到暂存区。</p>
-<p>撤销暂存区的修改执行 <code>git reset -- [文件名]</code> 或者 <code>git rm --cached [文件名]</code> 命令即可</p>
-<p>git commit  提交文件到本体仓库----每当完成一些工作，都可以创建一次提交，保存当前的版本</p>
-<p>提交之前，设置名字和email   相当于签名，每次提交会包含这些信息  git config  配置</p>
-<p><code>git config -l</code> 可以查看配置信息</p>
-<pre><code>$ git config --global user.name &quot;YourName&quot;
-$ git config --global user.email &quot;YourEmail@xxx.com&quot;
 
-git commit -m &quot;first commit&quot;   -m&quot;注释&quot;
-</code></pre>
-<p>提交加注释辨别不同版本，便于理解对代码做了什么修改</p>
-<p>git push 同步到远端仓库</p>
-<p>git status 监测当前目录和缓存区的状态</p>
-<pre><code>git remote add origin 仓库链接
-git push origin master  （origin为仓库名）
-</code></pre>
-<p>git clone 拷贝一个Git仓库到本地，让自己能够查看修改。</p>
-<p><code>git diff</code>用来查看工作区被跟踪的文件的修改详情</p>
-<p><code>git diff --cached</code> 查看暂存区的全部修改</p>
-<p><code>git log</code>，它用来查看版本区的提交历史记录</p>
-<ul>
-<li>
-<p><code>git log [分支名]</code> 查看某分支的提交历史，不写分支名查看当前所在分支</p>
-</li>
-<li>
-<p><code>git log --oneline</code> 一行显示提交历史</p>
-</li>
-<li>
-<p><code>git log -n</code> 其中 n 是数字，查看最近 n 个提交</p>
-</li>
-<li>
-<p><code>git log --author [贡献者名字]</code> 查看指定贡献者的提交记录</p>
-</li>
-<li>
-<p><code>git log --graph</code> 图示法显示提交历史</p>
-<p><code>git log</code> 查看提交记录  时间正序排列的信息，那么可以使用 <code>git log --reverse</code> 命令。 (按q退出此界面)</p>
-<p><code>git branch -avv</code>，它用来查看全部分支信息</p>
-<p><code>git reset --soft HEAD^</code> 撤销最近的一次提交，将修改还原到暂存区。  <code>--soft</code> 表示软退回，对应的还有 <code>--hard</code> 硬退，HEAD^<code>表示撤销一次提交，</code>HEAD^^<code>表示撤销两次提交，撤销 n 次可以简写为</code>HEAD~n`。</p>
-</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Linux常用操作]]></title>
-        <id>https://xmweijh.github.io/post/linux-chang-yong-cao-zuo/</id>
-        <link href="https://xmweijh.github.io/post/linux-chang-yong-cao-zuo/">
-        </link>
-        <updated>2020-03-21T10:37:35.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="目录">目录</h3>
-<pre><code> shiyanlou:~/ $   
-</code></pre>
-<p>当前所处的目录位置  shiiyanlou： 用户名   $命令提示符</p>
-<p>**ls ：**查找目录中的内容    （蓝字目录，白字内容）</p>
-<p><strong>cd:</strong> 进入目录</p>
-<p>上下键可以快速选择前面输过的命令</p>
-<p>**cd ..**可以回到上一级目录（中间有空格）</p>
-<p>**cd -**上次所在的目录</p>
-<p>**cd ~**回到主目录</p>
-<p>**cd /**进入根目录</p>
-<h3 id="文件">文件</h3>
-<p><strong>tree</strong> 列出文件夹下所有子文件和文件（树形结构）</p>
-<p><strong>Ctrl + c</strong> 停止</p>
-<p><strong>pwd</strong> 获得当前目录的绝对路径</p>
-<p><strong>mkdir</strong> 创建目录  加入**-p**一次性创建多级目录</p>
-<p><strong>touch</strong> 新建文件   		<strong>cp</strong> 复制文件到指定目录</p>
-<p><strong>cp -r</strong> 复制目录 		<strong>rm</strong> 删除文件 删除目录加 <strong>-r</strong></p>
-<p><strong>mv</strong>移动文件或者目录  还可以用来重命名</p>
-<p><strong>cat</strong> 将文件内容打印到屏幕 <strong>cat -n</strong>带上行号</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Matlab的一些点]]></title>
-        <id>https://xmweijh.github.io/post/matlab-de-yi-xie-dian/</id>
-        <link href="https://xmweijh.github.io/post/matlab-de-yi-xie-dian/">
-        </link>
-        <updated>2020-03-14T12:48:10.000Z</updated>
-        <content type="html"><![CDATA[<p>用mod时，不管被除数是正是负，余数的符号与除数相同，rem反之。</p>
-<p>直接输入用中括号，同行空格或者逗号不同行用；号。</p>
-<p>冒号表达式格式： 初始值：步长：终止值</p>
-<p>linspace（第一个元素，最后一个元素，元素总数）</p>
-<p>matlab元素按列储存，先第一列在第二列。</p>
-<p>矩阵拆分用：号</p>
-<p>~=是不等于</p>
-<p>fix朝零方向取整，如fix(-1.3)=-1; fix(1.3)=1;</p>
-<p>floor，顾名思义，就是地板，所以是取比它小的整数，即朝负无穷方向取整，如floor(-1.3)=-2; floor(1.3)=1;floor(-1.8)=-2，floor(1.8)=1</p>
-<p>ceil，与floor相反，它的意思是天花板，也就是取比它大的最小整数，即朝正无穷方向取整，如ceil(-1.3)=-1; ceil(1.3)=2;ceil(-1.8)=-1，ceil(1.8)=2</p>
-<p>round四舍五入到最近的整数，如round(-1.3)=-1;round(-1.52)=-2;round(1.3)=1;round(1.52)=2。</p>
-<p>在进行矩阵之间的运算时“.<em>”和“</em>”的意义就有所不同了。假设a，b表示两个矩阵，a*b表示矩阵a与矩阵b进行矩阵相乘，a.*b表示矩阵a中的元素与矩阵b中的元素按位置依次相乘，得到的结果将作为新矩阵中相同位置的元素</p>
-<p>a:c:b表示[a,a+c,……,a+n*c],其中n=fix((b-a)/c)</p>
-<p>Syms 变量间不打符号</p>
-<p>abs函数求实数的绝对值，复数的模，字符串的asc||</p>
-<p>在plot写完后 加上axis([0 1 2 3])</p>
-<p>则表明图线的x轴范围为0<sub>1y轴范围为2</sub>3</p>
-<p>hold on是当前轴及图像保持而不被刷新，准备接受此后将绘制的图形，多图共存</p>
-<p>即，启动图形保持功能，当前坐标轴和图形都将保持，从此绘制的图形都将添加在这个图形的基础上，并自动调整坐标轴的范围。</p>
-<p>hold off使当前轴及图像不再具备被刷新的性质，新图出现时，取消原图。即，关闭图形保持功能。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C++]]></title>
-        <id>https://xmweijh.github.io/post/c/</id>
-        <link href="https://xmweijh.github.io/post/c/">
-        </link>
-        <updated>2020-03-14T12:43:39.000Z</updated>
-        <content type="html"><![CDATA[<p>C++比C更丰富</p>
-<p>(1).支持面向对象，将问题域和方法域统一化。宏观面向对象，微观面向过程。</p>
-<p>(2).支持泛型编程。</p>
-<pre><code>int add (int a, int b) { ... }
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://xmweijh.github.io/post/git/">
+                <h3 class="post-title">
+                  Git
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
 
-template\&lt;typename T&gt;
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://xmweijh.github.io//images/avatar.png?v=1585969390769" class="no-responsive avatar">
+    <div class="text-muted">努力成就自我</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/python/">Python</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/git/">Git</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/linux-chang-yong-cao-zuo/">Linux常用操作</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/matlab-de-yi-xie-dian/">Matlab的一些点</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/c/">C++</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/hui-bian-yu-yan-de-yi-xie-ji-chu-zhi-shi/">汇编语言的一些基础知识</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/c-yu-yan-de-yi-xie-bi-ji/">C语言的一些笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/about/">关于</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://xmweijh.github.io/tag/xHTgICqZ2/" class="badge warning">
+          Python
+        </a>
+      
+        <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="badge ">
+          其他
+        </a>
+      
+        <a href="https://xmweijh.github.io/tag/3AyLbslIy/" class="badge success">
+          C/C++
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xmweijh.github.io//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
 
-T add (T a, T b) { ... }
-</code></pre>
-<p>(3).支持异常机制。</p>
-<pre><code>int func (void) {
 
-  ...
+    </div>
 
-}
-</code></pre>
-<pre><code>int main (void) {
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-  if (func () == -1) {
+<script type="application/javascript">
 
-​    //错误处理;
+AOS.init();
 
-  }
+hljs.initHighlightingOnLoad()
 
-}
-</code></pre>
-<p>(4).操作符重载</p>
-<p>不再使用scanf/printf而是cin/cout。</p>
-<p>头文件：#include\大多数标准库头文件没有.h后缀。</p>
-<p>输出：cout – 标准输出对象</p>
-<p>输入运算符：&lt;&lt;</p>
-<p>提取输出运算符：&gt;&gt;</p>
-<pre><code>\#include &lt;iostream&gt;
- int main (void) {
-   std::cout &lt;&lt; &quot;Hello, World !&quot; &lt;&lt; std::endl;
-   int i;
-   double d;
-   char s[256];
- //  scanf (&quot;%d%lf%s&quot;, &amp;i, &amp;d, s);
-   std::cin &gt;&gt; i &gt;&gt; d &gt;&gt; s;
- //  printf (&quot;%d %lf %s\n&quot;, i, d, s);
-   std::cout &lt;&lt; i &lt;&lt; ' ' &lt;&lt; d &lt;&lt; ' ' &lt;&lt; s &lt;&lt; '\n';
-   return 0;
- }
-</code></pre>
-<p>A. 结构</p>
-<p>定义结构型变量时，可以省略struct关键字。</p>
-<p>1)结构内部可以定义函数——成员函数。</p>
-<p>2)sizeof(空结构) -&gt; 1</p>
-<p>C++层面上引用和指针存在以下不同：</p>
-<p>(a). 指针是实体变量，但是引用不是实体变量。</p>
-<pre><code> int&amp; a=b;
- sizeof (a);//4
- double&amp; d=f;
- sizeof (d);//8
-</code></pre>
-<p>(b). 指针可以不初始化，但是引用必须初始化。</p>
-<p>(c). 指针的目标可以修改，但是引用的目标的不能修改。</p>
-<p>(d). 可以定义指针的指针，但是不能定义引用的指针。</p>
-<pre><code> int a;
- int* p = &amp;a;
- int** pp = &amp;p;//ok
- int&amp; r = a;
- int&amp;* pr = &amp;r;//ERROR
-</code></pre>
-<p>(e). 可以定义指针的引用，但是不能定义引用的引用。</p>
-<pre><code> int a;
- int* p = &amp;a;
- int*&amp; q = p;//ok
- int&amp; r = a;
- int&amp;&amp; s = r;//ERROR
-</code></pre>
-<p>(f). 可以定义指针的数组，但不能定义引用的数组。</p>
-<pre><code> int a, b, c;
- int* parr[] = {&amp;a,&amp;b,&amp;c};/ok
- int&amp; rarr[] = {a,b,c};//ERROR
- //可以定义数组的引用。
- int arr[] = {1 ,2,3};
-</code></pre>
-<p><strong>建议</strong>:</p>
-<p>(1). 少用宏，多用const，enum和inline。</p>
-<pre><code>\#define PAI 3.14159 
+</script>
 
- const double PAI = 3.14159;
 
- #define ERORR_FILE -1;
 
- #defile ERORR_MEM -2;
 
- enum {
-
- ERORR_FILE = -1,
-
- ERORR_MEM = -2
-
- };
-
- #define max(a,b) ((a) &gt; (b) ? (a) : (b))
-
- inline int double max (double a,double b){return a &gt; b ? a : b;}
-</code></pre>
-<p>(2). 变量随用随时声明同时初始化。</p>
-<p>(3). 少用malloc/free,多用new/delete。</p>
-<p>(4). 少用C风格的强制类型转换，多用类型转换运算符。</p>
-<p>(5). 少用C风格的字符串，多用string。</p>
-<p>(6). 树立面向对象的编程思想。</p>
-<p>类和对象</p>
-<p>什么是对象</p>
-<p>1 万物皆对象</p>
-<p>程序就是一组对象，对象之间通过消息交换信息</p>
-<p>类就是对对象的描述和抽象，对象就是类的具体化和实例化。</p>
-<p>2 通过类描述对象</p>
-<p>属性：姓名、年龄、学号</p>
-<p>行为：吃饭、睡觉、学习</p>
-<p>类就是从属性和行为两个方面对对象进行抽象。</p>
-<p>3 面向对象程序设计（OOP）</p>
-<p>现实世界 虚拟世界</p>
-<p>对象 -&gt; 抽象 -&gt; 类 -&gt; 对象</p>
-<p>至少掌握一种OOP编程语言</p>
-<p>精通一种面向对象的元语言—UML</p>
-<p>研究设计模式，GOF</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[汇编语言的一些基础知识]]></title>
-        <id>https://xmweijh.github.io/post/hui-bian-yu-yan-de-yi-xie-ji-chu-zhi-shi/</id>
-        <link href="https://xmweijh.github.io/post/hui-bian-yu-yan-de-yi-xie-ji-chu-zhi-shi/">
-        </link>
-        <updated>2020-03-14T12:36:02.000Z</updated>
-        <content type="html"><![CDATA[<h2 id=""></h2>
-<pre><code>Int add_a_and_b(int a,int b){
-
-returna+b;
-
-}
-
-Int main(){
-
-returnadd_a_and_b(2,3);
-
-}
-</code></pre>
-<pre><code>_add_a_and_b:
-
- push%ebx mov%eax,
-
-[%esp+8]mov%ebx,
-
-[%esp+12]add%eax,%ebx 
-
-pop%ebx
-
- ret _main:push3 push2 call _add_a_and_b add%esp,8ret
-</code></pre>
-<p>针对8086CPU，有14个寄存器，分别为： AX, BX, CX, DX, SI, DI, SP, BP, IP, CS, SS, DS, ES, PSW。</p>
-<p>ABCD-X，通用寄存器，存储一般性数据。 不过，在汇编中，CX 有个特殊功能，用于存储 loop的循环次数。 这里的寄存器都有分高低位，H、L分别表示高低。示例：</p>
-<p>mov ax, 11  ; 将11送入寄存器ax<br>
-mov bl, 3    ; 将3送入bl寄存器<br>
-add ax, 5    ; 将ax寄存器的值加3</p>
-<p>CS、IP 是最关键的两个寄存器，它们指示了当前 要读取指令的地址，CS是段地址，IP是指令指针寄存器。 CSx16+IP 就是CPU当前要执行的指令。换个通俗的话，要让CPU执行什么命令，只要改变这两个寄存器的值，就可以做到了。（有一种皇帝的感觉，哈哈），但是CPU不可能提供 mov cs, 11h 等命令操作，使用jmp cs:ip 进行更改值，从而跳转到想执行的命令处。</p>
-<p>DS 寄存器是用于存储数据的段地址，比如要读取某段数据中的值，那么就要先DS指向那里的地址，再加上偏移地址 [...]，就可以进行数据读取了（ES作为附加段寄存器，与DS功能一致，在段太多的情况，可以视情况选用即可）</p>
-<p>SS, SP, BP 是栈相关寄存器。CPU提供的栈机制</p>
-<p>在语言层面表现出来就是，push, pop 两个命令，任意时刻，SS:SP都指向栈顶元素。 push 时， SP=SP-2，pop时，如果有接收的寄存器则先将栈顶值送入，然后 SP=SP+2，指向下面一个单元。 这有什么用呢？ 当然有用，它可以用来临时保存各种数据，然后再插入功能执行完成后，进行现场的恢复，事实上，大部分时候是这么用的。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C语言的一些笔记]]></title>
-        <id>https://xmweijh.github.io/post/c-yu-yan-de-yi-xie-bi-ji/</id>
-        <link href="https://xmweijh.github.io/post/c-yu-yan-de-yi-xie-bi-ji/">
-        </link>
-        <updated>2020-03-14T12:24:35.000Z</updated>
-        <content type="html"><![CDATA[<p>该运算<strong>只适合用两个整数</strong>进行取余运算，如：10%3 = 1；而10.0%3则是错误的；运算后的符号取决于被模数的符号，如(-10)%3 = -1;而10%(-3) = 1。</p>
-<p>注意：复合运算符中运算符和等号之间是<strong>不存在空格</strong>的。</p>
-<p>* 整个逗号表达式的值是最后一个表达式的值c = (++a, a *= 2, b = a * 5); &lt;==&gt; c=b;</p>
-<p>数组a的地址是ffc1，数组a[0]的地址也是ffc1，即a = a[0]；</p>
-<p>注意了，尾部有个'\0'，如果没有这个结束标记，说明这个字符数组存储的并不是字符串</p>
-<p>使用‘’初始化时，一定记得加‘\0’，</p>
-<p>而“”初始化时，系统会自动在字符串尾部加上一个\0结束符</p>
-<p>gets可以读入包含空格、tab的字符串，直到遇到回车为止；scanf<strong>不能用来读取空格</strong>、tab</p>
-<p>算法：可以没有输入，<strong>但是一定要有输出</strong>。</p>
-<p>%符号两边要，求是整数。不是整数就错了。</p>
-<p>int x=y=10: 错啦，<strong>定义时，不可以连续赋值</strong>。int x,y; x=y=10;   对滴，定义完成后，可以连续赋值。</p>
-<p>逗号表达式： 优先级别最低。表达式的数值逗号最右边的那个表达式的数值</p>
-<p>z=（2，3，4）(整个是赋值表达式) 这个时候z的值为4。</p>
-<p>z=  2，3，4 （整个是逗号表达式）这个时候z的值为2。</p>
-<p>注释不是C语言，不占运行时间，没有分号。不可以嵌套！</p>
-<p>数组名代表的值不可以改变，他是地址常量名。</p>
-<p>在C语言中，二维数组元素的内存中的存放顺序是按行主顺序存放</p>
-<p>while(k++&amp;&amp;n++&gt;2); k=1，n=2，因为k++为0不计算后面的n++，k变化，n不变</p>
-<p>最终可以得出结论：a = a[0] = &amp;a[0][0]，以此类推，可以得出a[1] = &amp;a[1][0]</p>
-<p>sqrt()算术平方根函数，fabs()绝对值函数，pow()幂函数，sin()正弦函数</p>
-<p>指数形式字母e或E前必须有数字，且后面的数字必须为整数。</p>
-<p>for 循环三个表达式<strong>可以省去</strong>，第二表达式只要为真就执行，无特殊格式。</p>
-<p>​</p>
-<pre><code>int main(int argc, const char * argv[]) {
-
-  clock_t start,finish;
-
-  
-
-  start = clock();
-
-  printf(&quot;计算结果：%d\n&quot;, fib(45));
-
-  finish = clock();
-
-  printf(&quot;花费时间--------%lu\n&quot;,finish - start);
-
- 
-
-   
-
-  start = clock();
-
-  printf(&quot;计算结果：%d\n&quot;, tailfib(45,1,1));
-
-  finish = clock();
-
-   
-
-  printf(&quot;花费时间--------%lu\n&quot;,finish - start);
-
-  return 0;
-</code></pre>
-]]></content>
-    </entry>
-</feed>
+  </body>
+</html>
