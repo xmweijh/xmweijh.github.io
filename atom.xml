@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xmweijh.github.io/</id>
     <title>小虾米的记录</title>
-    <updated>2020-04-04T03:07:55.545Z</updated>
+    <updated>2020-04-28T00:15:17.067Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xmweijh.github.io/"/>
     <link rel="self" href="https://xmweijh.github.io/atom.xml"/>
@@ -10,6 +10,367 @@
     <logo>https://xmweijh.github.io/images/avatar.png</logo>
     <icon>https://xmweijh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 小虾米的记录</rights>
+    <entry>
+        <title type="html"><![CDATA[SQL语言]]></title>
+        <id>https://xmweijh.github.io/post/sql-yu-yan/</id>
+        <link href="https://xmweijh.github.io/post/sql-yu-yan/">
+        </link>
+        <updated>2020-04-28T00:13:13.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="select">SELECT</h3>
+<pre><code>SELECT column_name,column_name FROM table_name;//选出特定列
+
+SELECT * FROM table_name;//选取所有列
+
+SELECT DISTINCT column_name,column_name
+FROM table_name;//返回列中不同值（去除掉重复值）
+
+SELECT column_name new_column_name FROM table_name;使用列别名可以改变查询结果的列标题
+</code></pre>
+<h3 id="where">WHERE</h3>
+<pre><code>SELECT column_name,column_name
+FROM table_name
+WHERE column_name operator value;//提取那些满足指定条件的记录
+</code></pre>
+<p>使用<strong>单引号来环绕文本值</strong>（大部分数据库系统也接受双引号）。如果是<strong>数值字段，请不要使用引号</strong>。</p>
+<p>可以在 WHERE 子句中使用的运算符</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">运算符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">=</td>
+<td style="text-align:left">等于</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;&gt;</td>
+<td style="text-align:left">不等于。**注释：**在 SQL 的一些版本中，该操作符可被写成 !=</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">大于</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;</td>
+<td style="text-align:left">小于</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;=</td>
+<td style="text-align:left">大于等于</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;=</td>
+<td style="text-align:left">小于等于</td>
+</tr>
+<tr>
+<td style="text-align:left">BETWEEN</td>
+<td style="text-align:left">在某个范围内</td>
+</tr>
+<tr>
+<td style="text-align:left">LIKE</td>
+<td style="text-align:left">搜索某种模式</td>
+</tr>
+<tr>
+<td style="text-align:left">IN</td>
+<td style="text-align:left">指定针对某个列的多个可能值</td>
+</tr>
+</tbody>
+</table>
+<p>逻辑运算    not        and         or  （优先级从左到右下降）</p>
+<p>空值判断：  is null</p>
+<h3 id="order-by">ORDER BY</h3>
+<pre><code>SELECT column_name,column_name
+FROM table_name
+ORDER BY column_name,column_name ASC|DESC;//对结果集按照一个列或者多个列进行排序,默认按照升序对记录进行排序。如果需要按照降序对记录进行排序，您可以使用 DESC 关键字。
+ORDER BY 多列的时候，先按照第一个column name排序，再按照第二个column name排序
+desc 或者 asc 只对它紧跟着的第一个列名有效，其他不受影响，仍然是默认的升序。
+</code></pre>
+<h3 id="insert-into">INSERT INTO</h3>
+<pre><code>INSERT INTO table_name
+VALUES (value1,value2,value3,...);//无需指定要插入数据的列名，只需提供被插入的值即可
+
+INSERT INTO table_name (column1,column2,column3,...)
+VALUES (value1,value2,value3,...);//指定列名及被插入的值
+</code></pre>
+<h3 id="update">UPDATE</h3>
+<pre><code>UPDATE table_name
+SET column1=value1,column2=value2,...
+WHERE some_column=some_value;//更新表中已存在的记录。
+如果您省略了 WHERE 子句，所有的记录都将被更新！
+</code></pre>
+<h3 id="delete">DELETE</h3>
+<pre><code>DELETE FROM table_name
+WHERE some_column=some_value;//删除表中的行。
+如果您省略了 WHERE 子句，所有的记录都将被删除！
+</code></pre>
+<h3 id="select-top-limit-rownum-子句">SELECT TOP, LIMIT, ROWNUM 子句</h3>
+<pre><code>SELECT TOP number|percent column_name(s)
+FROM table_name;
+
+SELECT column_name(s)
+FROM table_name
+LIMIT number;
+
+SELECT column_name(s)
+FROM table_name
+WHERE ROWNUM &lt;= number;//用于规定要返回的记录的数目
+</code></pre>
+<h3 id="like">LIKE</h3>
+<pre><code>SELECT column_name(s)
+FROM table_name
+WHERE column_name LIKE pattern;//操作符用于在 WHERE 子句中搜索列中的指定模式。
+</code></pre>
+<p>'%a'   //以a结尾的数据</p>
+<p>'a%'   //以a开头的数据</p>
+<p>'%a%'   //含有a的数据</p>
+<p>‘_a_’   //三位且中间字母是a的</p>
+<p>'_a'   //两位且结尾字母是a的</p>
+<p>'a_'   //两位且开头字母是a的</p>
+<h3 id="sql-通配符">SQL 通配符</h3>
+<p>在 SQL 中，通配符与 SQL LIKE 操作符一起使用。</p>
+<p>SQL 通配符用于搜索表中的数据。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">通配符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">%</td>
+<td style="text-align:left">替代 0 个或多个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">_</td>
+<td style="text-align:left">替代一个字符</td>
+</tr>
+<tr>
+<td style="text-align:left">[<em>charlist</em>]</td>
+<td style="text-align:left">字符列中的任何单一字符</td>
+</tr>
+<tr>
+<td style="text-align:left">[^<em>charlist</em>] 或 [!<em>charlist</em>]</td>
+<td style="text-align:left">不在字符列中的任何单一字符</td>
+</tr>
+</tbody>
+</table>
+<h3 id="in">IN</h3>
+<pre><code>SELECT column_name(s)
+FROM table_name
+WHERE column_name IN (value1,value2,...);//IN 操作符允许您在 WHERE 子句中规定多个值。
+</code></pre>
+<h3 id="between">BETWEEN</h3>
+<pre><code>SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;//用于选取介于两个值之间的数据范围内的值。
+</code></pre>
+<h3 id="sql-别名">SQL 别名</h3>
+<pre><code>SELECT column_name AS alias_name
+FROM table_name;//列的 SQL 别名语法
+
+SELECT column_name(s)
+FROM table_name AS alias_name;//表的 SQL 别名语法
+</code></pre>
+<h3 id="sql-连接join">SQL 连接(JOIN)</h3>
+<ul>
+<li><strong>INNER JOIN</strong>：如果表中有至少一个匹配，则返回行</li>
+<li><strong>LEFT JOIN</strong>：即使右表中没有匹配，也从左表返回所有的行</li>
+<li><strong>RIGHT JOIN</strong>：即使左表中没有匹配，也从右表返回所有的行</li>
+<li><strong>FULL JOIN</strong>：只要其中一个表中存在匹配，则返回行</li>
+</ul>
+<p><strong>SQL INNER JOIN 语法</strong></p>
+<p>INNER JOIN 关键字在表中存在至少一个匹配时返回行。</p>
+<figure data-type="image" tabindex="1"><img src="https://www.runoob.com/wp-content/uploads/2013/09/img_innerjoin.gif" alt="SQL INNER JOIN" loading="lazy"></figure>
+<pre><code>SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name=table2.column_name;
+
+SELECT column_name(s)
+FROM table1
+JOIN table2
+ON table1.column_name=table2.column_name;//INNER JOIN 与 JOIN 是相同的。
+</code></pre>
+<p>在使用 <strong>join</strong> 时，<strong>on</strong> 和 <strong>where</strong> 条件的区别如下：</p>
+<ul>
+<li>1、 <strong>on</strong> 条件是在生成临时表时使用的条件，它不管 <strong>on</strong> 中的条件是否为真，都会返回左边表中的记录。</li>
+<li>2、<strong>where</strong> 条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有 <strong>left join</strong> 的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。</li>
+</ul>
+<p><strong>SQL LEFT JOIN 语法</strong></p>
+<p>LEFT JOIN 关键字从左表（table1）返回所有的行，即使右表（table2）中没有匹配。如果右表中没有匹配，则结果为 NULL。</p>
+<figure data-type="image" tabindex="2"><img src="https://www.runoob.com/wp-content/uploads/2013/09/img_leftjoin.gif" alt="SQL LEFT JOIN" loading="lazy"></figure>
+<pre><code>SELECT column_name(s)
+FROM table1
+LEFT JOIN table2
+ON table1.column_name=table2.column_name;
+
+SELECT column_name(s)
+FROM table1
+LEFT OUTER JOIN table2
+ON table1.column_name=table2.column_name;//在某些数据库中，LEFT JOIN 称为 LEFT 											 //OUTER JOIN。
+</code></pre>
+<p><strong>SQL RIGHT JOIN 语法</strong></p>
+<p>RIGHT JOIN 关键字从右表（table2）返回所有的行，即使左表（table1）中没有匹配。如果左表中没有匹配，则结果为 NULL。</p>
+<figure data-type="image" tabindex="3"><img src="https://www.runoob.com/wp-content/uploads/2013/09/img_rightjoin.gif" alt="SQL RIGHT JOIN" loading="lazy"></figure>
+<pre><code>SELECT column_name(s)
+FROM table1
+RIGHT JOIN table2
+ON table1.column_name=table2.column_name;
+
+SELECT column_name(s)
+FROM table1
+RIGHT OUTER JOIN table2
+ON table1.column_name=table2.column_name;//在某些数据库中，RIGHT JOIN 称为 RIGHT 											 //OUTER JOIN。
+</code></pre>
+<p><strong>SQL FULL OUTER JOIN 语法</strong></p>
+<p>FULL OUTER JOIN 关键字只要左表（table1）和右表（table2）其中一个表中存在匹配，则返回行.</p>
+<p>FULL OUTER JOIN 关键字结合了 LEFT JOIN 和 RIGHT JOIN 的结果。</p>
+<figure data-type="image" tabindex="4"><img src="https://www.runoob.com/wp-content/uploads/2013/09/img_fulljoin.gif" alt="SQL FULL OUTER JOIN" loading="lazy"></figure>
+<pre><code>SELECT column_name(s)
+FROM table1
+FULL OUTER JOIN table2
+ON table1.column_name=table2.column_name;
+</code></pre>
+<h3 id="union">UNION</h3>
+<p>UNION 操作符用于合并两个或多个 SELECT 语句的结果集。</p>
+<p>请注意，UNION 内部的每个 SELECT 语句必须拥有相同数量的列。列也必须拥有相似的数据类型。同时，每个 SELECT 语句中的列的顺序必须相同。</p>
+<pre><code>SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+//默认地，UNION 操作符选取不同的值。如果允许重复的值，请使用 UNION ALL。
+SELECT column_name(s) FROM table1
+UNION ALL
+SELECT column_name(s) FROM table2;
+</code></pre>
+<h3 id="select-into">SELECT INTO</h3>
+<p>SELECT INTO 语句从一个表复制数据，然后把数据插入到另一个新表中。</p>
+<pre><code>SELECT *
+INTO newtable [IN externaldb]
+FROM table1;
+
+SELECT column_name(s)
+INTO newtable [IN externaldb]
+FROM table1;
+</code></pre>
+<h3 id="insert-into-select">INSERT INTO SELECT</h3>
+<p>INSERT INTO SELECT 语句从一个表复制数据，然后把数据插入到一个已存在的表中。</p>
+<pre><code>INSERT INTO table2
+SELECT * FROM table1;
+
+INSERT INTO table2
+(column_name(s))
+SELECT column_name(s)
+FROM table1;
+</code></pre>
+<h3 id="create-database">CREATE DATABASE</h3>
+<pre><code>CREATE DATABASE dbname;//用于创建数据库。
+</code></pre>
+<h3 id="create-table">CREATE TABLE</h3>
+<pre><code>CREATE TABLE table_name
+(
+column_name1 data_type(size),
+column_name2 data_type(size),
+column_name3 data_type(size),
+....
+);//用于创建数据库中的表。表由行和列组成，每个表都必须有个表名。
+  //column_name 参数规定表中列的名称。
+  //data_type 参数规定列的数据类型（例如 varchar、integer、decimal、date 等等）。
+  //size 参数规定表中列的最大长度。
+</code></pre>
+<h3 id="sql-约束constraints">SQL 约束（Constraints）</h3>
+<pre><code>CREATE TABLE table_name
+(
+column_name1 data_type(size) constraint_name,
+column_name2 data_type(size) constraint_name,
+column_name3 data_type(size) constraint_name,
+....
+);//用于规定表中的数据规则。
+</code></pre>
+<p>在 SQL 中，我们有如下约束：</p>
+<ul>
+<li>
+<p><strong>NOT NULL</strong> - 指示某列不能存储 NULL 值。</p>
+<p>​	NOT NULL 约束强制列不接受 NULL 值。</p>
+<p>​	NOT NULL 约束强制字段始终包含值。这意味着，如果不向字段添加值，就无法插入新记录或	者更新记录。</p>
+</li>
+<li>
+<p><strong>UNIQUE</strong> - 保证某列的每行必须有唯一的值。</p>
+<p>​	UNIQUE 约束唯一标识数据库表中的每条记录。</p>
+<p>​	UNIQUE 和 PRIMARY KEY 约束均为列或列集合提供了唯一性的保证。</p>
+<p>​	PRIMARY KEY 约束拥有自动定义的 UNIQUE 约束。</p>
+<p>​	请注意，每个表可以有多个 UNIQUE 约束，但是每个表只能有一个 PRIMARY KEY 约束。</p>
+</li>
+<li>
+<p><strong>PRIMARY KEY</strong> - NOT NULL 和 UNIQUE 的结合。确保某列（或两个列多个列的结合）有唯一标识，有助于更容易更快速地找到表中的一个特定的记录。</p>
+<p>​	PRIMARY KEY 约束唯一标识数据库表中的每条记录。</p>
+<p>​	主键必须包含唯一的值。</p>
+<p>​	主键列不能包含 NULL 值。</p>
+<p>​	每个表都应该有一个主键，并且每个表只能有一个主键。</p>
+</li>
+<li>
+<p><strong>FOREIGN KEY</strong> - 保证一个表中的数据匹配另一个表中的值的参照完整性。</p>
+</li>
+<li>
+<p><strong>CHECK</strong> - 保证列中的值符合指定的条件。</p>
+<p>​	如果对单个列定义 CHECK 约束，那么该列只允许特定的值。</p>
+<p>​	如果对一个表定义 CHECK 约束，那么此约束会基于行中其他列的值在特定的列中对值进行限	    	制。</p>
+</li>
+<li>
+<p><strong>DEFAULT</strong> - 规定没有给列赋值时的默认值。 如果没有规定其他的值，那么会将默认值添加到所有的新记录。</p>
+</li>
+</ul>
+<h3 id="create-index-语句">CREATE INDEX 语句</h3>
+<p>CREATE INDEX 语句用于在表中创建索引。</p>
+<p>在不读取整个表的情况下，索引使数据库应用程序可以更快地查找数据。</p>
+<pre><code>CREATE INDEX index_name
+ON table_name (column_name)//在表上创建一个简单的索引。允许使用重复的值
+
+CREATE UNIQUE INDEX index_name
+ON table_name (column_name)//在表上创建一个唯一的索引。不允许使用重复的值：唯一的索引意味着						   //两个行不能拥有相同的索引值
+</code></pre>
+<h3 id="drop">DROP</h3>
+<p>通过使用 DROP 语句，可以轻松地删除索引、表和数据库。</p>
+<h3 id="alter-table">ALTER TABLE</h3>
+<p>ALTER TABLE 语句用于在已有的表中添加、删除或修改列。</p>
+<h3 id="sql-alter-table-语法">SQL ALTER TABLE 语法</h3>
+<p>如需在表中添加列，请使用下面的语法:</p>
+<pre><code>ALTER TABLE table_name
+ADD column_name datatype
+</code></pre>
+<p>如需删除表中的列，请使用下面的语法（请注意，某些数据库系统不允许这种在数据库表中删除列的方式）：</p>
+<pre><code>ALTER TABLE table_name
+DROP COLUMN column_name
+</code></pre>
+<h3 id="auto-increment">AUTO INCREMENT</h3>
+<p>Auto-increment 会在新记录插入表中时生成一个唯一的数字。</p>
+<h3 id="视图views">视图（Views）</h3>
+<p>在 SQL 中，视图是基于 SQL 语句的结果集的可视化的表。</p>
+<p>视图包含行和列，就像一个真实的表。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。</p>
+<p>您可以向视图添加 SQL 函数、WHERE 以及 JOIN 语句，也可以呈现数据，就像这些数据来自于某个单一的表一样。</p>
+<p>SQL CREATE VIEW 语法</p>
+<pre><code>CREATE VIEW view_name AS
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+</code></pre>
+<p>**注释：**视图总是显示最新的数据！每当用户查询视图时，数据库引擎通过使用视图的 SQL 语句重建数据。</p>
+<p>您可以使用下面的语法来更新视图：</p>
+<p>SQL CREATE OR REPLACE VIEW 语法</p>
+<pre><code>CREATE OR REPLACE VIEW view_name AS
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+</code></pre>
+<p>您可以通过 DROP VIEW 命令来删除视图。</p>
+<p>SQL DROP VIEW 语法</p>
+<pre><code>DROP VIEW view_name
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Python]]></title>
         <id>https://xmweijh.github.io/post/python/</id>
