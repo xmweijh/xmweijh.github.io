@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>HTML基础 | 小虾米的记录</title>
+<meta name="description" content="努力成就自我">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://xmweijh.github.io//favicon.ico?v=1588208058063">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://xmweijh.github.io//styles/main.css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://xmweijh.github.io/">小虾米的记录</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>HTML基础</h1>
+            <p class="article-meta">
+              2020-04-30
+              
+            </p>
+            
+            <div class="post-content">
+              <h2 id="html">HTML</h2>
+<p>超文本传输协议（HTTP，HyperText Transfer Protocol)  是互联网上应用最为广泛的一种网络协议。</p>
+<p><strong>常见状态码</strong></p>
+<ul>
+<li>200 ：成功。</li>
+<li>400 ：客户端请求有语法错误，服务器端不能理解。</li>
+<li>401 ：该请求可能未经过授权。</li>
+<li>403 ：服务器端收到该请求，但是拒绝为它提供服务，可能是没有权限等等。</li>
+<li>404 ：该资源没找到。</li>
+<li>500 ：服务器端发生了一个不可预知的错误。</li>
+<li>503 ：服务器端当前还不能处理客户端的这个请求，可能过段时间之后才能恢复正常。</li>
+</ul>
+<p>HTML（超文本标记语言）是一种用于创建网页的标准标记语言。 HTML 不需要编译，可以直接由浏览器执行，它的解析依赖于浏览器的内核。 它不是一种编程语言，而是一种标记语言。</p>
+<p>一个网页的基本结构：</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;HTML 简介&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>&lt;!DOCTYPE html&gt;是我们的文档声明头。他告诉了浏览器，本文档处理的是 HTML 文档。<code>html</code> 标签即根元素，此处表示文档的开始。<code>head</code> 标签是网页的头部，设置网页的相关信息。<code>title</code> 标签设置网页标题。<code>body</code> 标签定义文档的主体，也就是我们的主要内容。</p>
+<p>在 HTML 中满足以下格式的内容即为注释，被注释的内容将不会被渲染和显示。</p>
+<pre><code>&lt;!-- 在此处写注释 --&gt;
+</code></pre>
+<p>**注：**在开始标签中有一个惊叹号，但是结束标签中没有。浏览器不会显示注释，但是能够帮助记录。</p>
+<p>HTML 标签的大小写无关的，例如 <code>和</code> 表示的意思是一样的，都代表“主体”，推荐使用小写。</p>
+<p><strong>双标签（双标记）</strong></p>
+<p>双标记也称体标记，是指由开始和结束两个标记符组成的标记。其基本语法格式如下：</p>
+<pre><code>&lt;标记名&gt;&lt;/标记名&gt;
+</code></pre>
+<p>常见的双标签有：</p>
+<pre><code class="language-html">&lt;html&gt;&lt;/html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;body&gt;&lt;/body&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;span&gt;&lt;/span&gt;
+&lt;a&gt;&lt;/a&gt;
+&lt;ul&gt;&lt;/ul&gt;
+</code></pre>
+<p><strong>单标签（单标记）</strong></p>
+<p>单标记也称空标记，是指用一个标记符号即可完整地描述某个功能的标记。其基本语法格式如下：</p>
+<pre><code>&lt;标记名/&gt;
+</code></pre>
+<p>常见的单标签有：</p>
+<pre><code class="language-html">&lt;br /&gt;
+&lt;!--换行--&gt;
+&lt;hr /&gt;
+&lt;!--水平分隔线--&gt;
+&lt;meta /&gt;
+&lt;img /&gt;
+</code></pre>
+<p><strong>标签的关系</strong></p>
+<ul>
+<li>嵌套关系</li>
+</ul>
+<pre><code class="language-html">&lt;head&gt;
+  &lt;title&gt; &lt;/title&gt;
+&lt;/head&gt;
+</code></pre>
+<ul>
+<li>并列关系</li>
+</ul>
+<pre><code class="language-html">&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;&lt;/body&gt;
+</code></pre>
+<p>HTML 元素指的是从开始标签（start tag）到结束标签（end tag）的所有代码。</p>
+<p>例子：</p>
+<pre><code class="language-html">&lt;p&gt;I Love You&lt;/p&gt;
+</code></pre>
+<p>注：这个元素定义了 HTML 文档中的一个段落。这个元素拥有一个开始标签 <code>，以及一个结束标签</code>。元素内容是：<code>I Love You</code>。</p>
+<p><strong>h 系类标签</strong></p>
+<p><code>h</code> 标签有六种 <code>h1</code>，<code>h2</code>，<code>h3</code>，<code>h4</code>，<code>h5</code>，<code>h6</code>，它代表着我们的标题。</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;HTML 简介&lt;/title&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;我是一级标题&lt;/h1&gt;
+    &lt;h2&gt;我是二级标题&lt;/h2&gt;
+    &lt;h3&gt;我是三级标题&lt;/h3&gt;
+    &lt;h4&gt;我是四级标题&lt;/h4&gt;
+    &lt;h5&gt;我是五级标题&lt;/h5&gt;
+    &lt;h6&gt;我是六级标题&lt;/h6&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>p 标签</strong></p>
+<p><code>p</code> 标签是我们的文本标签。</p>
+<p><strong>图片标签</strong></p>
+<p>HTML 的图像是通过标签 &lt;img&gt;来定义的。</p>
+<p><strong>a 标签</strong></p>
+<p><a> 标签是超链接标签，意思就是我们点击它可以跳转到一个网页。</p>
+<p><strong>div 标签</strong></p>
+<div> 标签是一个块级元素，块级元素占据其父元素（容器）的整个空间，你可以把它想成一个盒子。 <div> 能够设置其宽高
+<p><strong>换行标签和空格字符</strong></p>
+<p>在浏览器显示页面时，浏览器会移除源代码中多余的空格和空行，所有连续的空格或空行都会被认为是一个空格。如果希望在不产生一个新段落的情况下换行，可以使用&lt;br/&gt;标签。如果想使用空格的话可以使用&amp;nbsp;字符</p>
+<pre><code class="language-html">&lt;body&gt;
+  &lt;p&gt;这是一段文字 前面有很多空格但是只显示一个&lt;/p&gt;
+  &lt;p&gt;这是一段文字&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;用了空格字符&lt;/p&gt;
+  &lt;br /&gt;
+  &lt;p&gt;上面是换行符&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+<p><strong>水平分割线</strong></p>
+<p>&lt;hr/&gt; 标签用于在 HTML 页面中创建一条水平线。</p>
+<p>标签 <div> 可将网页页面分割成不同的独立部分，通常用于定义文档中的区域或节。该标签是一个块级元素，浏览器会自动在 <div> 和 </div> 所标记的区域前后自动放置一个换行符。</p>
+<p>标签 <span> 通常作为文本的容器，它没有特定的含义和样式，只有与 CSS 同时使用才可以为指定文本设置样式属性。该标签是一个内联元素，他与块级元素相反，内联元素不会自动在前后自动放置换行符，因此内联元素会默认显示在同一行。</p>
+<p>无序列表是一个项目的列表，此列项目使用实心圆、空心圆、方块进行标记，无序列表使用 <ul> 标签。同样，有序列表也是一列项目，列表项目使用数字进行标记。有序列表始于 <ol> 标签。每个列表项始于 <li> 标签。</p>
+<pre><code class="language-html">&lt;p&gt;无序列表&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;列表项1&lt;/li&gt;
+  &lt;li&gt;列表项2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;有序列表&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;列表项1&lt;/li&gt;
+  &lt;li&gt;列表项2&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<p><strong>无序列表和有序列表的 type 属性：</strong></p>
+<p>type 属性定义了列表项前项目符号的类型。</p>
+<p>&lt;ul&gt;标签的 type 属性：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>disc（默认）</td>
+<td>实心圆</td>
+</tr>
+<tr>
+<td>circle</td>
+<td>空心圆</td>
+</tr>
+<tr>
+<td>square</td>
+<td>小方块</td>
+</tr>
+</tbody>
+</table>
+<p>&lt;ol&gt;标签的 type 属性：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1（默认）</td>
+<td>数字表示（1，2，3...)</td>
+</tr>
+<tr>
+<td>A</td>
+<td>大写字母表示（A,B,C...)</td>
+</tr>
+<tr>
+<td>a</td>
+<td>小写字母表示（a,b,c...)</td>
+</tr>
+<tr>
+<td>I</td>
+<td>大写罗马数字表示(I,II,III…)</td>
+</tr>
+<tr>
+<td>i</td>
+<td>小写罗马数字表示(i,ii,iii…)</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-html">&lt;p&gt;无序列表&lt;/p&gt;
+&lt;ul type=&quot;circle&quot;&gt;
+  &lt;li&gt;空心圆列表项1&lt;/li&gt;
+  &lt;li&gt;空心圆列表项2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;有序列表&lt;/p&gt;
+&lt;ol type=&quot;A&quot;&gt;
+  &lt;li&gt;列表项1&lt;/li&gt;
+  &lt;li&gt;列表项2&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<p><strong>自定义列表（dl）</strong></p>
+<p>定义：自定义列表不仅仅是一列项目，而是项目及其注释的组合。自定义列表以&lt;dl&gt;标签开始。每个自定义列表项以&lt;dt&gt;开始。每个自定义列表项的定义以&lt;dd&gt;开始。自定义列表的列表项前没有任何项目符号。</p>
+<p>语法格式：</p>
+<pre><code class="language-html">&lt;dl&gt;
+  &lt;dt&gt;名词1&lt;/dt&gt;
+  &lt;dd&gt;名词1解释1&lt;/dd&gt;
+  ...
+  &lt;dt&gt;名词2&lt;/dt&gt;
+  &lt;dd&gt;名词2解释1&lt;/dd&gt;
+  ...
+&lt;/dl&gt;
+</code></pre>
+<p><strong>HTML 样式实例 - 背景颜色</strong></p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;body&gt;
+    &lt;p style=&quot;background-color:red&quot;&gt;xxx&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>注：通过 <code>&quot;background-color&quot;</code> 属性值的设置来给背景设置颜色。</p>
+<p><strong>HTML 样式实例 - 字体、颜色和尺寸</strong></p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;body&gt;
+    &lt;p style=&quot;font-family:arial;color:green;font-size:50px;&quot;&gt;xxx&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>注：通过对 <code>font-family</code> 属性值的设置来设置字体，通过对 <code>color</code> 属性值的设置来设置颜色，通过对 <code>font-size</code> 属性值的设计来设计字体大小。</p>
+<p><strong>HTML 样式实例 - 文本对齐</strong></p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1 style=&quot;text-align:center&quot;&gt;xxx&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>表格由 <table> 标签来定义。每个表格均有若干行（由 <tr> 标签定义），每行被分割为若干单元格（由 <td> 标签定义）。字母 td 指表格数据（table data），即数据单元格的内容。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。</p>
+<pre><code class="language-html">&lt;table&gt;   //&lt;table border=&quot;1&quot;&gt;给表格加上边框
+  &lt;tr&gt;
+    &lt;td&gt;第一行第一列&lt;/td&gt;
+    &lt;td&gt;第一行第二列&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;第二行第一列&lt;/td&gt;
+    &lt;td&gt;第二行第二列&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<p>表格一般都有标题，在 HTML 中表格标题通过 <caption> 定义。</p>
+<figure data-type="image" tabindex="1"><img src="https://doc.shiyanlou.com/document-uid897174labid9222timestamp1545370661694.png/wm" alt="img" loading="lazy"></figure>
+<p>表格的表头使用 <th> 标签进行定义，表头通常用于列名字。</p>
+<pre><code class="language-html">&lt;table border=&quot;1&quot; width=&quot;300px&quot; height=&quot;150px&quot;&gt;
+  &lt;caption&gt;
+    支出表
+  &lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th&gt;支出&lt;/th&gt;
+    &lt;th&gt;备注&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;32&lt;/td&gt;
+    &lt;td&gt;买苹果&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;24&lt;/td&gt;
+    &lt;td&gt;买饮料&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<p>绘制表格的时候，我们常常需要合并单元格，而在 HTML 中提供了 colspan（合并行）和 rowspan（合并列）属性来帮助我们实现这一效果。</p>
+<blockquote>
+<p>colspan 又称跨列，rowspan 又称跨行。</p>
+</blockquote>
+<p>设置 <code>rowspan=&quot;2&quot;</code> 表示合并该列上的两个单元格，同样的我们可以通过设置 <code>colspan</code> 来合并行</p>
+<p>在网页中可以使用很多个 div，在网页制作中，使用 div 可以将网页中的任何元素布局到网页中的任何位置。</p>
+<p>语法：</p>
+<pre><code class="language-html">&lt;div style=&quot;样式设置&quot;&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;
+</code></pre>
+<p>table 元素布局：</p>
+<ul>
+<li>优点：</li>
+</ul>
+<ol>
+<li>理解比较简单。</li>
+<li>不同的浏览器看到的效果一般相同。</li>
+</ol>
+<ul>
+<li>缺点：</li>
+</ul>
+<ol>
+<li>显示样式和数据绑定在一起。</li>
+<li>布局的时候灵活度不高。</li>
+<li>一个页面可能会有大量的 table 元素，代码冗余度高。</li>
+<li>增加带宽。</li>
+<li>搜索引擎不喜欢这样的布局。</li>
+</ol>
+<p>div 元素布局：</p>
+<ul>
+<li>优点：</li>
+</ul>
+<ol>
+<li>符合 W3C 标准。</li>
+<li>搜索引擎更加友好。</li>
+<li>样式的调整更加方便，内容和样式的分离，使页面和样式的调整变得更加方便。</li>
+<li>节省代宽，代码冗余度低。</li>
+<li>表现和结构分离，在团队开发中更容易分工合作而减少相互关联性。</li>
+</ol>
+<p>&lt;form&gt;标签用于创建 HTML 表单，常见的表单格式为：</p>
+<pre><code class="language-html">&lt;form name=&quot;&quot; method=&quot;&quot; action=&quot;&quot;&gt;&lt;/form&gt;
+</code></pre>
+<ul>
+<li>name：定义表单的名字。</li>
+<li>method：定义表单结果从浏览器传送到服务器的方式，默认参数为：<code>get</code> 。<code>post</code> 安全性更高，因此常用作传输密码等，而 <code>get</code> 安全性较低，一般用于查询数据。</li>
+<li>action：发送数据要去的地址。它的值必须是一个有效的 URL，可以是相对 URL 也可以是绝对 URL。如果没有提供此属性或者 <code>action=&quot;#&quot;</code>，则数据将被发送到包含表单的页面的 URL。</li>
+</ul>
+<p>在网页中最常见的表单元素就是文字字段，用户可以在文字字段内输入字符或者单行文本。 语法：</p>
+<pre><code class="language-html">&lt;input
+  type=&quot;text&quot;
+  name=&quot;控件名称&quot;
+  value=&quot;文字字段的默认取值&quot;
+  size=&quot;控件的长度&quot;
+  maxlength=&quot;最长字符数&quot;
+/&gt;
+</code></pre>
+<p>该语法包含了许多参数，除了 <code>type</code> 参数以外，其他的参数都是可选的</p>
+<p>举个例子：</p>
+<pre><code class="language-html">&lt;form name=&quot;formBox&quot; method=&quot;post&quot; action=&quot;&quot;&gt;
+  姓名：&lt;input type=&quot;text&quot; name=&quot;name&quot; size=&quot;20&quot; /&gt;&lt;br /&gt;
+  年龄:&lt;input type=&quot;text&quot; name=&quot;age&quot; size=&quot;40&quot; value=&quot;10&quot; maxlength=&quot;3&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+<p><strong>密码输入框</strong></p>
+<p>密码输入框是一种特殊的文字字段，他的各个属性和文字字段是相同的，但是输入进密码输入框的字符全部是“*”表示，保证周围人看不见输入的文本。</p>
+<pre><code class="language-html">&lt;input type=&quot;password&quot; name=&quot;pwd&quot; /&gt;
+</code></pre>
+<p><strong>单选按钮</strong></p>
+<p>单选按钮可以使用户从选择列表中选择一个选项。</p>
+<pre><code class="language-html">&lt;form name=&quot;formBox&quot; method=&quot;post&quot; action=&quot;&quot;&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot; checked /&gt;男&lt;br /&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot; /&gt;女
+&lt;/form&gt;
+</code></pre>
+<p>几个单选按钮可以连接在一起，只需要把它们的 <code>name</code> 值设置为相同的。同一组中只有一个按钮可以同时被选。如果没有选中任何一个，那么整个单选按钮池就被认为处于未知状态，且不会随表单提交。 可以尝试如果 name 不相同或者没有 name 会是什么情况。</p>
+<p>复选框可以让用户从一个选项列表中选择超出一个的选项。</p>
+<pre><code class="language-html">&lt;form name=&quot;formBox&quot; method=&quot;post&quot; action=&quot;&quot;&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;music&quot; checked /&gt;音乐&lt;br /&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;art&quot; /&gt;美术&lt;br /&gt;
+  &lt;input type=&quot;checkbox&quot; name=&quot;math&quot; /&gt;数学&lt;br /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>复选框可以拥有自己的名字，并不需要属于一个组。</p>
+<p><strong>按钮</strong><br>
+HTML 表单中，有三种按钮：提交按钮，重置按钮，匿名按钮。我们可以使用 <button> 元素或者 <input> 元素来创建一个按钮。type 属性的值指定显示什么类型的按钮。</p>
+<p><strong>提交按钮（submit）</strong></p>
+<p>用于发送表单数据给服务器。</p>
+<p>语法：</p>
+<pre><code class="language-html">&lt;form name=&quot;formBox&quot; method=&quot;post&quot; action=&quot;&quot;&gt;
+  &lt;input type=&quot;text&quot; value=&quot;输入的内容&quot; /&gt;
+  &lt;button type=&quot;submit&quot;&gt;
+    This a submit button
+  &lt;/button&gt;
+
+  &lt;!--or--&gt;
+
+  &lt;input type=&quot;reset&quot; value=&quot;This is a reset button&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+<p><strong>重置按钮（reset）</strong></p>
+<p>重置按钮用来清除用户在页面中输入的信息。</p>
+<p>语法：</p>
+<pre><code class="language-html">&lt;form name=&quot;formBox&quot; method=&quot;post&quot; action=&quot;&quot;&gt;
+  &lt;input type=&quot;text&quot; /&gt;
+  &lt;button type=&quot;reset&quot;&gt;
+    This a reset button
+  &lt;/button&gt;
+
+  &lt;!--or--&gt;
+
+  &lt;input type=&quot;reset&quot; value=&quot;This is a reset button&quot; /&gt;
+&lt;/form&gt;
+</code></pre>
+<p>在文本框中输入内容，点击按钮即可清除。</p>
+<p><strong>匿名按钮（button）</strong></p>
+<p>没有自动生效的按钮，但是可以使用 JavaScript 代码进行定制。如果你省略了 <code>type</code> 属性，那么这就是默认值。</p>
+<p>语法：</p>
+<pre><code class="language-html">&lt;button type=&quot;button&quot;&gt;
+  This a anonymous button
+&lt;/button&gt;
+
+&lt;!--or--&gt;
+&lt;button&gt;
+  This a anonymous button
+&lt;/button&gt;
+
+&lt;!--or--&gt;
+&lt;input type=&quot;button&quot; value=&quot;This is a anonymous button&quot; /&gt;
+</code></pre>
+<p>不管使用的是 <button> 元素还是 <input> 元素，按钮的行为都是一样的。它们的不同点在于：</p>
+<p>从前面的例子中也可以看出 <button> 元素允许你使用 HTML 内容作为其标记内容，但 <input> 元素只接受纯文本内容。<br>
+使用 <button> 元素，可以有一个不同于按钮标签的值（通过将其设置为 value 属性）。</p>
+<p><strong>下拉菜单</strong></p>
+<p>下拉菜单能够节省页面空间，正常状态下显示一个选项，单击展开所以选项。</p>
+<pre><code class="language-html">&lt;form name=&quot;formBox&quot; method=&quot;post&quot; action=&quot;&quot;&gt;
+  &lt;select name=&quot;select&quot;&gt;
+    &lt;option value=&quot;成都&quot;&gt;成都&lt;/option&gt;
+    &lt;option value=&quot;广州&quot;&gt;广州 &lt;/option&gt;
+    &lt;option value=&quot;四川&quot;&gt;四川&lt;/option&gt;
+    &lt;option value=&quot;上海&quot;&gt;上海&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+</code></pre>
+<p>注意：下拉菜单的宽度是由 <option> 标记中包含的最长文本的宽度决定的。</p>
+<p><strong>列表项</strong></p>
+<p>在页面中列表项可以显示出几条信息，一旦超出这个信息量，在列表项右侧会出现滚动条，拖动滚动条可以看到所有选项。</p>
+<pre><code class="language-html">&lt;form name=&quot;formBox&quot; method=&quot;post&quot; action=&quot;&quot;&gt;
+  &lt;select name=&quot;select&quot; size=&quot;2&quot; multiple=&quot;multiple&quot;&gt;
+    &lt;option value=&quot;成都&quot;&gt;成都&lt;/option&gt;
+    &lt;option value=&quot;广州&quot;&gt;广州 &lt;/option&gt;
+    &lt;option value=&quot;四川&quot;&gt;四川&lt;/option&gt;
+    &lt;option value=&quot;上海&quot;&gt;上海&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt;
+</code></pre>
+<p>当用户想要填入多行文本时，就应该使用文本域而不是文本字段。文本域使用 <textarea> 标记。</p>
+<pre><code class="language-html">&lt;form name=&quot;formBox&quot; method=&quot;post&quot; action=&quot;&quot;&gt;
+  留下您的联系方式：
+  &lt;textarea name=&quot;textarea&quot; cols=&quot;35&quot; rows=&quot;5&quot;&gt;&lt;/textarea&gt;
+&lt;/form&gt;
+</code></pre>
+<p><code>clos</code> 代表列数，<code>rows</code> 代表行数。</p>
+<p><strong>图像标签</strong><br>
+在 HTML 中，图像由 <img> 标签定义。语法为：</p>
+<pre><code class="language-html">&lt;img src=&quot;url&quot; alt=&quot;&quot; /&gt;
+</code></pre>
+<p><img> 是空标签，它只包含属性，没有闭合标签。要在页面上显示图像，你需要使用源属性（src）。src 的值是图像文件的 URL，也就是引用该图像的文件的的绝对路径或相对路径。alt 规定图像的替代文本即当图片未成功显示的时候显示的文本信息。title 设置鼠标悬停时显示的内容（一般不用设置）。此外还可以通过设置 width 和 height 的值来设置图片的宽和高。</p>
+<p><strong>框架</strong></p>
+<p>使用框架，你可以在同一个浏览器窗口中显示不止一个页面。</p>
+<p>语法：</p>
+<pre><code class="language-html">&lt;iframe src=&quot;URL&quot;&gt;
+  &lt;!-- URL指向不同的页面 --&gt;
+&lt;/iframe&gt;
+</code></pre>
+<p><strong>iframe - 设置高度与宽度</strong></p>
+<p>属性默认以像素为单位,但是你可以指定其按比例显示 (如：&quot;60%&quot;)。</p>
+<p><strong>iframe - 移除边框</strong></p>
+<p><code>frameborder</code> 属性用于定义 iframe 表示是否显示边框。设置属性值为 &quot;0&quot; 移除 iframe 的边框:</p>
+<p>在标准 HTML5 中， <html> 和 <body> 标签是可以省略的。</p>
+<p>HTML5 元素名可以使用大写和小写字母，建议使用小写字母，会显得更加好看一点，千万不要使用大小写混写，那样会显得很不专业。</p>
+<p>图片通常使用 <code>alt</code> 属性。 在图片不能显示时，它能替代图片显示。建议定义好图片的尺寸，在加载时可以预留指定空间，减少闪烁。</p>
+<p>等号的前后可以使用空格，也可以不使用，推荐少用空格。</p>
+<p>不要无缘无故的添加空行，一般一个模块或一个功能添加一个空行便于区分，缩进使用两个空格，不建议使用 Tab。</p>
+<p><strong>section 标签</strong></p>
+<p>&lt;section&gt; 表示文档中的一个区域（或节）。比如章节、页眉、页脚或文档中的其他部分，一般来说会包含一个标题。不要把 <section> 元素作为一个普通的 div 容器来使用。一般来说，一个 <section> 应该出现在文档大纲中。</p>
+<p><strong>article 标签</strong></p>
+<p>&lt;article&gt; 标签定义独立的内容。常常使用在论坛帖子，报纸文章，博客条目，用户评论等独立的内容项目之中。article 可以嵌套，内层的 article 对外层的 article 标签有隶属关系。</p>
+<p><strong>nav 标签</strong></p>
+<p>&lt;nav&gt; 标签定义导航链接的部分：描绘一个含有多个超链接的区域，这个区域包含转到其他页面，或者页面内部其他部分的链接列表。</p>
+<p><strong>header 标签</strong></p>
+<p>&lt;header&gt; 标签定义文档的页眉，通常是一些引导和导航信息。它不局限于写在网页头部，也可以写在网页内容里面。</p>
+<p>通常 header 标签至少包含一个标题标记（h1-h6），还可以包括 hgroup 标签，还可以包括表格内容、标识、搜索表单、nav 导航等。</p>
+<p><strong>footer 标签</strong></p>
+<p>&lt;footer&gt; 标签定义 section 或 document 的页脚，包含了与页面、文章或是部分内容有关的信息，比如说文章的作者或者日期。 它和 header 标签使用基本一样，可以在一个页面中多次使用，如果在一个区段的后面加入了 footer 标签，那么它就相当于该区段的页脚了。</p>
+<p><strong>aside 标签</strong></p>
+<p>&lt;aside&gt; 标签表示一个和其余页面内容几乎无关的部分，被认为是独立于该内容的一部分并且可以被单独的拆分出来而不会使整体受影响。其通常表现为侧边栏或者嵌入内容。他们通常包含在工具条，例如来自词汇表的定义。也可能有其他类型的信息，例如相关的广告、笔者的传记、web 应用程序、个人资料信息，或在博客上的相关链接。</p>
+<p><strong>datalist 元素</strong><br>
+datalist 元素用于为文本框提供一个可供选择的列表，使用 datalist 元素来为表单小部件提供建议的、自动完成的值，并使用一些 option 子元素来指定要显示的值。然后使用 list 属性将数据列表绑定到一个文本域(通常是一个 <input> 元素)。</p>
+<p>一旦数据列表与表单小部件相关联，它的选项用于自动完成用户输入的文本。通常，这是作为一个下拉框向用户展示的，在输入框中输入可能匹配的内容。</p>
+<p><strong>autocomplete 属性</strong><br>
+autocomplete 属性规定表单是否应该启用自动完成功能：自动完成允许浏览器预测对字段的输入，当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。当 autocomplete 属性值为 on 时表示启用自动完成功能，为 off 时表示关闭。autocomplete 属性适用于 <form>，以及下面的 <input> 类型：text, search, url, telephone, email, password, datepickers, range 以及 color。</p>
+<p><strong>autofocus 属性</strong><br>
+autofocus 属性规定在页面加载时，域自动地获得焦点。适用于所有 <input> 标签的类型。</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://xmweijh.github.io/post/sql-yu-yan/">
+                <h3 class="post-title">
+                  SQL语言
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://xmweijh.github.io//images/avatar.png?v=1588208058063" class="no-responsive avatar">
+    <div class="text-muted">努力成就自我</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/html-ji-chu/">HTML基础</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/sql-yu-yan/">SQL语言</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/python/">Python</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/git/">Git</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/linux-chang-yong-cao-zuo/">Linux常用操作</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/matlab-de-yi-xie-dian/">Matlab的一些点</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/c/">C++</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/hui-bian-yu-yan-de-yi-xie-ji-chu-zhi-shi/">汇编语言的一些基础知识</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/c-yu-yan-de-yi-xie-bi-ji/">C语言的一些笔记</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/about/">关于</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="badge secondary">
+          其他
+        </a>
+      
+        <a href="https://xmweijh.github.io/tag/xHTgICqZ2/" class="badge warning">
+          Python
+        </a>
+      
+        <a href="https://xmweijh.github.io/tag/3AyLbslIy/" class="badge success">
+          C/C++
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xmweijh.github.io//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>
