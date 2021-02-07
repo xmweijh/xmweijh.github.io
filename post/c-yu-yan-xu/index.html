@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>C语言续 | 小虾米的记录</title>
+<meta name="description" content="努力成就自我">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://xmweijh.github.io//favicon.ico?v=1612697969402">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://xmweijh.github.io//styles/main.css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://xmweijh.github.io/">小虾米的记录</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>C语言续</h1>
+            <p class="article-meta">
+              2021-02-07
+              
+                <a href="https://xmweijh.github.io/tag/3AyLbslIy/" class="badge secondary">
+                  C/C++
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <h2 id="c语言续">c语言续</h2>
+<p>char *p1,p2       p1指针，p2字符         可用  typedef char * PCHAR    或   char *p1 ,  *p2解决</p>
+<p>数据类型  编译器指定出的数据类型，为了更好地管理内存</p>
+<p><code>sizeof</code>  只是一个操作符类似于+-*/，非函数。对于数据类型，必须用（），但对于变量不用。   其返回值类型为 unsigned int  无符号整型。</p>
+<p>当unsigned int 和 int 做运算，编译器会把数据类型都转换为unsigned int</p>
+<p>无符号打印%u</p>
+<p>sizeof 可以统计数组长度，当数组名作为函数参数时，会退化为指针，指向数组的第一个元素</p>
+<p>变量，可以读写的内存对象</p>
+<p>data初始化全局变量，静态变量，常量     bss未初始化</p>
+<p>栈区          堆区</p>
+<p>栈，注意不要返回局部变量的地址（函数结束内存会被释放）</p>
+<p>堆区，手动开辟的记得手动回收</p>
+<p>如果主调函数中没有给指针分配内存，被调函数用同级指针是修饰不到主调函数中的指针的</p>
+<p>static 静态变量 只初始化一次，在编译阶段就分配内存属于内部链接属性，只能在当前文件中使用</p>
+<p>const 修饰的局部变量通过间接修改 成功</p>
+<p>宏函数一定程度上比普通效率（入栈，出栈）高 ，频繁短小函数可写为宏函数           以空间换时间</p>
+<p>调用惯例       出栈放、参数的传入顺序、函数名称的修饰    c和c++ 为cdecl</p>
+<p>栈的生成方向 以及 内存存储方式</p>
+<p>栈底   高地址      栈顶   低地址  （从高地址到低地址使用）</p>
+<p>存储方式     高位字节数据  高地址  低位 低地址  （小端对齐）</p>
+<p>空指针   不允许向NULL和非法地址拷贝内存</p>
+<p>野指针  未初始化指针 ， malloc后free了，但没将指针置空  ， 指针操作超越作用域</p>
+<p>指针的步长</p>
+<p>指针变量+1后，跳跃的字节数量</p>
+<p>解引用的时候，取得字节数</p>
+<p>获取结构体中属性的偏移： offsetof(结构体,属性)   头文件 #include&lt;stddef.h&gt;</p>
+<p>字符串是有结束标志 \0</p>
+<p>三种方式拷贝字符串：利用[]  利用指针  利用while （*dest++ =  *source++）</p>
+<p>char*str 字符串常量不能改变  char str[]可以改</p>
+<p>calloc 分配的内存会初始化为0</p>
+<p>sscanf  将已知的字符串格式化匹配出有效信息</p>
+<p>指针易错点</p>
+<p>越界操作  指针叠加会不断改变指针指向  返回局部变量地址  不可以释放野指针</p>
+<p>将文件光标置为文件首 fseek( file, 0 ,SEEK_SET)</p>
+<p>按位取反 ~</p>
+<pre><code> int num =2; 
+ printf(&quot;~num = %d\n&quot;,~num);//结果为-3
+</code></pre>
+<p>2  -&gt;  010    按位取反（符号位也取反） 101  源码      101  补码 （取反+1）  110+1（此时符号位不取反）    111   = -3</p>
+<p>两数交换的其他方法</p>
+<pre><code>num1 = num1 ^ num2;
+num2 = num1 ^ num2;
+num1 = num1 ^ num2;
+
+num1 = num1 + num2;
+num2 = num1 - num2;
+num1 = num1 - num2;
+</code></pre>
+<p>左移&lt;&lt;  右移&gt;&gt;</p>
+<p>一维数组  本质并不是一个指针</p>
+<p>​		有两种特殊情况：1.对数组进行sizeof   2.对数组名称取地址 ，获取的指针步长为整个数组的长度</p>
+<p>其他情况都是指向数组首元素的地址的指针</p>
+<p>数组名  -- 指针常量 ，指针的指向不可以修改  int * const p</p>
+<p>访问数组元素的时候下标可以为负数</p>
+<p>结构体偏移量 offsetof计算 或 地址相减</p>
+<p>cpu按块读取内存，块的大小为2的n次方 有了内存对齐，更好读取</p>
+<p>#pragma pack(show) 查看对齐模数， 默认对齐为8 可改为2的n次方</p>
+<p>对于自定义数据类型 内存对齐规则如下:</p>
+<p>1、从第一个属性开始 偏移为0</p>
+<p>2、从第二个属性开始，地址要放在 该类型整数倍 与 对齐模数比 取小的值的 整数倍</p>
+<p>3、所有的属性都计算后，整体再做二次对齐 整体需要放在属性中最大类型与 对齐模数比 取小的值的整数倍上。</p>
+<p>结构体嵌套结构体时，只需要看子结构体中最大数据类型就可以了</p>
+<p>文件结尾 EOF</p>
+<p>fseek(文件指针，偏移，起始位置 SEEK_SET SEEK_END SEEK_CUR)</p>
+<p>rewind(文件指正) 将文件光标置首</p>
+<p>error宏 全局变量 perror 打印宏提示错误信息</p>
+<p>数组缺陷，静态空间，一旦分配内存就不可以动态扩展  对属于数组头进行插入和删除效率低</p>
+<p>头结点 好处在于头结点永远都是固定的</p>
+<p>静态链表  栈区  动态链表 堆区</p>
+<p>带头节点链表好处在于头节点永远都是固定的<br>
+初始化链表struct LinkNode*pHeader= init_LinkList(u<br>
+遍历链表void	foreach_LinkList( struct LinkNode  pHeader )u</p>
+<p>函数指针的定义<br>
+先定义出函数类型，再通过类型定义出函数指针<br>
+typedef void(FUNC_TYPE)();<br>
+FUNC_TYPE pEunc = func</p>
+<p>先定义出函躞指针类型，再定义函数指针÷<br>
+typedef void(*FUNC_TYPE)();'<br>
+FUNC_TYPE pFunc- func;</p>
+<p>直接定义函数指针变量<br>
+void(* pEunc )()= fung;<br>
+函数指针和指针函数的区别<br>
+函数指针是指向函数的指针<br>
+指针函数―丞|数的返回值是一个指针的函数+<br>
+函数指针的数组定义↓<br>
+void(*pFunc[3])();.</p>
+<p>本题要求实现一个函数，判断任一给定整数<code>N</code>是否满足条件：它是完全平方数，又至少有两位数字相同，如144、676等。</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int IsTheNumber(const int N);
+
+int main()
+{
+    int n1, n2, i, cnt;
+
+    scanf(&quot;%d %d&quot;, &amp;n1, &amp;n2);
+    cnt = 0;
+    for (i = n1; i &lt;= n2; i++) {
+        if (IsTheNumber(i))
+            cnt++;
+    }
+    printf(&quot;cnt = %d\n&quot;, cnt);
+    
+    return 0;
+
+}
+
+int IsTheNumber(const int N) {
+    int n = N;
+    int b;
+    int p[10] = { 0 };
+    int m = sqrt(n);
+    if (m * m == n) {
+        while (n) {
+            b = n % 10;
+            p[b]++;
+            n /= 10;
+        }
+        for (int i = 0;i &lt;= 9;i++) {
+            if (p[i] &gt; 1)
+                return 1;
+        }
+    }
+    return 0;
+}
+</code></pre>
+<p>声明和定义区别</p>
+<p>l 声明变量不需要建立存储空间，如：extern int a;</p>
+<p>l 定义变量需要建立存储空间，如：int b;</p>
+<p>从广义的角度来讲声明中包含着定义，即定义是声明的一个特例，所以并非所有的声明都是定义：</p>
+<p>l int b 它既是声明，同时又是定义</p>
+<p>l 对于 extern b来讲它只是声明不是定义</p>
+<p>​         不以f结尾的常量是double类型，以f结尾的常量(如3.14f)是float类型</p>
+<p><strong>在计算机系统中，数值一律用补码来存储</strong>，主要原因是：</p>
+<p>l 统一了零的编码</p>
+<p>l 将符号位和其它位统一处理</p>
+<p>l 将减法运算转变为加法运算</p>
+<p>l 两个用补码表示的数相加时，如果最高位(符号位)有进位，则进位被舍弃</p>
+<p>斯特林(Stirling)公式 求大数阶乘的位数</p>
+<pre><code>我们知道整数n的位数的计算方法为：log10(n)+1n!=10^m故n!的位数为 m = log10(n!)+1
+</code></pre>
+<p><strong>#pragmaonce这个宏有什么作用？</strong></p>
+<p>为了避免同一个头文件被包含（include）多次，C/C++中有两种宏实现方式：一种是#ifndef方式；另一种是#pragma once方式。</p>
+<p>在能够支持这两种方式的编译器上，二者并没有太大的区别。但两者仍然有一些细微的区别。</p>
+<p>如果我们要在一个函数内改变一个指针的值，我们就需要将形参定义了二级指针</p>
+<p><strong>中缀转后缀算法∶</strong><br>
+遍历中缀表达式中的数字和符号∶<br>
+**对于数字︰**直接输出.<br>
+<strong>对于符号∶</strong><br>
+左括号∶进栈<br>
+运算符号∶与栈顶符号进行优先级比较若栈顶符号优先级低∶此符号进栈<br>
+(默认栈顶若是左括号，左括号优先级最低)&gt;<br>
+若栈顶符号优先级不低∶将栈顶符号弹出并输出，之后进栈<br>
+右括号∶将栈顶符号弹出并输出，直到匹配左括号,将左括号和右括号同时舍弃<br>
+遍历结束∶将栈中的所有符号弹出并输出</p>
+<p>计算规则·<br>
+遍历后缀表达式中的数字和符号<br>
+对于数字∶进栈<br>
+对于符号:<br>
+从栈中弹出右操作数<br>
+从栈中弹出左操作数<br>
+根据符号进行运算<br>
+将运算结果压入栈中<br>
+遍历结束:栈中的唯—数字为计算结果</p>
+<figure data-type="image" tabindex="1"><img src="E:%5CAPTX-4869%5Cmd%5C1337526379_6285.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="E:%5CAPTX-4869%5Cmd%5C1337526423_9040.jpg" alt="" loading="lazy"></figure>
+<pre><code class="language-cc">List Reverse( List L )
+{
+    List head,next,prev;
+    prev = NULL;
+    head = L;
+    while(head != NULL)
+    {
+        next = head-&gt;Next;
+        head-&gt;Next = prev;
+        prev = head;
+        head = next;
+    }
+    return prev;
+}
+</code></pre>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://xmweijh.github.io/post/html/">
+                <h3 class="post-title">
+                  HTML
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://xmweijh.github.io//images/avatar.png?v=1612697969402" class="no-responsive avatar">
+    <div class="text-muted">努力成就自我</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/css/">CSS</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/h5c3/">H5,C3</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/cji-lu/">C++记录</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/c-yu-yan-xu/">C语言续</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/html/">HTML</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/web-dai-ma-gui-fan/">web代码规范</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/ji-suan-ji-wang-luo/">计算机网络</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/html-ji-chu/">HTML基础</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/sql-yu-yan/">SQL语言</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/python/">Python</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://xmweijh.github.io/tag/vXmkk1Jyb/" class="badge secondary">
+          web
+        </a>
+      
+        <a href="https://xmweijh.github.io/tag/3AyLbslIy/" class="badge ">
+          C/C++
+        </a>
+      
+        <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="badge warning">
+          其他
+        </a>
+      
+        <a href="https://xmweijh.github.io/tag/xHTgICqZ2/" class="badge warning">
+          Python
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xmweijh.github.io//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>

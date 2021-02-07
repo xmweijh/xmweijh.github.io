@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>C++记录 | 小虾米的记录</title>
+<meta name="description" content="努力成就自我">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://xmweijh.github.io//favicon.ico?v=1612697969402">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://xmweijh.github.io//styles/main.css">
+
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://xmweijh.github.io/">小虾米的记录</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>C++记录</h1>
+            <p class="article-meta">
+              2021-02-07
+              
+                <a href="https://xmweijh.github.io/tag/3AyLbslIy/" class="badge secondary">
+                  C/C++
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <h1 id="c">C++</h1>
+<p>c++语言在c语言的基础上添加了<strong>面向对象编程</strong>和<strong>泛型编程</strong>的支持。c++继承了c语言高效，简洁，快速和可移植的传统。</p>
+<h3 id="作用域运算符">::作用域运算符</h3>
+<p>​         在局部变量的作用域内，可用::对被屏蔽的同名的全局变量进行访问。</p>
+<p>​     ::代表作用域 如果前面什么都不添加 代表全局作用域</p>
+<p>namespace命名空间</p>
+<h3 id="c命名空间namespace">C++命名空间(namespace)</h3>
+<p>命名空间用途：解决名称冲突</p>
+<p>​       可以存放 ： 变量、函数、结构体、类…</p>
+<p>​	   命名空间必须要声明在全局作用域</p>
+<pre><code>命名空间可以嵌套命名空
+
+命名空间是开放的，可以随时将新成员添加到命名空间下
+</code></pre>
+<p>​       命名空间可以匿名的</p>
+<pre><code>命名空间可以起别名
+</code></pre>
+<p>using声明</p>
+<p>using KingGlory::sunwukongId；</p>
+<p>当using声明与 就近原则同时出现，出错，尽量避免</p>
+<p>using编译指令</p>
+<p>using namespace KingGlory;</p>
+<p>当using编译指令 与 就近原则同时出现，优先使用就近</p>
+<p>当using编译指令有多个，需要加作用域 区分</p>
+<h3 id="c对c语言增强以及扩展">C++对C语言增强以及扩展</h3>
+<p><strong>全局变量检测增强</strong></p>
+<p>int a ;</p>
+<p>int a = 10; C下可以，C++重定义</p>
+<p><strong>函数检测增强</strong></p>
+<p>函数的返回值</p>
+<p>形参类型</p>
+<p>函数调用参数个数</p>
+<p><strong>类型转换检测增强</strong></p>
+<p>char * p = (char *)malloc(64) C++下必须等号左右一致类型</p>
+<p><strong>struct 增强</strong></p>
+<p>C++可以在结构体中放函数</p>
+<p>创建结构体变量  可以简化关键字struct</p>
+<p><strong>bool数据类型扩展</strong></p>
+<p>C++才有bool类型</p>
+<p>代表真 --- 1 true 假 ---- 0 false</p>
+<p>sizeof = 1</p>
+<p><strong>三目运算符增强</strong></p>
+<p>C语言下返回的是值</p>
+<p>C++语言下返回的是变量</p>
+<p>a &gt; b ? a : b = 100;            结果b变为100  执行的是b=100这个式子 若是小于  a，b都不变（不要想成(a &gt; b ? a : b) = 100;   b=100是个整体式子 前面条件满足才执行这个赋值语句）</p>
+<p><strong>const增强</strong></p>
+<p>C语言下</p>
+<p>全局const  直接修改 失败 间接修改 语法通过，运行失败</p>
+<p>局部 const 直接修改 失败 间接修改 成功</p>
+<p>C++语言下</p>
+<p>全局 const 和C结论一样</p>
+<p>局部 const 直接修改失败  间接修改 失败</p>
+<p>C++const可以称为常量</p>
+<p>const 链接属性</p>
+<p>C语言下const修饰的全局变量默认是外部链接属性</p>
+<p>C++下const修饰的全局变量默认是内部链接属性，可以加extern 提高作用域</p>
+<p>const分配内存情况</p>
+<p>对const变量 取地址 ，会分配临时内存</p>
+<p>使用普通变量 初始化 const变量</p>
+<p>对于自定义数据类型</p>
+<p>尽量用const代替define</p>
+<p>define出的宏常量，没有数据类型、不重视作用域</p>
+<h3 id="引用"><strong>引用</strong></h3>
+<p>目的：起别名</p>
+<p>语法： 类型（与原名类型必须一致）  &amp;别名 = 原名</p>
+<p>引用必须要初始化</p>
+<p>引用一旦初始化后，就不可以引向其他变量</p>
+<p>建立对数组引用</p>
+<p>直接建立引用</p>
+<p>int arr[10];</p>
+<p>int(&amp;pArr)[10] = arr;</p>
+<p>先定义出数组类型，再通过类型 定义引用</p>
+<p>typedef int(ARRAY_TYPE)[10];</p>
+<p>ARRAY_TYPE &amp; pArr2 = arr;</p>
+<p><strong>参数的传递方式</strong></p>
+<p>值传递</p>
+<p>地址传递</p>
+<p>引用传递</p>
+<p>注意事项</p>
+<p>引用必须引一块合法内存空间</p>
+<p>不要返回局部变量的引用</p>
+<p>当函数返回值是引用时候，那么函数的调用可以作为左值进行运算</p>
+<p>指针的引用</p>
+<p>利用引用可以简化指针</p>
+<p>可以直接用同级指针的 引用 给同级指针分配空间</p>
+<p>常量的引用</p>
+<p>const int &amp;ref = 10;</p>
+<p>/ 加了const之后， 相当于写成  int temp = 10; const int &amp;ref = temp;</p>
+<p>常量引用的使用场景 修饰函数中的形参，防止误操作</p>
+<h3 id="设计类-抽象类">设计类 抽象类</h3>
+<p>class 类名{</p>
+<p>public 公共权限</p>
+<p>​	 设置 成员属性</p>
+<p>​	设置 成员函数</p>
+<p>}</p>
+<p>使用类 创建对象 实例化对象</p>
+<p>类名 对象名</p>
+<p>通过对象 来设置属性 调用成员函数</p>
+<p>类和对象 关系</p>
+<p>类是对对象的抽象</p>
+<p>对象是对类的实例</p>
+<h3 id="内联函数-解决宏缺陷问题">内联函数 解决宏缺陷问题</h3>
+<p>给编译器一个建议，加上关键字，编译器不一定按照内联处理</p>
+<p>不加关键字，也许编译器还偷摸的给你加inline</p>
+<p>成员函数 默认加上关键字</p>
+<p>函数声明加了关键字，函数实现也要加inline关键字</p>
+<p><strong>函数默认参数</strong></p>
+<p>参数可以有默认值</p>
+<p>如果有一个位置有了默认值，那么从这个位置开始，从左往右都必须有默认值</p>
+<p>函数声明和实现 只能有一个有默认值</p>
+<p><strong>函数占位参数</strong></p>
+<p>void func(int) 占位参数 调用时候必须要提供这个参数</p>
+<p>占位参数也可以有默认值</p>
+<p>c语言中没有默认参数 和占位参数</p>
+<p><strong>函数重载的基本语法</strong></p>
+<p>函数名称相同 又在同一个作用域下</p>
+<p>函数参数个数不同、类型不同、顺序不同都可以满足重载条件</p>
+<p>函数的返回值可以作为函数重载条件吗？ 不可以</p>
+<p>当函数重载碰到了函数默认参数 要注意避免二义性</p>
+<h3 id="extern-c浅析"><strong>extern C浅析</strong></h3>
+<p>解决了C++文件中调用C语言的代码</p>
+<p>方法1:+<br>
+在C++代码中加入<br>
+告诉编译器show函数用C语言方式做链接/ /extern &quot;C&quot; void show() ;<br>
+方法2:<br>
+在c语言的头文件中加入6行代码<br>
+#ifdef__cplusplus       //两个下划线</p>
+<p>extern &quot;C&quot; {</p>
+<p>#endif<br>
+#ifdef  __cplusplus       //两个下划线</p>
+<p>｝</p>
+<p>#endif</p>
+<h3 id="c语言的封装">C++语言的封装</h3>
+<p>将属性和行为作为一个整体，来表示生活中具体的事物</p>
+<p>有访问权限</p>
+<p>class 和struct唯一区别 默认权限不同</p>
+<p>class默认是private</p>
+<p>struct 默认是public</p>
+<p>public 是类内类外都可以访问到</p>
+<p>protected 类内可以，类外不可以</p>
+<p>private 类内可以，类外不可以</p>
+<p>建议将所有成员属性设置为私有</p>
+<p>自己提供公共的对外接口来进行 set或者get方法访问</p>
+<h3 id="构造函数和析构函数">构造函数和析构函数</h3>
+<p>构造函数</p>
+<p>//没有返回值 不用写void</p>
+<p>//函数名 与 类名相同</p>
+<p>//可以有参数 ，可以发生重载</p>
+<p>//构造函数 由编译器自动调用一次 无须手动调用</p>
+<p>析构函数</p>
+<p>//没有返回值  不用写void</p>
+<p>函数名 与类名相同 函数名前 加 ~</p>
+<p>不可以有参数 ，不可以发生重载</p>
+<p>析构函数 也是由编译器自动调用一次，无须手动调用</p>
+<p>构造函数的分类和调用</p>
+<p>分类</p>
+<p>按照参数分类： 有参 无参（默认）</p>
+<p>按照类型分类： 普通 拷贝构造 ( const Person &amp; p )</p>
+<p>调用</p>
+<p>括号法</p>
+<p>显示法</p>
+<p>隐式法</p>
+<p>注意事项</p>
+<p>不要用括号法 调用无参构造函数 Person p3(); 编译器认为代码是函数的声明</p>
+<p>不要用拷贝构造函数 初始化 匿名对象 Person(p3); 编译器认为 Person p3对象实例化 如果已经有p3 p3就重定义</p>
+<p>匿名对象 特点： 当前行执行完后 立即释放</p>
+<p>拷贝构造函数的调用时机</p>
+<p>用已经创建好的对象来初始化新的对象</p>
+<p>值传递的方式 给函数参数传值</p>
+<p>以值方式 返回局部对象</p>
+<p>构造函数的调用规则</p>
+<p>//1、编译器会给一个类 至少添加3个函数  默认构造（空实现）  析构函数（空实现）  拷贝构造（值拷贝）</p>
+<p>//2、如果我们自己提供了 有参构造函数，编译器就不会提供默认构造函数，但是依然会提供拷贝构造函数</p>
+<p>//3、如果我们自己提供了 拷贝构造函数，编译器就不会提供其他构造函数</p>
+<h3 id="深拷贝与浅拷贝的问题以及解决">深拷贝与浅拷贝的问题以及解决</h3>
+<p>如果有属性开辟到堆区，利用编译器提供拷贝构造函数会调用浅拷贝带来的析构重复释放堆区内存的问题</p>
+<p>利用深拷贝解决浅拷贝问题</p>
+<p>自己提供拷贝构造函数，实现深拷贝</p>
+<p>初始化列表</p>
+<p>可以利用初始化列表语法 对类中属性进行初始化</p>
+<p>语法：构造函数名称后 ： 属性(值), 属性（值）...</p>
+<p>Person(int a, int b, int c) : m_A(a), m_B(b), m_C(c)</p>
+<h3 id="类对象作为类中成员">类对象作为类中成员</h3>
+<p>当其他类对象 作为本类成员，先构造其他类对象，再构造自身，析构的顺序和构造相反</p>
+<p>explicit关键字</p>
+<p>explicit用途： 防止利用隐式类型转换方式来构造对象</p>
+<p>new和delete</p>
+<p>malloc 和 new 区别</p>
+<p>malloc 和 free 属于 库函数   new 和delete属于 运算符</p>
+<p>malloc不会调用构造函数  new会调用构造函数</p>
+<p>malloc返回void* C++下要强转   new 返回创建的对象的指针</p>
+<p>事项 不要用void<em>去接受new出来的对象,利用void</em>无法调用析构函数</p>
+<p>利用new创建数组</p>
+<p>Person * pPerson = new Person[10];</p>
+<p>释放数组时候 需要加[]</p>
+<p>delete [] pPerson;</p>
+<p>堆区开辟数组，一定会调用默认构造函数</p>
+<p>栈上开辟数组，可不可以没有默认构造,可以没有默认构造</p>
+<h3 id="静态成员">静态成员</h3>
+<p><strong>静态成员变量</strong></p>
+<p>所有对象都共享同一份数据</p>
+<p>编译阶段就分配内存</p>
+<p>类内声明、类外初始化</p>
+<p>访问方式有两种：通过对象访问、通过类名访问</p>
+<p>静态成员变量也是有访问权限</p>
+<p><strong>静态成员函数</strong></p>
+<p>所有对象都共享同一份函数</p>
+<p>静态成员函数 只可以访问 静态成员变量，不可以访问非静态成员变量</p>
+<p>静态成员函数 也是有访问权限的</p>
+<p>静态成员函数 有两种访问方式：通过对象 、通过类名</p>
+<p>单例模式 – 主席类案例</p>
+<p>通过一个类 只能实例化唯一的一个对象</p>
+<p>私有化</p>
+<p>默认构造</p>
+<p>拷贝构造</p>
+<p>唯一实例指针</p>
+<p>对外提供 getInstance 接口，将指针返回</p>
+<p>单例模式 – 打印机案例</p>
+<p>和主席类案例一样设计单例模式</p>
+<p>提供打印功能并且统计打印次数</p>
+<p>C++对象模型初探</p>
+<p>类中的成员变量 和 成员函数 是分开存储的</p>
+<p>只有非静态成员变量 属于类对象上</p>
+<p>空类的sizeof结果 1</p>
+<p>this指针</p>
+<p>this指针 指向 被调用的成员函数 所属的对象</p>
+<p>this指针可以解决名称冲突</p>
+<p>this指针 隐式加在每个成员函数中</p>
+<p>*this 就是本体</p>
+<p>​     p1.personAddPerson(p2).personAddPerson(p2).personAddPerson(p2); //链式编程</p>
+<p>空指针访问成员函数</p>
+<p>如果成员函数中没有用到this指针，可以用空指针调用成员函数</p>
+<p>如果成员函数中用到了this，那么这个this需要加判断，防止代码down掉</p>
+<p>常对象和常函数</p>
+<p>常函数</p>
+<p>成员函数 声明后面加const</p>
+<p>void showPerson() <strong>const</strong></p>
+<p>const目的是为了修饰成员函数中的this指针，让指针指向的值不可以修改</p>
+<p>有些属性比较特殊，依然在常函数或者常对象中可以修改，需要加入关键字 mutable</p>
+<p>常对象</p>
+<p>const Person p</p>
+<p>常对象也不许修改成员属性</p>
+<p>常对象只能调用常函数</p>
+<p>对于成员函数 ，可不可以 用static 和 const同时修饰 ，不可以</p>
+<p>友元</p>
+<p>全局函数作为友元函数</p>
+<p>利用friend关键字让全局函数 goodGay作为本类好朋友，可以访问私有成员</p>
+<p>friend  void goodGay(Building * buliding);</p>
+<p>类作为友元类</p>
+<p>让goodGay类作为 Building的好朋友，可以访问私有成员</p>
+<p>friend class GoodGay;</p>
+<p>​    类中的成员函数作为友元函数</p>
+<p>​    //让GoodGay类中的 visit成员函数作为友元</p>
+<p>friend void GoodGay::visit();</p>
+<h3 id="加号运算符重载">加号运算符重载</h3>
+<p>对于内置的数据类型，编译器知道如何进行运算</p>
+<p>但是对于自定义数据类型，编译器不知道如何运算</p>
+<p>利用运算符重载 可以让符号有新的含义</p>
+<p>利用加号重载 实现p1 + p2 Person数据类型相加操作</p>
+<p>利用成员函数 和 全局函数 都可以实现重载</p>
+<p>关键字 operator +</p>
+<p>成员本质 p1.operator+(p2)</p>
+<p>全局本质 operator+(p1,p2)</p>
+<p>简化  p1 + p2</p>
+<p>运算符重载 也可以发生函数重载</p>
+<p>左移运算符重载</p>
+<p>不要滥用运算符重载，除非有需求</p>
+<p>不能对内置数据类型进行重载</p>
+<p>对于自定义数据类型，不可以直接用 cout &lt;&lt; 输出</p>
+<p>需要重载 左移运算符</p>
+<p>如果利用成员 函数重载 ，无法实现让cout 在左侧，因此不用成员重载</p>
+<p>利用全局函数 实现左移运算符重载</p>
+<p><em>ostream</em>&amp; operator&lt;&lt;(<em>ostream</em> &amp;cout, Person &amp; p1)</p>
+<p>如果想访问类中私有内存，可以配置友元实现</p>
+<h3 id="递增运算符重载">递增运算符重载</h3>
+<p>前置递增</p>
+<p>MyInter&amp; operator++()</p>
+<p>后置递增</p>
+<p>MyInter operator++(<strong>int</strong>)</p>
+<p>前置++ 效率高于 后置++ 效率 ，因为后置++会调用拷贝构造，创建新的数据</p>
+<h3 id="指针运算符重载">指针运算符重载</h3>
+<p>智能指针</p>
+<p>用途： 托管new出来的对象的释放</p>
+<p>设计smartPoint智能指针类，内部维护 Person * ，在析构时候释放堆区new出来的person对象</p>
+<p>重载 -&gt;  * 让 sp智能指针用起来向真正的指针</p>
+<p>赋值运算符重载</p>
+<p>编译器会默认个一个类添加4个函数</p>
+<p>默认构造、析构 、 拷贝构造（值拷贝） 、 operator=（值拷贝）</p>
+<p>出现 堆区内存重复释放的问题</p>
+<p>解决方案：利用深拷贝 重载 =运算符</p>
+<p>Person&amp; operator=( const Person &amp;p)</p>
+<p>[]运算符重载</p>
+<p>int&amp; operator[](int index);</p>
+<p>实现访问数组时候利用[] 访问元素</p>
+<h3 id="关系运算符重载">关系运算符重载</h3>
+<p>对于自定义数据类型，编译器不知道如果进行比较</p>
+<p>重载 ==  ！=号</p>
+<p>bool operator==( Person &amp; p)</p>
+<p>bool operator!=(Person &amp; p)</p>
+<h3 id="函数调用运算符重载">函数调用运算符重载</h3>
+<p>重载 （）</p>
+<p>使用时候很像函数调用，因此称为仿函数</p>
+<p>void operator()(<em>string</em> text)</p>
+<p>int operator()(int a,int b)</p>
+<p>仿函数写法不固定，比较灵活</p>
+<p><em>cout</em> &lt;&lt; MyAdd()(1, 1) &lt;&lt; <em>endl</em>; // 匿名函数对象 特点：当前行执行完立即释放</p>
+<p><strong>不要重载 &amp;&amp; 和 ||</strong></p>
+<p>原因是无法实现短路特性</p>
+<p>建议：将&lt;&lt; 和 &gt;&gt;写成全局函数，其他可重载的符号写到成员即可</p>
+<p>强化训练-字符串类封装</p>
+<p>myString类 实现自定义的字符串类</p>
+<h3 id="继承基本语法">继承基本语法</h3>
+<p>继承优点：减少重复的代码，提高代码复用性</p>
+<p>// 语法： class 子类 ： 继承方式  父类</p>
+<p>// News     子类  派生类</p>
+<p>// BasePage 父类  基类</p>
+<h3 id="继承方式">继承方式</h3>
+<p>公共继承</p>
+<p>父类中公共权限，子类中变为公共权限</p>
+<p>父类中保护权限，子类中变为保护权限</p>
+<p>父类中私有权限，子类访问不到</p>
+<p>保护继承</p>
+<p>父类中公共权限，子类中变为保护权限</p>
+<p>父类中保护权限，子类中变为保护权限</p>
+<p>父类中私有权限，子类访问不到</p>
+<p>私有继承</p>
+<p>父类中公共权限，子类中变为私有权限</p>
+<p>父类中保护权限，子类中变为私有权限</p>
+<p>父类中私有权限，子类访问不到</p>
+<p><strong>继承中的对象模型</strong>**</p>
+<p>父类中的私有属性，子类是继承下去了，只不过由编译器给隐藏了，访问不到</p>
+<p>可以利用开发人员工具查看对象模型</p>
+<p>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\Shortcuts</p>
+<p>打开开发人员命令工具</p>
+<p>跳转盘符 E:</p>
+<p>跳转文件路径 cd到文件路径下</p>
+<p>c<strong>l</strong> /d<strong>1</strong> reportSingleClassLayout类名 文件名</p>
+<h3 id="继承中的构造和析构">继承中的构造和析构</h3>
+<p>先调用父类构造，再调用其他成员构造， 再调用自身构造 ，析构的顺序与构造相反</p>
+<p>利用初始化列表语法 显示调用父类中的其他构造函数</p>
+<p>父类中 构造、析构、拷贝构造 、operator= 是不会被子类继承下去的</p>
+<p>继承中的同名成员处理</p>
+<p>​     我们可以利用作用域 访问父类中的同名成员</p>
+<p>当子类重新定义了父类中的同名成员函数，子类的成员函数会 隐藏掉父类中所有重载版本的同名成员，可以利用作用域显示指定调用</p>
+<p>继承中的同名 静态成员处理</p>
+<p>结论和 非静态成员 一致</p>
+<p>只不过调用方式有两种</p>
+<p>通过对象</p>
+<p>通过类名</p>
+<p>通过类名的方式 访问 父类作用域下的m_A静态成员变量</p>
+<p>Son::Base::m_A</p>
+<p>​    多继承基本语法</p>
+<p>class 子类 ： 继承方式 父类1 ， 继承方式 父类2</p>
+<p>当多继承的两个父类中有同名成员，需要加作用域区分</p>
+<p>菱形继承</p>
+<p>两个类有公共的父类 和共同的子类 ，发生菱形继承</p>
+<p>​    菱形继承导致数据有两份，浪费资源</p>
+<p>解决方案：利用虚继承可以解决菱形继承问题</p>
+<p>class Sheep : <strong>virtual</strong> public Animal{};</p>
+<p>//当发生虚继承后，sheep和tuo类中 继承了一个 vbptr指针  虚基类指针  指向的是一个 虚基类表 vbtable</p>
+<p>​    //虚基类表中记录了 偏移量 ，通过偏移量 可以找到唯一的一个m_Age</p>
+<p>​    利用地址偏移找到 vbtable中的偏移量 并且访问数据</p>
+<p>静态联编动态联编</p>
+<p><strong>静态多态和动态多态</strong></p>
+<p>静态多态：函数重载，运算符重载</p>
+<h3 id="动态多态">动态多态：</h3>
+<p>//先有继承关系</p>
+<p>//父类中有虚函数，子类重写父类中的虚函数</p>
+<p>//父类的指针或引用 指向子类的对象</p>
+<p>静态多态在编译阶段绑定地址，地址早绑定，静态联编</p>
+<p>动态多次在运行阶段绑定地址，地址晚绑定，动态联编</p>
+<h3 id="多态原理">多态原理</h3>
+<p>当父类写了虚函数后，类内部结构发生改变，多了一个vfptr</p>
+<p>vfptr 虚函数表指针 ---- &gt; vftable 虚函数表</p>
+<p>虚函数表内部记录着 虚函数的入口地址</p>
+<p>当父类指针或引用指向子类对象，发生多态，调用是时候从虚函数中找函数入口地址</p>
+<p>虚函数 关键字 virtual</p>
+<p>利用指针的偏移调用 函数</p>
+<p>((void(<em>)()) (</em>(int <em>)</em>(int *)animal)) ();</p>
+<p>typedef void( __stdcall *FUNPOINT)(int);</p>
+<p>(FUNPOINT (<em>((int</em>)<em>(int</em>)animal + 1)))(10);</p>
+<p>多态的好处</p>
+<p>代码可读性强</p>
+<p>组织结构清晰</p>
+<p>扩展性强</p>
+<p>开闭原则： 对扩展进行开放 对修改进行关闭</p>
+<p>纯虚函数和抽象类</p>
+<p>语法： virtual int getResult() = 0;</p>
+<p>//如果一个类中包含了纯虚函数，那么这个类就无法实例化对象了,这个类通常我们称为 抽象类</p>
+<p>//抽象类的子类 必须要重写 父类中的纯虚函数，否则也属于抽象类</p>
+<p>虚析构和纯虚析构</p>
+<p>虚析构语法：</p>
+<p>virtual ~Animal(){}</p>
+<p>如果子类中有指向堆区的属性，那么要利用虚析构技术 在delete的时候 调用子类的析构函数</p>
+<p>纯虚析构语法：</p>
+<p>virtual ~Animal() = 0;</p>
+<p>Animal::~Animal(){ .. }</p>
+<p>​     //纯虚析构 需要有声明 也需要有实现</p>
+<p>​    //如果一个类中 有了 纯虚析构函数，那么这个类也属于抽象类，无法实例化对象了</p>
+<p>向上类型转换和向下类型转换</p>
+<p>父转子  向下类型转换  不安全</p>
+<p>子转父  向上类型转换  安全</p>
+<p>如果发生多态，那么转换永远都是安全的</p>
+<p>重载、重写、重定义</p>
+<p>重载</p>
+<p>函数重载</p>
+<p>同一个作用域下，函数名称相同，参数个数、顺序、类型不同</p>
+<p>重写</p>
+<p>子类重写父类中的虚函数，函数返回值、函数名、形参列表完全一致称为重写</p>
+<p>重定义</p>
+<p>子类重新定义父类中的同名成员函数，隐藏掉父类中同名成员函数，如果想调用加作用域</p>
+<h3 id="函数模板">函数模板</h3>
+<p><strong>泛型编程 – 模板技术 特点：类型参数化</strong></p>
+<p>template&lt; typename T &gt; 告诉编译器后面紧跟着的函数或者类中出现T，不要报错，T是一个通用的数据类型</p>
+<p>实现通用两个数进行交换函数</p>
+<p>使用</p>
+<p>1.自动类型推导  必须要推导出一致的T才可以使用</p>
+<p>2.显示指定类型    mySwap<int>(a,b);</p>
+<p><strong>函数模板和普通函数的区别以及调用规则</strong></p>
+<p>区别</p>
+<p>如果使用自动类型推导，是不可以发生隐式类型转换的</p>
+<p>普通函数 可以发生隐式类型转换</p>
+<p>调用规则</p>
+<p>如果函数模板和普通函数都可以调用，那么优先调用普通函数</p>
+<p>如果想强制调用函数模板，可以使用空模板参数列表</p>
+<p>myPrint&lt;&gt;(a, b);</p>
+<p>函数模板也可以发生函数重载</p>
+<p>如果函数模板能产生更好的匹配，那么优先使用函数模板</p>
+<p><strong>模板的实现机制</strong></p>
+<p>编译器并不是把函数模板处理成能够处理任何类型的函数</p>
+<p>函数模板通过具体类型产生不同的函数 --- 通过函数模板产生的函数 称为模板函数</p>
+<p>编译器会对函数模板进行两次编译，在声明的地方对模板代码本身进行编译，在调用的地方对参数替换后的代码进行编译。</p>
+<p><strong>模板局限性</strong></p>
+<p>模板并不是真实的通用，对于自定义数据类型，可以使用具体化技术，实现对自定义数据类型特殊使用</p>
+<p>template&lt;&gt;bool myCompare(<strong>Person</strong> &amp;a, <strong>Person</strong> &amp;b)</p>
+<h3 id="类模板">类模板</h3>
+<p>​    //类模板和函数模板区别：</p>
+<p>​     //1、类模板不可以使用自动类型推导，只能用显示指定类型</p>
+<p>​        //2、类模板中 可以有默认参数</p>
+<p>类模板中成员函数创建时机</p>
+<p>类模板中的成员函数 并不是一开始创建的，而是在运行阶段确定出T的数据类型才去创建</p>
+<p><strong>类模板做函数参数</strong></p>
+<p>1、指定传入类型</p>
+<p>void doWork(Person &lt;string, int&gt;&amp;p)</p>
+<p>2、参数模板化</p>
+<p>template&lt;class T1, class T2&gt;</p>
+<p>void doWork2(Person &lt;T1, T2&gt;&amp;p)</p>
+<p>3、整个类 模板化</p>
+<p>template<class T></p>
+<p>void doWork3( T &amp;p)</p>
+<p>查看T数据类型</p>
+<p>typeid(T).name()</p>
+<p>​     <strong>类模板碰到继承的问题以及解决</strong></p>
+<p>必须要指定出父类中的T数据类型，才能给子类分配内存</p>
+<p>​    template&lt;class T1 ,class T2&gt;</p>
+<p>class Son2 :public Base2<T2></p>
+<p>类模板中的成员函数类外实现</p>
+<p>void Person&lt;T1, T2&gt;::showPerson()</p>
+<p><strong>类模板的分文件编写问题以及解决</strong></p>
+<p>类模板中的成员函数，不会一开始创建，因此导致分文件编写时连接不到函数的实现，出现无法解析的外部命令错误</p>
+<p>解决方式1：</p>
+<p>直接包含.cpp文件 （不推荐）</p>
+<p>解决方式2：</p>
+<p>将类声明和实现写到同一个文件中，将文件的后缀名改为 .hpp 即可</p>
+<p><strong>类模板碰到友元的问题以及解决</strong></p>
+<p>友元类内实现</p>
+<p>friend void printPerson(Person&lt;T1, T2&gt; &amp;p)</p>
+<p>友元类外实现</p>
+<p>声明：</p>
+<p>friend void printPerson2&lt;&gt;(Person&lt;T1, T2&gt; &amp;p);</p>
+<p>实现：</p>
+<p>template&lt;class T1,class T2&gt;</p>
+<p>void printPerson2(Person&lt;T1, T2&gt; &amp;p){ 。。。}</p>
+<p>template&lt;class T1,class T2&gt;</p>
+<p>class Person;</p>
+<p>template&lt;class T1,class T2&gt;</p>
+<p>void printPerson2(Person&lt;T1, T2&gt; &amp;p);</p>
+<h3 id="类型转换">类型转换</h3>
+<p>静态类型转换 static_cast</p>
+<p>允许内置数据类型转换</p>
+<p>允许父子之间的指针或者引用的转换</p>
+<p>语法 static_cast&lt;目标类型&gt;(原变量/原对象)</p>
+<p>动态类型转换 dynamic_cast</p>
+<p>不允许内置数据类型转换</p>
+<p>允许父子之间指针或者引用的转换</p>
+<p>父转子 不安全的 转换失败</p>
+<p>子转父 安全  转换成功</p>
+<p>如果发生多态，总是安全，可以成功</p>
+<p>语法 dynamic_cast&lt;目标类型&gt;(原变量/原对象)</p>
+<p>常量转换  const_cast</p>
+<p>只允许 指针或者引用 之间转换</p>
+<p>语法 const _cast&lt;目标类型&gt;(原变量/原对象)</p>
+<p>重新解释转换</p>
+<p>reinterpret_cast 最不安全一种转换，不建议使用</p>
+<h3 id="异常的基本语法">异常的基本语法</h3>
+<p>C++异常的处理关键字</p>
+<p>try throw catch</p>
+<p>可以出现异常的代码 放到 try块</p>
+<p>利用throw抛出异常</p>
+<p>利用catch捕获异常</p>
+<p>catch( 类型) 如果想捕获其他类型 catch(…)</p>
+<p>如果捕获到的异常不想处理，而继续向上抛出，利用 throw</p>
+<p>异常必须有函数进行处理，如果都不去处理，程序自动调用 terminate函数，中断掉</p>
+<p>异常可以是自定义数据类型</p>
+<p><strong>栈解旋</strong></p>
+<p>从try代码块开始，到throw抛出异常之前，所有栈上的数据都会被释放掉，</p>
+<p>释放的顺序和创建顺序相反的，这个过程我们称为栈解旋</p>
+<p><strong>异常的接口声明</strong></p>
+<p>在函数中 如果限定抛出异常的类型，可以用异常的接口声明</p>
+<p>语法： void func()throw(int ,double)</p>
+<p>throw(空)代表 不允许抛出异常</p>
+<p><strong>异常变量的生命周期</strong></p>
+<p>//抛出的是 throw MyException(); catch (MyException e) 调用拷贝构造函数 效率低</p>
+<p>//抛出的是 throw MyException(); catch (MyException &amp;e) 只调用默认构造函数 效率高 <strong>推荐</strong></p>
+<p>//抛出的是 throw &amp;MyException(); catch (MyException *e) 对象会提前释放掉，不能在非法操作</p>
+<p>//抛出的是 new MyException();  catch (MyException *e) 只调用默认构造函数 自己要管理释放</p>
+<p>异常的多态使用</p>
+<p>提供基类异常类</p>
+<p>class BaseException</p>
+<p>纯虚函数 virtual void printError() = 0;</p>
+<p>子类空指针异常 和 越界异常 继承 BaseException</p>
+<p>重写virtual void printError()</p>
+<p>测试 利用父类引用指向子类对象</p>
+<p><strong>系统标准异常</strong></p>
+<p>引入头文件 #include <stdexcept></p>
+<p>抛出越界异常 throw out_of_range(“…”)</p>
+<p>获取错误信息 catch( exception &amp; e )   e.what();</p>
+<p><strong>编写自己的异常类</strong></p>
+<p>编写myOutofRange 继承 Exception类</p>
+<p>重写 virtual const char * what() const</p>
+<p>将sting 转为 const char *</p>
+<p>.c_str()</p>
+<p>​    const char * 可以隐式类型转换为 string 反之不可以</p>
+<p>​     测试，利用多态打印出错误提示信息</p>
+<h3 id="标准输入流">标准输入流</h3>
+<p>cin.get() 获取一个字符</p>
+<p>cin.get(两个参数) 获取字符串</p>
+<p>利用cin.get获取字符串时候，换行符遗留在缓冲区中</p>
+<p>cin.getline() 获取字符串</p>
+<p>利用cin.getline获取字符串时候，换行符不会被取走，也不在缓冲区中，而是直接扔掉</p>
+<p>cin.ignore() 忽略 默认忽略1个字符， 如果填入参数X，代表忽略X个字符</p>
+<p>cin.peek() 偷窥</p>
+<p>cin.putback() 放回 放回原位置</p>
+<h3 id="标准输出流">标准输出流</h3>
+<p>cout.put() //向缓冲区写字符</p>
+<p>cout.write() //从buffer中写num个字节到当前输出流中。</p>
+<p>通过 流成员函数 格式化输出</p>
+<p>int number = 99;</p>
+<p>cout.width(20); //指定宽度为20</p>
+<p>cout.fill('*'); //填充</p>
+<p>cout.setf(ios::left); //左对齐</p>
+<p>cout.unsetf(ios::dec); //卸载十进制</p>
+<p>cout.setf(ios::hex); //安装十六进制</p>
+<p>cout.setf(ios::showbase); //显示基数</p>
+<p>cout.unsetf(ios::hex); //卸载十六进制</p>
+<p>cout.setf(ios::oct);  //安装八进制</p>
+<p>​    cout &lt;&lt; number &lt;&lt; endl;</p>
+<p><strong>通过控制符 格式化输出</strong></p>
+<p>int number = 99;</p>
+<p>cout &lt;&lt; setw(20)   //设置宽度</p>
+<p>​    &lt;&lt; setfill('~') //设置填充</p>
+<p>&lt;&lt; setiosflags(ios::showbase) //显示基数</p>
+<p>&lt;&lt; setiosflags(ios::left) //设置左对齐</p>
+<p>&lt;&lt; hex  //显示十六进制</p>
+<p>&lt;&lt; number</p>
+<p>&lt;&lt; endl;</p>
+<p>​	引入头文件 #include&lt; iomanip&gt;</p>
+<h3 id="文件读写">文件读写</h3>
+<p>头文件 #inlcude &lt; fstream&gt;</p>
+<p>写文件</p>
+<p>ofstream ofs (文件路径，打开方式 ios::out )</p>
+<p>判断文件是否打开成功 ofs.is_open</p>
+<p>ofs &lt;&lt; “…”</p>
+<p>关闭文件 ofs.close();</p>
+<p>读文件</p>
+<p>ifstream ifs(文件路径，打开方式 ios::in)</p>
+<p>判断文件是否打开成功 ofs.is_open</p>
+<p>利用4种方式 对文件进行读取</p>
+<p>关闭文件 ifs.close();</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://xmweijh.github.io/post/c-yu-yan-xu/">
+                <h3 class="post-title">
+                  C语言续
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+      </div>
+
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://xmweijh.github.io//images/avatar.png?v=1612697969402" class="no-responsive avatar">
+    <div class="text-muted">努力成就自我</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/css/">CSS</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/h5c3/">H5,C3</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/cji-lu/">C++记录</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/c-yu-yan-xu/">C语言续</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/html/">HTML</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/web-dai-ma-gui-fan/">web代码规范</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/ji-suan-ji-wang-luo/">计算机网络</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/html-ji-chu/">HTML基础</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/sql-yu-yan/">SQL语言</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://xmweijh.github.io/post/python/">Python</a>
+            </li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://xmweijh.github.io/tag/vXmkk1Jyb/" class="badge secondary">
+          web
+        </a>
+      
+        <a href="https://xmweijh.github.io/tag/3AyLbslIy/" class="badge secondary">
+          C/C++
+        </a>
+      
+        <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="badge secondary">
+          其他
+        </a>
+      
+        <a href="https://xmweijh.github.io/tag/xHTgICqZ2/" class="badge success">
+          Python
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://xmweijh.github.io//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+
+
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+
+  </body>
+</html>
