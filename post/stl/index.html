@@ -1,0 +1,704 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>STL | 小虾米的记录</title>
+
+<link rel="shortcut icon" href="https://xmweijh.github.io//favicon.ico?v=1613538925202">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://xmweijh.github.io//styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<style>
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <style>
+    /* 导航栏样式 */
+    .navbar {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        text-decoration: none;
+    }
+
+    .navbar-nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+    .navbar-collapse {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+    }
+
+    .navbar-toggler:hover,
+    .navbar-toggler:focus {
+        text-decoration: none;
+    }
+
+    @media (min-width: 992px) {
+        .navbar-expand-lg {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }
+
+        .navbar-expand-lg .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .navbar-expand-lg .navbar-collapse {
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+        }
+
+        .navbar-expand-lg .navbar-toggler {
+            display: none;
+        }
+    }
+
+    @media (max-width: 991px) {
+        #navbarSupportedContent {
+            display: none;
+        }
+    }
+</style>
+<nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            小虾米的记录
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1613538925202"
+                action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function () {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    STL
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-02-17 ·
+                    </time>
+                    
+                        <a href="https://xmweijh.github.io/tag/3AyLbslIy/" class="post-tags">
+                            # C/C++
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <h1 id="stl">STL</h1>
+<h3 id="stl六大组件">STL六大组件</h3>
+<p>容器、算法、迭代器、仿函数、适配器、空间配置器</p>
+<p>STL优点</p>
+<p>内建在C++编译器中，不需要安装额外内容</p>
+<p>不需要了解具体实现内容，只要熟练运用即可</p>
+<p>高复用，可移植，高性能</p>
+<p>容器划分</p>
+<p>序列式容器</p>
+<p>关联式容器  有个key起到索引作用</p>
+<p>算法</p>
+<p>变算法</p>
+<p>非质变算法</p>
+<h3 id="vector容器-vectorintv">vector容器 vector<int>v</h3>
+<p>vector<int>::iterator itBegin = v.begin(); //v.begin() 起始迭代器，指向容器中第一个数据</p>
+<p>vector<int>::iterator itEnd = v.end(); //v.end()；结束迭代器，指向的是容器中最后一个元素的下一个位置</p>
+<p>利用算法遍历容器</p>
+<p>for_each(v.begin(),v.end() , myPrint ) 头文件  algorithm</p>
+<p>容器中存放自定义数据类型</p>
+<p>容器中存放自定义数据类型指针</p>
+<p>容器嵌套容器</p>
+<pre><code class="language-c++">	vector&lt;vector&lt;int&gt;&gt;v;
+
+	vector&lt;int&gt;v1;
+	vector&lt;int&gt;v2;
+	vector&lt;int&gt;v3;
+
+	for (int i = 0; i &lt; 5; i++)
+	{
+		v1.push_back(i + 1);
+		v2.push_back(i + 10);
+		v3.push_back(i + 100);
+	}
+
+	//将小容器放入到大容器中
+	v.push_back(v1);
+	v.push_back(v2);
+	v.push_back(v3);
+
+
+	//遍历大容器
+	for (vector&lt;vector&lt;int&gt;&gt;::iterator it = v.begin(); it != v.end();it++)
+	{
+		// *it ==== vector&lt;int&gt;
+		for (vector&lt;int&gt;::iterator vit = (*it).begin(); vit != (*it).end();vit++)
+		{
+			cout &lt;&lt; *vit &lt;&lt; &quot; &quot;;
+		}
+		cout &lt;&lt; endl;
+	}
+</code></pre>
+<h3 id="string">string</h3>
+<p>构造、赋值</p>
+<p>[]、at 字符存取</p>
+<p>[] 和 at区别 []访问越界 直接挂掉，at抛出out_of_range异常</p>
+<pre><code class="language-c++">string str = &quot;hello world&quot;;
+
+	//for (int i = 0; i &lt; str.size();i++)
+	//{
+	//	//cout &lt;&lt; str[i] &lt;&lt; endl;
+	//	cout &lt;&lt; str.at(i) &lt;&lt; endl;
+	//}
+
+	//[]和at区别，[]访问越界 直接挂掉 ， at访问越界  抛出out_of_range异常
+	try
+	{
+		//cout &lt;&lt; str[100] &lt;&lt; endl;
+		cout &lt;&lt; str.at(100) &lt;&lt; endl;
+	}
+	catch (out_of_range &amp; e)
+	{
+		cout &lt;&lt; e.what() &lt;&lt; endl;
+	}
+	catch (...)
+	{
+		cout &lt;&lt; &quot;异常捕获&quot; &lt;&lt; endl;
+	}
+</code></pre>
+<p>字符串拼接  += append</p>
+<p>查找  find  rfind(从右往左查找)</p>
+<p>替换  replace</p>
+<pre><code class="language-c++">	//替换
+	//string&amp; replace(int pos, int n, const string&amp; str); //替换从pos开始n个字符为字符串str
+	str.replace(1, 3, &quot;11111&quot;);//不是只替换三个1，而是将三个替换为五个
+	//a11111efgde
+	cout &lt;&lt; str &lt;&lt; endl;
+</code></pre>
+<p>比较  compare</p>
+<p>子串  substr</p>
+<pre><code class="language-c++">	string email = &quot;zhangtao@sina.com&quot;;
+
+	int pos = email.find(&quot;@&quot;); // 8
+
+	string userName = email.substr(0, pos);//pos任然是8而非加减，因为截取几个是从1开始的
+
+	cout &lt;&lt; userName &lt;&lt; endl;
+</code></pre>
+<pre><code class="language-c++">	string str = &quot;www.itcast.com.cn&quot;;
+
+	vector&lt;string&gt; v; //将 www  itcast  com  cn 单词截取到 vector容器中
+
+	int start = 0;
+	int pos = -1;
+
+	while (true)
+	{
+		//www.itcast.com.cn
+		pos = str.find(&quot;.&quot;, start);
+
+		if (pos == -1)
+		{
+			//将cn截取出来
+			string tempStr = str.substr(start,str.size() - start);
+			v.push_back(tempStr);
+			break;
+		}
+
+		string tempStr = str.substr(start, pos - start);
+
+		v.push_back(tempStr);
+
+		start = pos + 1;
+	}
+
+	for (vector&lt;string&gt;::iterator it = v.begin(); it != v.end();it++)
+	{
+		cout &lt;&lt; *it &lt;&lt; endl;
+	}
+</code></pre>
+<p>插入 insert</p>
+<p>删除 erase</p>
+<p>string和const char* 转换</p>
+<p>string 转 const char *   .c_str();</p>
+<p>const char * 转string  利用string 有参构造</p>
+<p>const char *可以隐式转换为 string 反之不可以</p>
+<p>小写转大写 toupper</p>
+<p>大写转小写 tolower</p>
+<h3 id="vector容器">vector容器</h3>
+<p>单端数组</p>
+<p>动态数组，自动扩展内存，所谓动态扩展内存，并不是在原有空间后续进行扩展，而是找一个更大的内存空间，将原有数据拷贝到新空间下，并且释放原有空间</p>
+<p>接口</p>
+<p>构造、赋值</p>
+<p>交换 swap</p>
+<p>大小 size</p>
+<p>是否为空 empty</p>
+<p>重置大小 resize</p>
+<p>如果重置的比原来大，有默认值填充新位置</p>
+<p>如果重置的比原来小，超出的部分删除掉</p>
+<p>front 返回容器中第一个元素</p>
+<p>back 返回容器中最后一个元素</p>
+<p>插入 insert （迭代器）</p>
+<p>删除 erase  （迭代器）</p>
+<p>尾插 push_back</p>
+<p>尾删 pop_back</p>
+<p>清空 clear</p>
+<p>案例1 ：巧用swap收缩内存</p>
+<pre><code class="language-c++">vector&lt;int&gt;v;
+	for (int i = 0; i &lt; 100000;i++)
+	{
+		v.push_back(i);
+	}
+	cout &lt;&lt; &quot;v.capacity = &quot; &lt;&lt; v.capacity() &lt;&lt; endl;
+	cout &lt;&lt; &quot;v.size = &quot; &lt;&lt; v.size() &lt;&lt; endl;
+
+	v.resize(3);
+
+	cout &lt;&lt; &quot;v.capacity = &quot; &lt;&lt; v.capacity() &lt;&lt; endl;
+	cout &lt;&lt; &quot;v.size = &quot; &lt;&lt; v.size() &lt;&lt; endl;
+
+	//巧用swap收缩内存
+	vector&lt;int&gt;(v).swap(v);//vector&lt;int&gt;(v) 以v的size创造匿名对象，再与v交换（实际是地址的交换），匿名对象运行后会被释放。
+
+	cout &lt;&lt; &quot;v.capacity = &quot; &lt;&lt; v.capacity() &lt;&lt; endl;
+	cout &lt;&lt; &quot;v.size = &quot; &lt;&lt; v.size() &lt;&lt; endl;
+</code></pre>
+<p>案例2: ： 巧用reserve 预留内存</p>
+<pre><code class="language-c++">vector&lt;int&gt;v;
+	v.reserve(100000);
+	int * p = NULL;
+	int num = 0;
+	for (int i = 0; i &lt; 100000; i++)
+	{
+		v.push_back(i);
+		if (p != &amp;v[0])
+		{
+			p = &amp;v[0];
+			num++;
+		}
+	}
+
+	cout &lt;&lt; &quot;num = &quot; &lt;&lt; num &lt;&lt; endl;
+</code></pre>
+<p>逆序遍历 reverse_iterator  非质变</p>
+<p>判断容器的迭代器是否支持随机访问</p>
+<h3 id="deque容器">deque容器</h3>
+<p>双端数组</p>
+<p>可以对头部进行插入和删除操作，内部有中控器控制数据</p>
+<p>接口</p>
+<p>构造、赋值</p>
+<p>交换 swap</p>
+<p>大小 size</p>
+<p>是否为空 empty</p>
+<p>重置大小 resize</p>
+<p>front 返回容器中第一个元素</p>
+<p>back 返回容器中最后一个元素</p>
+<p>插入 insert （迭代器）</p>
+<p>删除 erase  （迭代器）</p>
+<p>头部插入 push_front</p>
+<p>头部删除 pop_front</p>
+<p>尾插 push_back</p>
+<p>尾删 pop_back</p>
+<p>清空 clear</p>
+<p>​    sort排序 sort(v.begin(),v.end(), 回调函数)</p>
+<h3 id="栈容器-stack">栈容器 Stack</h3>
+<p>符合先进后出的数据结构</p>
+<p>对外接口</p>
+<p>入栈 push</p>
+<p>出栈 pop</p>
+<p>栈顶 top</p>
+<p>是否为空 empty</p>
+<p>栈大小  size</p>
+<h3 id="队列容器-queue">队列容器 Queue</h3>
+<p>符合先进先出的数据结构</p>
+<p>对外接口</p>
+<p>入队 push</p>
+<p>出队 pop</p>
+<p>队头元素 front</p>
+<p>队尾元素 back</p>
+<p>是否为空 empty</p>
+<p>队列大小 size</p>
+<p>list容器</p>
+<p>双向循环链表</p>
+<p>对外接口</p>
+<p>构造、赋值、大小、重置大小、是否为空</p>
+<p>反转 reverse</p>
+<p>排序 sort</p>
+<p>//如果容器的迭代器支持随机访问，可以使用系统提供的标志算法</p>
+<p>//不支持随机访问的迭代器的容器，内部会提供对应的算法接口</p>
+<p>对于自定义数据类型，必须要指定排序规则</p>
+<p>对自定义数据类型做了高级排序</p>
+<p>如果利用remove删除自定义数据类型，需要重载 ==</p>
+<h3 id="set-容器">set 容器</h3>
+<p>关联式容器 key就是value</p>
+<p>默认排好序 从小到大</p>
+<p>插入 insert  大小 size 是否为空 empty</p>
+<p>查找 find 返回值 迭代器</p>
+<p>统计 count  对于set的结果 要么是0 要么是1</p>
+<p>lower_bound(keyElem);//返回第一个key&gt;=keyElem元素的迭代器。</p>
+<p>upper_bound(keyElem);//返回第一个key&gt;keyElem元素的迭代器。</p>
+<p>equal_range(keyElem);//返回容器中key与keyElem相等的上下限的两个迭代器。</p>
+<h3 id="pair对组">pair对组</h3>
+<p>创建方式</p>
+<p><em>pair</em>&lt;<em>string</em>, int&gt; p(&quot;Tom&quot;, 10);</p>
+<p><em>pair</em>&lt;<em>string</em>, int&gt; p2 = <em>make_pair</em>(&quot;Jerry&quot;, 18);</p>
+<p>set.insert的返回值是个对组 pair&lt;iterator, bool&gt; bool代表插入是否成功</p>
+<p>multiset可以插入重复的key值</p>
+<p>可以指定set容器的排序规则，但是必须在插入前指定，利用仿函数的技术</p>
+<p>对于自定义数据类型，set通常都会指定出排序规则</p>
+<h3 id="map容器">map容器</h3>
+<p>关联式容器</p>
+<p>默认按照key从小到大排序</p>
+<p>插入</p>
+<p>m.insert(pair&lt;int, int&gt;(1, 10));</p>
+<p>m.insert(make_pair(2, 20));</p>
+<p>m.insert(map&lt;int, int&gt;::value_type(3, 30));</p>
+<p>m[4] = 40;</p>
+<p>查找 find 返回值 是迭代器</p>
+<p>统计 count</p>
+<p>lower_bound(keyElem);//返回第一个key&gt;=keyElem元素的迭代器。</p>
+<p>upper_bound(keyElem);//返回第一个key&gt;keyElem元素的迭代器。</p>
+<p>equal_range(keyElem);//返回容器中key与keyElem相等的上下限的两个迭代器。</p>
+<p>利用仿函数 实现指定排序规则</p>
+<p>STL容器使用时机</p>
+<h3 id="函数对象">函数对象</h3>
+<p>本质是一个类的对象，因此称为函数对象，也叫仿函数</p>
+<p>函数对象 超出了普通函数的概念，可以拥有自己状态</p>
+<p>函数对象可以作为函数参数</p>
+<h3 id="谓词">谓词</h3>
+<p>普通函数或者仿函数的返回值是bool类型，称为谓词</p>
+<p>一元谓词</p>
+<p>查找容器中大于20的数字  find_if</p>
+<p>二元谓词</p>
+<p>对容器进行排序 sort</p>
+<p>lambda表达式  <a href=""></a>{}</p>
+<pre><code class="language-c++">	//lambda表达式  匿名函数  []代表lambda表达式标志  [](){}
+	for_each(v.begin(), v.end(), [](int val){ cout &lt;&lt; val &lt;&lt; &quot; &quot;; });
+</code></pre>
+<h3 id="内建函数对象">内建函数对象</h3>
+<p>引入头文件 #include&lt; functional&gt;</p>
+<p>取反 negate<int></p>
+<p>加法 plus<int></p>
+<p>大于 greater<int></p>
+<pre><code class="language-c++">//从大到小排序
+	sort(v.begin(), v.end(), greater&lt;int&gt;());
+</code></pre>
+<h3 id="适配器">适配器</h3>
+<p>函数对象适配器</p>
+<p>//1、利用bind2nd 进行绑定</p>
+<p>//2、继承 public binary_function&lt;参数1 类型,参数2类型,返回值类型&gt;</p>
+<p>//3、加const<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<pre><code class="language-c++">class MyPrint :public binary_function&lt;int,int,void&gt;
+{
+public:
+	void operator()(int val , int start)const 
+	{
+		cout &lt;&lt; &quot;val = &quot; &lt;&lt; val &lt;&lt; &quot; start = &quot; &lt;&lt; start &lt;&lt;  &quot; sum = &quot; &lt;&lt;val +  start &lt;&lt; endl;
+	}
+};
+	for_each(v.begin(), v.end(), bind2nd( MyPrint(), num ) );
+</code></pre>
+<p>取反适配器</p>
+<p>一元取反 not1</p>
+<p>//1、利用not1进行取反</p>
+<p>//2、继承 public unary_function&lt;int,bool&gt;</p>
+<p>//3、加const</p>
+<pre><code class="language-c++">class GreaterThanFive:public unary_function&lt;int,bool&gt;
+{
+public:
+	bool operator()(int val) const
+	{
+		return val &gt; 5;
+	}
+};
+	//一元取反
+	//vector&lt;int&gt;::iterator pos = find_if(v.begin(), v.end(), not1( GreaterThanFive()));
+</code></pre>
+<p>​	二元取反 not2</p>
+<p>函数指针适配器</p>
+<p>ptr_fun将普通函数指针 适配成函数对象</p>
+<p>​     成员函数适配器<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<pre><code class="language-c++">//利用 mem_fun_ref
+	for_each(v.begin(), v.end(),  mem_fun_ref(&amp;Person::showPerson));
+</code></pre>
+<p>如果存放的是对象实体  mem_fun_ref</p>
+<p>如果存放的是对象指针  mem_fun</p>
+<h3 id="常用遍历算法">常用遍历算法</h3>
+<p><strong>for_each</strong></p>
+<p>用于遍历</p>
+<p>有返回值</p>
+<pre><code class="language-c++">class MyPrint
+{
+public:
+	void operator()(int val)
+	{
+		cout &lt;&lt; val &lt;&lt; endl;
+		m_Count++;
+	}
+
+	int m_Count = 0;
+};
+	MyPrint print = for_each(v.begin(), v.end(), MyPrint());
+
+	cout &lt;&lt; &quot;print.count = &quot; &lt;&lt; print.m_Count &lt;&lt; endl;
+</code></pre>
+<p>可以绑定参数进行输出</p>
+<pre><code class="language-c++">class MyPrint2 :public binary_function&lt;int,int,void&gt;
+{
+public:
+	void operator()(int val , int start) const
+	{
+		cout &lt;&lt; val &lt;&lt; endl;
+		
+	}
+
+};
+</code></pre>
+<p><strong>transform</strong></p>
+<p>搬运</p>
+<p>注意：目标容器要有容量</p>
+<pre><code class="language-c++">class MyTransform
+{
+public:
+	int operator()(int val)
+	{	
+		return val + 10000;
+	}
+};
+void test()
+{
+	vector&lt;int&gt;v;
+	for (int i = 0; i &lt; 10; i++)
+	{
+		v.push_back(i);
+	}
+	vector&lt;int&gt;v2;
+	v2.resize(v.size());//如果不rize把v1向空的v2搬运会报错，v2会动态的扩充内存
+
+	transform(v.begin(), v.end(), v2.begin(), MyTransform());
+
+	for_each(v2.begin(), v2.end(), [](int val){cout &lt;&lt; val &lt;&lt; &quot; &quot;; });
+
+}
+</code></pre>
+<p>常用查找算法</p>
+<p><strong>find</strong> <strong>查找</strong></p>
+<p><strong>find_if</strong> <strong>按条件查找</strong></p>
+<p>adjacent_find算法 查找相邻重复元素</p>
+<p>binary_search算法 二分查找法	注意: 在无序序列中不可用</p>
+<p>**count算法 **统计元素出现次数</p>
+<p><strong>count_if</strong> <strong>按条件进行统计</strong></p>
+<h3 id="常用排序算法">常用排序算法</h3>
+<p>merge 合并</p>
+<p>将两个容器合并到 目标容器中</p>
+<p>注意： 两个容器必须是有序序列</p>
+<p>目标容器必须有容量</p>
+<p><strong>sort</strong> <strong>排序</strong></p>
+<p><strong>random_shuffle</strong> <strong>洗牌</strong></p>
+<p>reverse 反转</p>
+<h3 id="常用的拷贝和替换算法">常用的拷贝和替换算法</h3>
+<p>copy 拷贝</p>
+<p>实现打印 copy(v.begin(),v.end() , ostream_iterator<int>(cout , “ ”));</p>
+<p><code>ostream_iterator需要#include &lt;iterator&gt;</code></p>
+<p>replace 替换</p>
+<p>replace_if 按条件替换</p>
+<p>​    swap 交换</p>
+<h3 id="常用的算数生成算法">常用的算数生成算法</h3>
+<p>头文件 #include <numeric></p>
+<p><strong>accumulate</strong>算法 计算容器元素累计总和</p>
+<p>fill算法 向容器中添加元素</p>
+<h3 id="常用集合算法">常用集合算法</h3>
+<p>set_intersection算法 求两个set集合的交集</p>
+<p>set_union算法 求两个set集合的并集</p>
+<p>set_difference算法 求两个set集合的差集</p>
+<p>注意:两个集合必须是有序序列</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>这个const 修饰的是this指针，表示this指针指向的内存空间不能修改 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>成员函数与成员函数是分开存储的，可不创造对象，找到函数地址调用 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://xmweijh.github.io/post/css/" class="post-title gt-a-link">
+                    CSS
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">努力成就自我</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://xmweijh.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

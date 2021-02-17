@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xmweijh.github.io/</id>
     <title>小虾米的记录</title>
-    <updated>2021-02-08T06:39:30.009Z</updated>
+    <updated>2021-02-17T05:15:43.314Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xmweijh.github.io/"/>
     <link rel="self" href="https://xmweijh.github.io/atom.xml"/>
@@ -10,6 +10,1958 @@
     <logo>https://xmweijh.github.io/images/avatar.png</logo>
     <icon>https://xmweijh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 小虾米的记录</rights>
+    <entry>
+        <title type="html"><![CDATA[JS基础]]></title>
+        <id>https://xmweijh.github.io/post/js-ji-chu/</id>
+        <link href="https://xmweijh.github.io/post/js-ji-chu/">
+        </link>
+        <updated>2021-02-17T05:14:33.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="javascript基础">JavaScript基础</h1>
+<h3 id="js-的组成">JS 的组成</h3>
+<ol>
+<li>
+<h4 id="ecmascript"><strong>ECMAScript</strong></h4>
+<p>ECMAScript 是由ECMA 国际（ 原欧洲计算机制造商协会）进行标准化的一门编程语言，这种语言在万维网上应用广泛，它往往被称为 JavaScript或 JScript，但实际上后两者是 ECMAScript 语言的实现和扩展。</p>
+<p>​		ECMAScript：规定了JS的编程语法和基础核心知识，是所有浏览器厂商共同遵守的一套JS语法工业标准。</p>
+<p>更多参看MDN: <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/JavaScript_technologies_overview">MDN手册</a></p>
+</li>
+<li>
+<h4 id="dom文档对象模型"><strong>DOM——文档对象模型</strong></h4>
+<p><strong>文档对象模型</strong>（DocumentObject Model，简称DOM），是W3C组织推荐的处理可扩展标记语言的标准编程接口。通过 DOM 提供的接口可以对页面上的各种元素进行操作（大小、位置、颜色等）</p>
+</li>
+<li>
+<h4 id="bom浏览器对象模型"><strong>BOM——浏览器对象模型</strong></h4>
+<p><strong>浏览器对象模型</strong>(Browser Object Model，简称BOM) 是指浏览器对象模型，它提供了独立于内容的、可以与浏览器窗口进行互动的对象结构。通过BOM可以操作浏览器窗口，比如弹出框、控制浏览器跳转、获取分辨率等。</p>
+</li>
+</ol>
+<h3 id="js-书写位置">JS 书写位置</h3>
+<pre><code>JS 有3种书写位置，分别为行内、内嵌和外部。
+</code></pre>
+<ol>
+<li>
+<p>行内式</p>
+<pre><code class="language-html">&lt;input type=&quot;button&quot; value=&quot;点我试试&quot; onclick=&quot;alert('Hello World')&quot; /&gt;
+</code></pre>
+<ul>
+<li>可以将单行或少量 JS 代码写在HTML标签的事件属性中（以 on 开头的属性），如：onclick</li>
+<li>注意单双引号的使用：在HTML中我们推荐使用双引号, JS 中我们推荐使用单引号</li>
+<li>可读性差， 在html中编写JS大量代码时，不方便阅读；</li>
+<li>引号易错，引号多层嵌套匹配时，非常容易弄混；</li>
+<li>特殊情况下使用</li>
+</ul>
+</li>
+<li>
+<p>内嵌式</p>
+<pre><code class="language-html">&lt;script&gt;
+    alert('Hello  World~!');
+&lt;/script&gt;
+</code></pre>
+<ul>
+<li>可以将多行JS代码写到 script 标签中</li>
+<li>内嵌 JS 是学习时常用的方式</li>
+</ul>
+</li>
+<li>
+<p>外部JS文件</p>
+<pre><code class="language-html">&lt;script src=&quot;my.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<ul>
+<li>利于HTML页面代码结构化，把大段 JS代码独立到 HTML 页面之外，既美观，也方便文件级别的复用</li>
+<li>引用外部 JS文件的 script 标签中间不可以写代码</li>
+<li>适合于JS 代码量比较大的情况</li>
+</ul>
+</li>
+</ol>
+<h3 id="javascript注释">JavaScript注释</h3>
+<ul>
+<li>flex子项目占的份数</li>
+<li>align-self控制子项自己在侧轴的排列方式</li>
+<li>order属性定义子项的排列顺序（前后顺序）</li>
+</ul>
+<h4 id="单行注释">单行注释</h4>
+<pre><code>为了提高代码的可读性，JS与CSS一样，也提供了注释功能。
+JS中的注释主要有两种，分别是 单行注释 和 多行注释。
+</code></pre>
+<p>单行注释的注释方式如下：</p>
+<pre><code class="language-html">// 我是一行文字，不想被 JS引擎 执行，所以 注释起来	
+</code></pre>
+<pre><code>// 用来注释单行文字（  快捷键   ctrl  +  /   ）
+</code></pre>
+<h4 id="多行注释">多行注释</h4>
+<p>多行注释的注释方式如下：</p>
+<pre><code class="language-html">/*
+  获取用户年龄和姓名
+  并通过提示框显示出来
+*/
+</code></pre>
+<pre><code>/* */  用来注释多行文字（ 默认快捷键  alt +  shift  + a ） 
+</code></pre>
+<p>快捷键修改为：   ctrl + shift  +  /</p>
+<p>vscode → 首选项按钮 → 键盘快捷方式 → 查找 原来的快捷键 → 修改为新的快捷键 → 回车确认</p>
+<h3 id="javascript输入输出语句">JavaScript输入输出语句</h3>
+<p>为了方便信息的输入输出，JS中提供了一些输入输出语句，其常用的语句如下：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>归属</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alert(msg)</td>
+<td>浏览器弹出警示框</td>
+<td>浏览器</td>
+</tr>
+<tr>
+<td>console.log(msg)</td>
+<td>浏览器控制台打印输出信息</td>
+<td>浏览器</td>
+</tr>
+<tr>
+<td>prompt(info)</td>
+<td>浏览器弹出输入框，用户可以输入</td>
+<td>浏览器</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>注意：alert() 主要用来显示消息给用户，console.log() 用来给程序员自己看运行时的消息。</li>
+</ul>
+<h3 id="变量的概念">变量的概念</h3>
+<p>白话：变量就是一个装东西的盒子。</p>
+<p>通俗：变量是用于存放数据的容器。 我们通过 变量名 获取数据，甚至数据可以修改。</p>
+<p>变量在内存中的存储</p>
+<pre><code>	本质：变量是程序在内存中申请的一块用来存放数据的空间。类似我们酒店的房间，一个房间就可以看做是一个变量。  
+</code></pre>
+<h3 id="变量的使用">变量的使用</h3>
+<ul>
+<li>变量的声明</li>
+<li>变量的赋值</li>
+</ul>
+<h4 id="声明变量">声明变量</h4>
+<pre><code class="language-javascript">//  声明变量  
+var age; //  声明一个 名称为age 的变量     
+</code></pre>
+<ul>
+<li>
+<p>var 是一个 JS关键字，用来声明变量( variable 变量的意思 )。使用该关键字声明变量后，计算机会自动为变量分配内存空间，不需要程序员管</p>
+</li>
+<li>
+<p>age 是程序员定义的变量名，我们要通过变量名来访问内存中分配的空间</p>
+</li>
+</ul>
+<h4 id="赋值">赋值</h4>
+<pre><code class="language-javascript">age = 10; // 给 age  这个变量赋值为 10          
+</code></pre>
+<ul>
+<li>= 用来把右边的值赋给左边的变量空间中   此处代表赋值的意思</li>
+<li>变量值是程序员保存到变量空间里的值</li>
+</ul>
+<h4 id="变量的初始化">变量的初始化</h4>
+<pre><code class="language-js">var age  = 18;  // 声明变量同时赋值为 18
+// 声明一个变量并赋值， 我们称之为变量的初始化。
+</code></pre>
+<h4 id="变量语法扩展">变量语法扩展</h4>
+<ul>
+<li>
+<p>更新变量</p>
+<p>​		一个变量被重新复赋值后，它原有的值就会被覆盖，变量值将以最后一次赋的值为准。</p>
+<pre><code class="language-js">var age = 18;
+
+age = 81;   // 最后的结果就是81因为18 被覆盖掉了          
+</code></pre>
+</li>
+<li>
+<p>同时声明多个变量</p>
+<p>​		同时声明多个变量时，只需要写一个 var， 多个变量名之间使用英文逗号隔开。</p>
+<pre><code class="language-js">var age = 10,  name = 'zs', sex = 2;       
+</code></pre>
+</li>
+<li>
+<p>声明变量特殊情况</p>
+<table>
+<thead>
+<tr>
+<th>情况</th>
+<th>说明</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>var  age ; console.log (age);</td>
+<td>只声明 不赋值</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>console.log(age)</td>
+<td>不声明 不赋值  直接使用</td>
+<td>报错</td>
+</tr>
+<tr>
+<td>age   = 10; console.log (age);</td>
+<td>不声明   只赋值</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h4 id="变量命名规范">变量命名规范</h4>
+<p>规则：</p>
+<ul>
+<li>由字母(A-Za-z)、数字(0-9)、下划线(_)、美元符号( $ )组成，如：usrAge, num01, _name</li>
+<li>严格区分大小写。var app; 和 var App; 是两个变量</li>
+<li>不能 以数字开头。  18age   是错误的</li>
+<li>不能 是关键字、保留字。例如：var、for、while</li>
+<li>变量名必须有意义。 MMD   BBD        nl   →     age</li>
+<li>遵守驼峰命名法。首字母小写，后面单词的首字母需要大写。myFirstName</li>
+</ul>
+<h3 id="数据类型">数据类型</h3>
+<ul>
+<li>
+<p>变量的数据类型</p>
+<p>变量是用来存储值的所在处，它们有名字和数据类型。变量的数据类型决定了如何将代表这些值的位存储到计算机的内存中。JavaScript 是一种弱类型或者说动态语言。这意味着不用提前声明变量的类型，在程序运行过程中，类型会被自动确定：</p>
+<pre><code class="language-js">var age = 10;        // 这是一个数字型
+var areYouOk = '是的';   // 这是一个字符串     
+</code></pre>
+<p>​		在<strong>代码运行</strong>时，变量的数据类型是由 JS引擎 根据 = 右边变量值的数据类型来判断 的，运行完毕之后， 变量就确定了数据类型。JavaScript 拥有动态类型，同时也意味着<strong>相同的变量可用作不同的类型</strong>：</p>
+<pre><code class="language-js">var x = 6;           // x 为数字
+var x = &quot;Bill&quot;;      // x 为字符串    
+</code></pre>
+</li>
+<li>
+<p>数据类型的分类</p>
+<p>JS 把数据类型分为两类：</p>
+<ul>
+<li>
+<p>简单数据类型 （Number,String,Boolean,Undefined,Null）</p>
+</li>
+<li>
+<p>复杂数据类型 （object)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="简单数据类型">简单数据类型</h4>
+<p>简单数据类型（基本数据类型）</p>
+<p>JavaScript 中的简单数据类型及其说明如下：</p>
+<figure data-type="image" tabindex="1"><img src="E:%5CAPTX-4869%5Cmd%5C%E5%9B%BE%E7%89%8716.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>数字型 Number</p>
+<p>​		JavaScript 数字类型既可以保存整数，也可以保存小数(浮点数）。</p>
+<pre><code class="language-js">var age = 21;       // 整数
+var Age = 21.3747;  // 小数     
+</code></pre>
+<ol>
+<li>
+<p>数字型进制</p>
+<p>最常见的进制有二进制、八进制、十进制、十六进制。</p>
+<pre><code class="language-js">  // 1.八进制数字序列范围：0~7
+ var num1 = 07;   // 对应十进制的7
+ var num2 = 019;  // 对应十进制的19
+ var num3 = 08;   // 对应十进制的8
+  // 2.十六进制数字序列范围：0~9以及A~F
+ var num = 0xA;   
+</code></pre>
+<p>现阶段我们只需要记住，在JS中八进制前面加0，十六进制前面加 0x</p>
+</li>
+<li>
+<p>数字型范围</p>
+<p>JavaScript中数值的最大和最小值</p>
+<ul>
+<li>
+<p>最大值：Number.MAX_VALUE，这个值为： 1.7976931348623157e+308</p>
+</li>
+<li>
+<p>最小值：Number.MIN_VALUE，这个值为：5e-32</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ol start="3">
+<li>
+<p>数字型三个特殊值</p>
+<ul>
+<li>
+<p>Infinity ，代表无穷大，大于任何数值</p>
+</li>
+<li>
+<p>-Infinity ，代表无穷小，小于任何数值</p>
+</li>
+<li>
+<p>NaN ，Not a number，代表一个非数值</p>
+</li>
+</ul>
+</li>
+<li>
+<p>isNaN</p>
+<p>用来判断一个变量是否为非数字的类型，返回 true 或者 false</p>
+</li>
+</ol>
+<pre><code class="language-js">  var usrAge = 21;
+var isOk = isNaN(userAge);
+  console.log(isNum);          // false ，21 不是一个非数字
+var usrName = &quot;andy&quot;;
+  console.log(isNaN(userName));// true ，&quot;andy&quot;是一个非数字
+</code></pre>
+<ul>
+<li>
+<p>字符串型 String</p>
+<p>​		字符串型可以是引号中的任意文本，其语法为 双引号 &quot;&quot; 和 单引号''</p>
+<pre><code class="language-js">var strMsg = &quot;我爱北京天安门~&quot;;  // 使用双引号表示字符串
+var strMsg2 = '我爱吃猪蹄~';    // 使用单引号表示字符串
+// 常见错误
+var strMsg3 = 我爱大肘子;       // 报错，没使用引号，会被认为是js代码，但js没有这些语法
+</code></pre>
+<p>​		因为 HTML 标签里面的属性使用的是双引号，JS 这里我们更推荐使用单引号。</p>
+<ol>
+<li>
+<p>字符串引号嵌套</p>
+<p>​		JS 可以用单引号嵌套双引号 ，或者用双引号嵌套单引号 (外双内单，外单内双)</p>
+<pre><code class="language-js">var strMsg = '我是&quot;高帅富&quot;程序猿';   // 可以用''包含&quot;&quot;
+var strMsg2 = &quot;我是'高帅富'程序猿&quot;;  // 也可以用&quot;&quot; 包含''
+//  常见错误
+var badQuotes = 'What on earth?&quot;; // 报错，不能 单双引号搭配
+</code></pre>
+</li>
+<li>
+<p>字符串转义符</p>
+<p>​		类似HTML里面的特殊字符，字符串中也有特殊字符，我们称之为转义符。</p>
+<p>​		转义符都是 \ 开头的，常用的转义符及其说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>转义符</th>
+<th>解释说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\n</td>
+<td>换行符，n   是   newline   的意思</td>
+</tr>
+<tr>
+<td>\ \</td>
+<td>斜杠   \</td>
+</tr>
+<tr>
+<td>'</td>
+<td>'   单引号</td>
+</tr>
+<tr>
+<td>&quot;</td>
+<td>”双引号</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>tab  缩进</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>空格 ，b   是   blank  的意思</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>字符串长度</p>
+<p>字符串是由若干字符组成的，这些字符的数量就是字符串的长度。通过字符串的 length 属性可以获取整个字符串的长度。</p>
+<pre><code class="language-js">var strMsg = &quot;我是帅气多金的程序猿！&quot;;
+alert(strMsg.length); // 显示 11
+</code></pre>
+</li>
+<li>
+<p>字符串拼接</p>
+<ul>
+<li>
+<p>多个字符串之间可以使用 + 进行拼接，其拼接方式为 字符串 + 任何类型 = 拼接之后的新字符串</p>
+</li>
+<li>
+<p>拼接前会把与字符串相加的任何类型转成字符串，再拼接成一个新的字符串</p>
+<pre><code class="language-js">//1.1 字符串 &quot;相加&quot;
+alert('hello' + ' ' + 'world'); // hello world
+//1.2 数值字符串 &quot;相加&quot;
+alert('100' + '100'); // 100100
+//1.3 数值字符串 + 数值
+alert('11' + 12);     // 1112 
+</code></pre>
+<ul>
+<li><em><strong>+ 号总结口诀：数值相加 ，字符相连</strong></em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>字符串拼接加强</p>
+<pre><code class="language-js">console.log('pink老师' + 18);        // 只要有字符就会相连 
+var age = 18;
+console.log('pink老师age岁啦');      // 这样不行哦
+console.log('pink老师' + age);         // pink老师18
+console.log('pink老师' + age + '岁啦'); // pink老师18岁啦
+</code></pre>
+<ul>
+<li>经常会将字符串和变量来拼接，变量可以很方便地修改里面的值</li>
+<li>变量是不能添加引号的，因为加引号的变量会变成字符串</li>
+<li>如果变量两侧都有字符串拼接，口诀“引引加加 ”，删掉数字，变量写加中间</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>布尔型Boolean</p>
+<p>​		布尔类型有两个值：true 和 false ，其中 true 表示真（对），而 false 表示假（错）。</p>
+<p>​		布尔型和数字型相加的时候， true 的值为 1 ，false 的值为 0。</p>
+<pre><code class="language-js">console.log(true + 1);  // 2
+console.log(false + 1); // 1
+</code></pre>
+</li>
+<li>
+<p>Undefined和 Null</p>
+<p>​		一个声明后没有被赋值的变量会有一个默认值undefined ( 如果进行相连或者相加时，注意结果）</p>
+<pre><code class="language-js">var variable;
+console.log(variable);           // undefined
+console.log('你好' + variable);  // 你好undefined
+console.log(11 + variable);     // NaN
+console.log(true + variable);   //  NaN
+</code></pre>
+<p>​		一个声明变量给 null 值，里面存的值为空（学习对象时，我们继续研究null)</p>
+<pre><code class="language-js">var vari = null;
+console.log('你好' + vari);  // 你好null
+console.log(11 + vari);     // 11
+console.log(true + vari);   //  1
+</code></pre>
+</li>
+</ul>
+<h4 id="获取变量数据类型">获取变量数据类型</h4>
+<ul>
+<li>
+<p>获取检测变量的数据类型</p>
+<p>​		typeof 可用来获取检测变量的数据类型</p>
+<pre><code class="language-js">var num = 18;
+console.log(typeof num) // 结果 number      
+</code></pre>
+</li>
+<li>
+<p>字面量</p>
+<p>​		字面量是在源代码中一个固定值的表示法，通俗来说，就是字面量表示如何表达这个值。</p>
+</li>
+</ul>
+<h4 id="数据类型转换">数据类型转换</h4>
+<p>​		什么是数据类型转换？</p>
+<p>​		使用表单、prompt 获取过来的数据默认是字符串类型的，此时就不能直接简单的进行加法运算，而需要转换变量的数据类型。通俗来说，就是把一种数据类型的变量转换成另一种数据类型，通常会实现3种方式的转换：</p>
+<pre><code>转换为字符串类型
+转换为数字型
+转换为布尔型
+</code></pre>
+<ul>
+<li>
+<p>转换为字符串</p>
+<figure data-type="image" tabindex="2"><img src="E:%5CAPTX-4869%5Cmd%5C%E5%9B%BE%E7%89%8719.png" alt="" loading="lazy"></figure>
+<ul>
+<li>toString() 和 String()  使用方式不一样。</li>
+<li>三种转换方式，更多第三种加号拼接字符串转换方式， 这一种方式也称之为隐式转换。</li>
+</ul>
+</li>
+<li>
+<p>转换为数字型（重点）</p>
+<figure data-type="image" tabindex="3"><img src="E:%5CAPTX-4869%5Cmd%5C%E5%9B%BE%E7%89%8720.png" alt="" loading="lazy"></figure>
+<ul>
+<li>注意 parseInt 和 parseFloat 单词的大小写，这2个是重点</li>
+<li>隐式转换是我们在进行算数运算的时候，JS 自动转换了数据类型</li>
+</ul>
+</li>
+<li>
+<p>转换为布尔型</p>
+<figure data-type="image" tabindex="4"><img src="E:%5CAPTX-4869%5Cmd%5C%E5%9B%BE%E7%89%8721.png" alt="" loading="lazy"></figure>
+<ul>
+<li>
+<p>代表空、否定的值会被转换为 false  ，如 ''、0、NaN、null、undefined</p>
+</li>
+<li>
+<p>其余值都会被转换为 true</p>
+<pre><code class="language-js">console.log(Boolean('')); // false
+console.log(Boolean(0)); // false
+console.log(Boolean(NaN)); // false
+console.log(Boolean(null)); // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean('小白')); // true
+console.log(Boolean(12)); // true
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="解释型语言和编译型语言">解释型语言和编译型语言</h3>
+<pre><code>计算机不能直接理解任何除机器语言以外的语言，所以必须要把程序员所写的程序语言翻译成机器语言才能执行程序。程序语言翻译成机器语言的工具，被称为翻译器。
+</code></pre>
+<ul>
+<li>翻译器翻译的方式有两种：一个是编译，另外一个是解释。两种方式之间的区别在于翻译的时间点不同</li>
+<li>编译器是在代码执行之前进行编译，生成中间代码文件</li>
+<li>解释器是在运行时进行及时解释，并立即执行(当编译器以解释方式运行的时候，也称之为解释器)</li>
+</ul>
+<h4 id="执行过程">执行过程</h4>
+<figure data-type="image" tabindex="5"><img src="E:%5CAPTX-4869%5Cmd%5C%E5%9B%BE%E7%89%8723.png" alt="" loading="lazy"></figure>
+<pre><code>类似于请客吃饭：
+
+	编译语言：首先把所有菜做好，才能上桌吃饭
+
+	解释语言：好比吃火锅，边吃边涮，同时进行
+</code></pre>
+<h3 id="关键字和保留字">关键字和保留字</h3>
+<h4 id="标识符">标识符</h4>
+<pre><code>标识(zhi)符：就是指开发人员为变量、属性、函数、参数取的名字。
+
+标识符不能是关键字或保留字。
+</code></pre>
+<h4 id="关键字">关键字</h4>
+<pre><code>关键字：是指 JS本身已经使用了的字，不能再用它们充当变量名、方法名。
+
+包括：break、case、catch、continue、default、delete、do、else、finally、for、function、if、in、instanceof、new、return、switch、this、throw、try、typeof、var、void、while、with 等。
+</code></pre>
+<h4 id="保留字">保留字</h4>
+<pre><code>保留字：实际上就是预留的“关键字”，意思是现在虽然还不是关键字，但是未来可能会成为关键字，同样不能使用它们当变量名或方法名。
+
+包括：boolean、byte、char、class、const、debugger、double、enum、export、extends、fimal、float、goto、implements、import、int、interface、long、mative、package、private、protected、public、short、static、super、synchronized、throws、transient、volatile 等。
+
+注意：如果将保留字用作变量名或函数名，那么除非将来的浏览器实现了该保留字，否则很可能收不到任何错误消息。当浏览器将其实现后，该单词将被看做关键字，如此将出现关键字错误。
+</code></pre>
+<h3 id="运算符操作符">运算符（操作符）</h3>
+<h4 id="运算符的分类">运算符的分类</h4>
+<p><strong>运算符</strong>（operator）也被称为操作符，是用于实现赋值、比较和执行算数运算等功能的符号。</p>
+<pre><code>JavaScript中常用的运算符有：
+</code></pre>
+<ul>
+<li>算数运算符</li>
+<li>递增和递减运算符</li>
+<li>比较运算符</li>
+<li>逻辑运算符</li>
+<li>赋值运算符</li>
+</ul>
+<h4 id="算数运算符">算数运算符</h4>
+<ul>
+<li>
+<p>算术运算符概述</p>
+<p>概念：算术运算使用的符号，用于执行两个变量或值的算术运算。</p>
+</li>
+<li>
+<p>浮点数的精度问题</p>
+<p>浮点数值的最高精度是 17 位小数，但在进行算术计算时其精确度远远不如整数。</p>
+<pre><code class="language-js">var result = 0.1 + 0.2;    // 结果不是 0.3，而是：0.30000000000000004
+console.log(0.07 * 100);   // 结果不是 7，  而是：7.000000000000001
+</code></pre>
+<p>所以：不要直接判断两个浮点数是否相等 !</p>
+</li>
+<li>
+<p>表达式和返回值</p>
+<p>表达式：是由数字、运算符、变量等以能求得数值的有意义排列方法所得的组合</p>
+<p>简单理解：是由数字、运算符、变量等组成的式子</p>
+<p>表达式最终都会有一个结果，返回给开发者，称为返回值</p>
+</li>
+</ul>
+<h4 id="递增和递减运算符">递增和递减运算符</h4>
+<ul>
+<li>
+<p>递增和递减运算符概述</p>
+<p>如果需要反复给数字变量添加或减去1，可以使用递增（++）和递减（ -- ）运算符来完成。</p>
+<p>在 JavaScript 中，递增（++）和递减（ -- ）既可以放在变量前面，也可以放在变量后面。放在变量前面时，我们可以称为前置递增（递减）运算符，放在变量后面时，我们可以称为后置递增（递减）运算符。</p>
+<p>注意：递增和递减运算符必须和变量配合使用。</p>
+</li>
+<li>
+<p>递增运算符</p>
+<ul>
+<li>
+<p>前置递增运算符</p>
+<p>++num 前置递增，就是自加1，类似于 num =  num + 1，但是 ++num 写起来更简单。</p>
+<p>使用口诀：先自加，后返回值</p>
+</li>
+</ul>
+<pre><code class="language-js">var  num = 10;
+alert(++num + 10);   // 21
+</code></pre>
+<ul>
+<li>
+<p>后置递增运算符</p>
+<p>num++ 后置递增，就是自加1，类似于 num =  num + 1 ，但是 num++ 写起来更简单。</p>
+<p>使用口诀：先返回原值，后自加</p>
+</li>
+</ul>
+<pre><code class="language-js">var  num = 10;
+alert(10 + num++);  // 20
+</code></pre>
+</li>
+</ul>
+<h4 id="比较运算符">比较运算符</h4>
+<ul>
+<li>
+<p>比较运算符概述</p>
+<p>概念：比较运算符（关系运算符）是两个数据进行比较时所使用的运算符，比较运算后，会返回一个布尔值（true / false）作为比较运算的结果。</p>
+</li>
+<li>
+<p>等号比较</p>
+<figure data-type="image" tabindex="6"><img src="E:%5CAPTX-4869%5Cmd%5C%E5%9B%BE%E7%89%873.png" alt="" loading="lazy"></figure>
+<pre><code class="language-js">console.log(18 == '18');
+console.log(18 === '18'); 
+</code></pre>
+</li>
+</ul>
+<h4 id="逻辑运算符">逻辑运算符</h4>
+<ul>
+<li>
+<p>逻辑运算符概述</p>
+<p>概念：逻辑运算符是用来进行布尔值运算的运算符，其返回值也是布尔值。后面开发中经常用于多个条件的判断</p>
+</li>
+<li>
+<p>逻辑与&amp;&amp;</p>
+<p>两边都是 true才返回 true，否则返回 false</p>
+</li>
+<li>
+<p>逻辑或 ||</p>
+<p>两边都是 true才返回 true，否则返回 false</p>
+</li>
+<li>
+<p>逻辑非 ！</p>
+<p>逻辑非（!）也叫作取反符，用来取一个布尔值相反的值，如 true 的相反值是 false</p>
+<pre><code class="language-js">var isOk = !true;
+console.log(isOk);  // false
+</code></pre>
+</li>
+<li>
+<p>短路运算（逻辑中断）</p>
+<p>短路运算的原理：当有多个表达式（值）时,左边的表达式值可以确定结果时,就不再继续运算右边的表达式的值;</p>
+<ul>
+<li>
+<p>逻辑与</p>
+<p>语法： 表达式1 &amp;&amp; 表达式2</p>
+<pre><code>- 如果第一个表达式的值为真，则返回表达式2
+
+- 如果第一个表达式的值为假，则返回表达式1
+</code></pre>
+<pre><code class="language-js">console.log( 123 &amp;&amp; 456 );        // 456
+console.log( 0 &amp;&amp; 456 );          // 0
+console.log( 123 &amp;&amp; 456&amp;&amp; 789 );  // 789
+</code></pre>
+</li>
+<li>
+<p>逻辑或</p>
+<p>语法： 表达式1 || 表达式2</p>
+<pre><code>- 如果第一个表达式的值为真，则返回表达式1
+
+- 如果第一个表达式的值为假，则返回表达式2
+</code></pre>
+<pre><code class="language-js">console.log( 123 || 456 );         //  123
+console.log( 0 ||  456 );          //  456
+console.log( 123 || 456 || 789 );  //  123
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="赋值运算符">赋值运算符</h4>
+<pre><code>概念：用来把数据赋值给变量的运算符。
+</code></pre>
+<pre><code class="language-js">var age = 10;
+age += 5;  // 相当于 age = age + 5;
+age -= 5;  // 相当于 age = age - 5;
+age *= 10; // 相当于 age = age * 10;
+</code></pre>
+<h4 id="运算符优先级">运算符优先级</h4>
+<figure data-type="image" tabindex="7"><img src="E:%5CAPTX-4869%5Cmd%5C%E5%9B%BE%E7%89%8710.png" alt="" loading="lazy"></figure>
+<ul>
+<li>一元运算符里面的逻辑非优先级很高</li>
+<li>逻辑与比逻辑或优先级高</li>
+</ul>
+<h3 id="流程控制">流程控制</h3>
+<h4 id="流程控制概念">流程控制概念</h4>
+<pre><code>在一个程序执行的过程中，各条代码的执行顺序对程序的结果是有直接影响的。很多时候我们要通过控制代码的执行顺序来实现我们要完成的功能。
+
+简单理解：**流程控制就是来控制代码按照一定结构顺序来执行**
+
+流程控制主要有三种结构，分别是**顺序结构**、**分支结构**和**循环结构**，代表三种代码执行的顺序。
+</code></pre>
+<ul>
+<li>
+<p>switch 语句和 if else if 语句的区别</p>
+<ul>
+<li>一般情况下，它们两个语句可以相互替换</li>
+<li>switch...case 语句通常处理 case为比较确定值的情况， 而 if…else…语句更加灵活，常用于范围判断(大于、等于某个范围)</li>
+<li>switch 语句进行条件判断后直接执行到程序的条件语句，效率更高。而if…else 语句有几种条件，就得判断多少次。</li>
+<li>当分支比较少时，if… else语句的执行效率比 switch语句高。</li>
+<li>当分支比较多时，switch语句的执行效率比较高，而且结构更清晰。</li>
+</ul>
+</li>
+</ul>
+<p>断点调试：</p>
+<pre><code>	断点调试是指自己在程序的某一行设置一个断点，调试时，程序运行到这一行就会停住，然后你可以一步一步往下调试，调试过程中可以看各个变量当前的值，出错的话，调试到出错的代码行即显示错误，停下。断点调试可以帮助观察程序的运行过程
+</code></pre>
+<pre><code class="language-html">断点调试的流程：
+1、浏览器中按 F12--&gt; sources --&gt;找到需要调试的文件--&gt;在程序的某一行设置断点
+2、Watch: 监视，通过watch可以监视变量的值的变化，非常的常用。
+3、摁下F11，程序单步执行，让程序一行一行的执行，这个时候，观察watch中变量的值的变化。
+</code></pre>
+<h3 id="标识符命名规范">标识符命名规范</h3>
+<ul>
+<li>变量、函数的命名必须要有意义</li>
+<li>变量的名称一般用名词</li>
+<li>函数的名称一般用动词</li>
+</ul>
+<h4 id="操作符规范">操作符规范</h4>
+<pre><code class="language-js">// 操作符的左右两侧各保留一个空格
+for (var i = 1; i &lt;= 5; i++) {
+   if (i == 3) {
+       break; // 直接退出整个 for 循环，跳到整个for循环下面的语句
+   }
+   console.log('我正在吃第' + i + '个包子呢');
+}
+</code></pre>
+<h4 id="单行注释规范">单行注释规范</h4>
+<pre><code class="language-js">for (var i = 1; i &lt;= 5; i++) {
+   if (i == 3) {
+       break; // 单行注释前面注意有个空格
+   }
+   console.log('我正在吃第' + i + '个包子呢');
+}
+</code></pre>
+<h4 id="其他规范">其他规范</h4>
+<pre><code>关键词、操作符之间后加空格
+</code></pre>
+<h3 id="创建数组">创建数组</h3>
+<p>JS 中创建数组有两种方式：</p>
+<ul>
+<li>
+<p>利用  new 创建数组</p>
+<pre><code class="language-js">var 数组名 = new Array() ；
+var arr = new Array();   // 创建一个新的空数组
+</code></pre>
+<p>注意 Array () ，A 要大写</p>
+</li>
+<li>
+<p>利用数组字面量创建数组</p>
+<pre><code class="language-js">//1. 使用数组字面量方式创建空的数组
+var  数组名 = []；
+//2. 使用数组字面量方式创建带初始值的数组
+var  数组名 = ['小白','小黑','大黄','瑞奇'];
+</code></pre>
+<ul>
+<li>数组的字面量是方括号 [ ]</li>
+<li>声明数组并赋值称为数组的初始化</li>
+<li>这种字面量方式也是我们以后最多使用的方式</li>
+</ul>
+</li>
+<li>
+<p>数组元素的类型</p>
+<p>数组中可以存放任意类型的数据，例如字符串，数字，布尔值等。</p>
+<pre><code class="language-js">var arrStus = ['小白',12,true,28.9];
+</code></pre>
+</li>
+</ul>
+<h3 id="获取数组中的元素">获取数组中的元素</h3>
+<p>​		索引 (下标) ：用来访问数组元素的序号（数组下标从 0 开始）。</p>
+<p>​		数组可以通过索引来访问、设置、修改对应的数组元素，可以通过“数组名[索引]”的形式来获取数组中的元素。</p>
+<pre><code class="language-js">// 定义数组
+var arrStus = [1,2,3];
+// 获取数组中的第2个元素
+alert(arrStus[1]);    
+</code></pre>
+<p>注意：如果访问时数组没有和索引值对应的元素，则得到的值是undefined</p>
+<h3 id="遍历数组">遍历数组</h3>
+<ul>
+<li>
+<p>数组遍历</p>
+<p>​		把数组中的每个元素从头到尾都访问一次（类似学生的点名），可以通过 for 循环索引遍历数组中的每一项</p>
+</li>
+</ul>
+<pre><code class="language-js">var arr = ['red','green', 'blue'];
+for(var i = 0; i &lt; arr.length; i++){
+    console.log(arrStus[i]);
+}
+</code></pre>
+<ul>
+<li>
+<p>数组的长度</p>
+<p>数组的长度：默认情况下表示数组中元素的个数</p>
+<p>使用“数组名.length”可以访问数组元素的数量（数组长度）。</p>
+<pre><code class="language-js">var arrStus = [1,2,3];
+alert(arrStus.length);  // 3
+</code></pre>
+<p><strong>注意</strong>：</p>
+<ul>
+<li>此处数组的长度是数组元素的个数 ，不要和数组的索引号混淆。</li>
+</ul>
+</li>
+<li>
+<p>当我们数组里面的元素个数发生了变化，这个 length 属性跟着一起变化</p>
+<ul>
+<li>数组的length属性可以被修改：</li>
+</ul>
+</li>
+<li>
+<p>如果设置的length属性值大于数组的元素个数，则会在数组末尾出现空白元素；</p>
+<ul>
+<li>如果设置的length属性值小于数组的元素个数，则会把超过该值的数组元素删除</li>
+</ul>
+</li>
+</ul>
+<h3 id="数组中新增元素">数组中新增元素</h3>
+<p>​		数组中可以通过以下方式在数组的末尾插入新元素：</p>
+<pre><code class="language-js">  数组[ 数组.length ] = 新数据;
+</code></pre>
+<h2 id="函数">函数</h2>
+<h3 id="函数的概念">函数的概念</h3>
+<p>​		在 JS 里面，可能会定义非常多的相同代码或者功能相似的代码，这些代码可能需要大量重复使用。虽然 for循环语句也能实现一些简单的重复操作，但是比较具有局限性，此时我们就可以使用 JS 中的函数。</p>
+<p>​		函数：就是<strong>封装了一段可被重复调用执行的代码块</strong>。通过此代码块可以<strong>实现大量代码的重复使用</strong>。</p>
+<h3 id="函数的使用">函数的使用</h3>
+<h4 id="声明函数">声明函数</h4>
+<pre><code class="language-js">// 声明函数
+function 函数名() {
+    //函数体代码
+}
+</code></pre>
+<ul>
+<li>
+<p>function 是声明函数的关键字,必须小写</p>
+</li>
+<li>
+<p>由于函数一般是为了实现某个功能才定义的， 所以通常我们将函数名命名为动词，比如 getSum</p>
+</li>
+</ul>
+<h4 id="调用函数">调用函数</h4>
+<pre><code class="language-js">// 调用函数
+函数名();  // 通过调用函数名来执行函数体代码
+</code></pre>
+<ul>
+<li>
+<p>调用的时候千万不要忘记添加小括号</p>
+</li>
+<li>
+<p>口诀：函数不调用，自己不执行</p>
+<p>注意：声明函数本身并不会执行代码，只有调用函数时才会执行函数体代码。</p>
+</li>
+</ul>
+<h4 id="函数的封装">函数的封装</h4>
+<ul>
+<li>
+<p>函数的封装是把一个或者多个功能通过函数的方式封装起来，对外只提供一个简单的函数接口</p>
+</li>
+<li>
+<p>简单理解：封装类似于将电脑配件整合组装到机箱中 ( 类似快递打包）</p>
+<p>例子：封装计算1-100累加和</p>
+<pre><code class="language-js">/* 
+   计算1-100之间值的函数
+*/
+// 声明函数
+function getSum(){
+  var sumNum = 0;// 准备一个变量，保存数字和
+  for (var i = 1; i &lt;= 100; i++) {
+    sumNum += i;// 把每个数值 都累加 到变量中
+  }
+  alert(sumNum);
+}
+// 调用函数
+getSum();
+</code></pre>
+</li>
+</ul>
+<h3 id="函数的参数">函数的参数</h3>
+<h4 id="函数参数语法">函数参数语法</h4>
+<ul>
+<li>
+<p>形参：函数定义时设置接收调用时传入</p>
+</li>
+<li>
+<p>实参：函数调用时传入小括号内的真实数据</p>
+<p>​	参数的作用 : 在函数内部某些值不能固定，我们可以通过参数在调用函数时传递不同的值进去。</p>
+<p>函数参数的运用：</p>
+<pre><code class="language-js">// 带参数的函数声明
+function 函数名(形参1, 形参2 , 形参3...) { // 可以定义任意多的参数，用逗号分隔
+  // 函数体
+}
+// 带参数的函数调用
+函数名(实参1, 实参2, 实参3...); 
+</code></pre>
+<ol>
+<li>调用的时候实参值是传递给形参的</li>
+<li>形参简单理解为：不用声明的变量</li>
+<li>实参和形参的多个参数之间用逗号（,）分隔</li>
+</ol>
+</li>
+</ul>
+<h4 id="函数形参和实参数量不匹配时">函数形参和实参数量不匹配时</h4>
+<figure data-type="image" tabindex="8"><img src="E:%5CAPTX-4869%5Cmd%5C%E5%9B%BE%E7%89%874.png" alt="" loading="lazy"></figure>
+<pre><code>注意：在JavaScript中，形参的默认值是undefined。
+</code></pre>
+<p>小结：</p>
+<ul>
+<li>函数可以带参数也可以不带参数</li>
+<li>声明函数的时候，函数名括号里面的是形参，形参的默认值为 undefined</li>
+<li>调用函数的时候，函数名括号里面的是实参</li>
+<li>多个参数中间用逗号分隔</li>
+<li>形参的个数可以和实参个数不匹配，但是结果不可预计，我们尽量要匹配</li>
+</ul>
+<h3 id="函数的返回值">函数的返回值</h3>
+<h4 id="return-语句">return 语句</h4>
+<pre><code>返回值：函数调用整体代表的数据；函数执行完成后可以通过return语句将指定数据返回 。
+</code></pre>
+<pre><code class="language-js">// 声明函数
+function 函数名（）{
+    ...
+    return  需要返回的值；
+}
+// 调用函数
+函数名();    // 此时调用函数就可以得到函数体内return 后面的值
+</code></pre>
+<ul>
+<li>在使用 return 语句时，函数会停止执行，并返回指定的值</li>
+<li>如果函数没有 return ，返回的值是 undefined</li>
+</ul>
+<h4 id="break-continue-return-的区别">break ,continue ,return 的区别</h4>
+<ul>
+<li>break ：结束当前的循环体（如 for、while）</li>
+<li>continue ：跳出本次循环，继续执行下次循环（如 for、while）</li>
+<li>return ：不仅可以退出循环，还能够返回 return 语句中的值，同时还可以结束当前的函数体内的代码</li>
+</ul>
+<h3 id="arguments的使用">arguments的使用</h3>
+<p>​		当不确定有多少个参数传递的时候，可以用 arguments 来获取。JavaScript 中，arguments实际上它是当前函数的一个内置对象。所有函数都内置了一个 arguments 对象，arguments 对象中存储了传递的所有实参。arguments展示形式是一个伪数组，因此可以进行遍历。伪数组具有以下特点：</p>
+<ul>
+<li>
+<p>具有 length 属性</p>
+</li>
+<li>
+<p>按索引方式储存数据</p>
+</li>
+<li>
+<p>不具有数组的 push , pop 等方法</p>
+<p>注意：在函数内部使用该对象，用此对象获取函数调用时传的实参。</p>
+<pre><code class="language-javascript">    &lt;script&gt;
+        // 利用函数求任意个数的最大值
+        function getMax() { // arguments = [1,2,3]
+            var max = arguments[0];
+            for (var i = 1; i &lt; arguments.length; i++) {
+                if (arguments[i] &gt; max) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        console.log(getMax(1, 2, 3));
+        console.log(getMax(1, 2, 3, 4, 5));
+        console.log(getMax(11, 2, 34, 444, 5, 100));
+    &lt;/script&gt;
+</code></pre>
+</li>
+</ul>
+<h3 id="函数案例">函数案例</h3>
+<pre><code>	函数内部可以调用另一个函数，在同一作用域代码中，函数名即代表封装的操作，使用函数名加括号即可以将封装的操作执行。
+</code></pre>
+<h3 id="函数的两种声明方式">函数的两种声明方式</h3>
+<ul>
+<li>
+<p>自定义函数方式(命名函数)</p>
+<p>利用函数关键字 function 自定义函数方式</p>
+<pre><code class="language-js">// 声明定义方式
+function fn() {...}
+// 调用  
+fn();  
+</code></pre>
+<ul>
+<li>因为有名字，所以也被称为命名函数</li>
+<li>调用函数的代码既可以放到声明函数的前面，也可以放在声明函数的后面</li>
+</ul>
+</li>
+<li>
+<p>函数表达式方式(匿名函数）</p>
+<p>利用函数表达式方式的写法如下：</p>
+<pre><code class="language-js">// 这是函数表达式写法，匿名函数后面跟分号结束
+var fn = function(){...}；
+// 调用的方式，函数调用必须写到函数体下面
+fn();
+</code></pre>
+<ul>
+<li>因为函数没有名字，所以也被称为匿名函数</li>
+<li>这个fn 里面存储的是一个函数</li>
+<li>函数表达式方式原理跟声明变量方式是一致的</li>
+<li>函数调用的代码必须写到函数体后面</li>
+</ul>
+</li>
+</ul>
+<p>​    <strong>1. 我们js引擎运行js 分为两步： 预解析 代码执行</strong></p>
+<p>​    (1). 预解析 js引擎会把js 里面所有的 var 还有 function 提升到当前作用域的最前面</p>
+<p>​    (2). 代码执行 按照代码书写的顺序从上往下执行</p>
+<p>​    <strong>2. 预解析分为 变量预解析（变量提升） 和 函数预解析（函数提升）</strong></p>
+<p>​    (1) 变量提升 就是把所有的变量声明提升到当前的作用域最前面 不提升赋值操作</p>
+<p>​    (2) 函数提升 就是把所有的函数声明提升到当前作用域的最前面 不调用函数</p>
+<h3 id="创建对象的三种方式">创建对象的三种方式</h3>
+<ul>
+<li>
+<p>利用字面量创建对象</p>
+<h5 id="使用对象字面量创建对象"><strong>使用对象字面量创建对象</strong>：</h5>
+<pre><code>  就是花括号 { } 里面包含了表达这个具体事物（对象）的属性和方法；{ } 里面采取键值对的形式表示 
+</code></pre>
+<ul>
+<li>
+<p>键：相当于属性名</p>
+</li>
+<li>
+<p>值：相当于属性值，可以是任意类型的值（数字类型、字符串类型、布尔类型，函数类型等）</p>
+<p>代码如下：</p>
+<pre><code class="language-js">var star = {
+    name : 'pink',
+    age : 18,
+    sex : '男',
+    sayHi : function(){
+        alert('大家好啊~');
+    }
+};
+</code></pre>
+<p>对象[‘属性名’]，注意方括号里面的属性必须加引号</p>
+</li>
+<li>
+<ul>
+<li>
+<p>示例代码如下：</p>
+<pre><code class="language-js">console.log(star.name)     // 调用名字属性
+console.log(star['name'])  // 调用名字属性
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>调用对象的方法</p>
+<ul>
+<li>
+<p>对象里面的方法调用：对象.方法名() ，注意这个方法名字后面一定加括号</p>
+<p>示例代码如下：</p>
+<pre><code class="language-js">star.sayHi();              // 调用 sayHi 方法,注意，一定不要忘记带后面的括号
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>变量、属性、函数、方法总结</p>
+<pre><code>属性是对象的一部分，而变量不是对象的一部分，变量是单独存储数据的容器
+</code></pre>
+<ul>
+<li>
+<p>变量：单独声明赋值，单独存在</p>
+</li>
+<li>
+<p>属性：对象里面的变量称为属性，不需要声明，用来描述该对象的特征</p>
+<p>方法是对象的一部分，函数不是对象的一部分，函数是单独封装操作的容器</p>
+</li>
+<li>
+<p>函数：单独存在的，通过“函数名()”的方式就可以调用</p>
+</li>
+<li>
+<p>方法：对象里面的函数称为方法，方法不需要声明，使用“对象.方法名()”的方式就可以调用，方法用来描述该对象的行为和功能。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>利用 new Object 创建对象</p>
+<ul>
+<li>
+<p>创建空对象</p>
+<pre><code class="language-js">var andy = new Obect();
+</code></pre>
+<p>通过内置构造函数Object创建对象，此时andy变量已经保存了创建出来的空对象</p>
+</li>
+<li>
+<p>给空对象添加属性和方法</p>
+<ul>
+<li>
+<p>通过对象操作属性和方法的方式，来为对象增加属性和方法</p>
+<p>示例代码如下：</p>
+</li>
+</ul>
+<pre><code class="language-js">andy.name = 'pink';
+andy.age = 18;
+andy.sex = '男';
+andy.sayHi = function(){
+    alert('大家好啊~');
+}
+</code></pre>
+<p>注意：</p>
+<ul>
+<li>Object() ：第一个字母大写</li>
+<li>new Object() ：需要 new 关键字</li>
+<li>使用的格式：对象.属性 =  值;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>利用构造函数创建对象</p>
+<ul>
+<li>
+<p>构造函数</p>
+<ul>
+<li>
+<p>构造函数：是一种特殊的函数，主要用来初始化对象，即为对象成员变量赋初始值，它总与 new 运算符一起使用。我们可以把对象中一些公共的属性和方法抽取出来，然后封装到这个函数里面。</p>
+</li>
+<li>
+<p>构造函数的封装格式：</p>
+<pre><code class="language-js">function 构造函数名(形参1,形参2,形参3) {
+     this.属性名1 = 参数1;
+     this.属性名2 = 参数2;
+     this.属性名3 = 参数3;
+     this.方法名 = 函数体;
+}
+</code></pre>
+</li>
+<li>
+<p>构造函数的调用格式</p>
+<pre><code>var obj = new 构造函数名(实参1，实参2，实参3)
+</code></pre>
+<p>以上代码中，obj即接收到构造函数创建出来的对象。</p>
+</li>
+<li>
+<p>注意事项</p>
+<ol>
+<li>构造函数约定<strong>首字母大写</strong>。</li>
+<li>函数内的属性和方法前面需要添加 <strong>this</strong> ，表示当前对象的属性和方法。</li>
+<li>构造函数中<strong>不需要 return 返回结果</strong>。</li>
+<li>当我们创建对象的时候，<strong>必须用 new 来调用构造函数</strong>。</li>
+</ol>
+</li>
+<li>
+<p>其他</p>
+<p>构造函数，如 Stars()，抽象了对象的公共部分，封装到了函数里面，它泛指某一大类（class）<br>
+创建对象，如 new Stars()，特指某一个，通过 new 关键字创建对象的过程我们也称为对象实例化</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>new关键字的作用</p>
+<ol>
+<li>在构造函数代码开始执行之前，创建一个空对象；</li>
+<li>修改this的指向，把this指向创建出来的空对象；</li>
+<li>执行函数的代码</li>
+<li>在函数完成之后，返回this---即创建出来的对象</li>
+</ol>
+<h3 id="遍历对象">遍历对象</h3>
+<p>for...in 语句用于对数组或者对象的属性进行循环操作。</p>
+<p>其语法如下：</p>
+<pre><code class="language-js">for (变量 in 对象名字) {
+    // 在此执行代码
+}
+</code></pre>
+<p>语法中的变量是自定义的，它需要符合命名规范，通常我们会将这个变量写为 k 或者 key。</p>
+<pre><code class="language-js">for (var k in obj) {
+    console.log(k);      // 这里的 k 是属性名
+    console.log(obj[k]); // 这里的 obj[k] 是属性值
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="预解析的相关概念">预解析的相关概念</h3>
+<pre><code>JavaScript 代码是由浏览器中的 JavaScript 解析器来执行的。JavaScript 解析器在运行 JavaScript 代码的时候分为两步：预解析和代码执行。
+</code></pre>
+<ul>
+<li>
+<p>预解析：在当前作用域下, JS 代码执行之前，浏览器会默认把带有 var 和 function 声明的变量在内存中<strong>进行提前声明或者定义。</strong></p>
+</li>
+<li>
+<p>代码执行： 从上到下执行JS语句。</p>
+<p><strong>预解析会把变量和函数的声明在代码执行之前执行完成。</strong></p>
+</li>
+</ul>
+<p>变量预解析</p>
+<pre><code>预解析也叫做变量、函数提升。
+变量提升（变量预解析）： 变量的声明会被提升到当前作用域的最上面，变量的赋值不会提升。
+</code></pre>
+<pre><code class="language-js">console.log(num);  // 结果是多少？
+var num = 10;      // ？
+</code></pre>
+<pre><code>结果：undefined
+
+注意：**变量提升只提升声明，不提升赋值**
+</code></pre>
+<p>函数预解析</p>
+<pre><code>函数提升： 函数的声明会被提升到当前作用域的最上面，但是不会调用函数。
+</code></pre>
+<pre><code class="language-js">fn();
+function fn() {
+    console.log('打印');
+}
+</code></pre>
+<pre><code>结果：控制台打印字符串 --- ”打印“ 
+
+注意：函数声明代表函数整体，所以函数提升后，函数名代表整个函数，但是函数并没有被调用！	
+</code></pre>
+<p>函数表达式声明函数问题</p>
+<pre><code>函数表达式创建函数，会执行变量提升，此时接收函数的变量名无法正确的调用：
+</code></pre>
+<pre><code class="language-js">fn();
+var  fn = function() {
+    console.log('想不到吧');
+}
+</code></pre>
+<pre><code>结果：报错提示 ”fn is not a function&quot;
+
+解释：该段代码执行之前，会做变量声明提升，fn在提升之后的值是undefined；而fn调用是在fn被赋值为函数体之前，此时fn的值是undefined，所以无法正确调用
+</code></pre>
+<pre><code class="language-javascript">//函数的预解析
+		var num=1;
+		function demo(){
+			console.log(num);
+			function demoSon(){
+				num=3;
+			}
+			var num=2;
+			demoSon();
+		}
+		demo();
+
+//相当于
+var num;//作用域在全局
+		function demo();
+		num=1;
+		function demo(){
+			var num;
+			function demoSon();
+			console.log(num);
+			function demoSon(){
+				num=3;
+			}
+			num=2;//num在函数作用域
+			demoSon();
+		}
+		demo();
+//var num = 2，声明会提前，但不会赋值 num会变为undefined 所以不会输出1 
+</code></pre>
+<p>JavaScript 中的对象分为3种：<strong>自定义对象 、内置对象、 浏览器对象</strong><br>
+​		前面两种对象是JS 基础 内容，属于 ECMAScript；  第三个浏览器对象属于 JS 独有的， JS API 讲解内置对象就是指 JS 语言自带的一些对象，这些对象供开发者使用，并提供了一些常用的或是<strong>最基本而必要的功能</strong>（属性和方法），内置对象最大的优点就是帮助我们快速开发</p>
+<p>​	 	JavaScript 提供了多个内置对象：Math、 Date 、Array、String等</p>
+<h3 id="math对象">Math对象</h3>
+<p>​		Math 对象不是构造函数，它具有数学常数和函数的属性和方法。跟数学相关的运算（求绝对值，取整、最大值等）可以使用 Math 中的成员。</p>
+<table>
+<thead>
+<tr>
+<th>属性、方法名</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Math.PI</td>
+<td>圆周率</td>
+</tr>
+<tr>
+<td>Math.floor()</td>
+<td>向下取整</td>
+</tr>
+<tr>
+<td>Math.ceil()</td>
+<td>向上取整</td>
+</tr>
+<tr>
+<td>Math.round()</td>
+<td>四舍五入版 就近取整   注意 -3.5   结果是  -3</td>
+</tr>
+<tr>
+<td>Math.abs()</td>
+<td>绝对值</td>
+</tr>
+<tr>
+<td>Math.max()/Math.min()</td>
+<td>求最大和最小值</td>
+</tr>
+<tr>
+<td>Math.random()</td>
+<td>获取范围在[0,1)内的随机值</td>
+</tr>
+</tbody>
+</table>
+<p>​	注意：上面的方法使用时必须带括号</p>
+<pre><code class="language-js">console.log(Math.round(1.5)); // 2
+console.log(Math.round(-1.5)); // 这个结果是 -1
+</code></pre>
+<p>​	<strong>获取指定范围内的随机整数</strong>：</p>
+<pre><code class="language-javascript"> function getRandom(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min; 
+}
+</code></pre>
+<h3 id="日期对象">日期对象</h3>
+<p>​	 	Date 对象和 Math 对象不一样，Date是一个构造函数，所以使用时需要实例化后才能使用其中具体方法和属性。Date 实例用来处理日期和时间</p>
+<ul>
+<li>
+<p>使用Date实例化日期对象</p>
+<ul>
+<li>获取当前时间必须实例化：</li>
+</ul>
+<pre><code class="language-js">var now = new Date();
+</code></pre>
+<ul>
+<li>获取指定时间的日期对象</li>
+</ul>
+<pre><code class="language-js">var future = new Date('2010/5/1');
+</code></pre>
+<p>注意：如果创建实例时并未传入参数，则得到的日期对象是当前时间对应的日期对象</p>
+</li>
+<li>
+<p>使用Date实例的方法和属性</p>
+<figure data-type="image" tabindex="9"><img src="E:%5CAPTX-4869%5Cmd%5Ctime1.png" alt="" loading="lazy"></figure>
+</li>
+<li>
+<p>通过Date实例获取总毫米数</p>
+<ul>
+<li>
+<p>总毫秒数的含义</p>
+<p>​	基于1970年1月1日（世界标准时间）起的毫秒数</p>
+</li>
+<li>
+<p>获取总毫秒数</p>
+<pre><code class="language-js">// 实例化Date对象
+var now = new Date();
+// 1. 用于获取对象的原始值
+console.log(date.valueOf())	
+console.log(date.getTime())	
+// 2. 简单写可以这么做
+var now = + new Date();			
+// 3. HTML5中提供的方法，有兼容性问题
+var now = Date.now();
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="数组对象">数组对象</h3>
+<h4 id="创建数组的两种方式">创建数组的两种方式</h4>
+<ul>
+<li>
+<p>字面量方式</p>
+<ul>
+<li>
+<p>示例代码如下：</p>
+<pre><code class="language-js">var arr = [1,&quot;test&quot;,true];
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>new Array()</p>
+<ul>
+<li>
+<p>示例代码如下：</p>
+<pre><code>var arr = new Array();
+</code></pre>
+<p>​	注意：上面代码中arr创建出的是一个空数组，如果需要使用构造函数Array创建非空数组，可以在创建数组时传入参数</p>
+<p>​	参数传递规则如下：</p>
+<ul>
+<li>
+<p>如果只传入一个参数，则参数规定了数组的长度</p>
+</li>
+<li>
+<p>如果传入了多个参数，则参数称为数组的元素</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="检测是否为数组">检测是否为数组</h4>
+<ul>
+<li>
+<p>instanceof 运算符</p>
+<ul>
+<li>
+<p>instanceof 可以判断一个对象是否是某个构造函数的实例</p>
+<pre><code class="language-js">var arr = [1, 23];
+var obj = {};
+console.log(arr instanceof Array); // true
+console.log(obj instanceof Array); // false
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Array.isArray()</p>
+<ul>
+<li>
+<p>Array.isArray()用于判断一个对象是否为数组，isArray() 是 HTML5 中提供的方法</p>
+<pre><code class="language-js">var arr = [1, 23];
+var obj = {};
+console.log(Array.isArray(arr));   // true
+console.log(Array.isArray(obj));   // false
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="添加删除数组元素的方法">添加删除数组元素的方法</h4>
+<ul>
+<li>
+<p>数组中有进行增加、删除元素的方法，部分方法如下表</p>
+<figure data-type="image" tabindex="10"><img src="E:%5CAPTX-4869%5Cmd%5Cp%E5%9B%BE%E7%89%872.png" alt="" loading="lazy"></figure>
+<p>注意：push、unshift为增加元素方法；pop、shift为删除元素的方法</p>
+</li>
+</ul>
+<h4 id="数组排序">数组排序</h4>
+<ul>
+<li>
+<p>数组中有对数组本身排序的方法，部分方法如下表</p>
+<figure data-type="image" tabindex="11"><img src="E:%5CAPTX-4869%5Cmd%5Carray3.png" alt="" loading="lazy"></figure>
+<p>注意：sort方法需要传入参数来设置升序、降序排序</p>
+<ul>
+<li>如果传入“function(a,b){ return a-b;}”，则为升序</li>
+<li>如果传入“function(a,b){ return b-a;}”，则为降序</li>
+</ul>
+</li>
+</ul>
+<h4 id="数组索引方法">数组索引方法</h4>
+<ul>
+<li>
+<p>数组中有获取数组指定元素索引值的方法，部分方法如下表</p>
+<figure data-type="image" tabindex="12"><img src="E:%5CAPTX-4869%5Cmd%5Carray4.png" alt="" loading="lazy"></figure>
+</li>
+</ul>
+<h4 id="数组转换为字符串">数组转换为字符串</h4>
+<ul>
+<li>
+<p>数组中有把数组转化为字符串的方法，部分方法如下表</p>
+<figure data-type="image" tabindex="13"><img src="E:%5CAPTX-4869%5Cmd%5Carray5.png" alt="" loading="lazy"></figure>
+<p>注意：join方法如果不传入参数，则按照 “ , ”拼接元素</p>
+</li>
+</ul>
+<h4 id="其他方法">其他方法</h4>
+<figure data-type="image" tabindex="14"><img src="E:%5CAPTX-4869%5Cmd%5Carray6.png" alt="" loading="lazy"></figure>
+<h3 id="字符串对象">字符串对象</h3>
+<h4 id="基本包装类型">基本包装类型</h4>
+<p>​		为了方便操作基本数据类型，JavaScript 还提供了三个特殊的引用类型：String、Number和 Boolean。</p>
+<p>​		基本包装类型就是把简单数据类型包装成为复杂数据类型，这样基本数据类型就有了属性和方法。</p>
+<pre><code class="language-js">// 下面代码有什么问题？
+var str = 'andy';
+console.log(str.length);
+</code></pre>
+<p>​		按道理基本数据类型是没有属性和方法的，而对象才有属性和方法，但上面代码却可以执行，这是因为</p>
+<p>​		js 会把基本数据类型包装为复杂数据类型，其执行过程如下 ：</p>
+<pre><code class="language-js">// 1. 生成临时变量，把简单类型包装为复杂数据类型
+var temp = new String('andy');
+// 2. 赋值给我们声明的字符变量
+str = temp;
+// 3. 销毁临时变量
+temp = null;
+</code></pre>
+<h4 id="字符串的不可变">字符串的不可变</h4>
+<p>​		指的是里面的值不可变，虽然看上去可以改变内容，但其实是<strong>地址变了</strong>，内存中新开辟了一个内存空间。</p>
+<p>​		当重新给字符串变量赋值的时候，变量之前保存的字符串不会被修改，依然在内存中重新给字符串赋值，会重新在内存中开辟空间，这个特点就是字符串的不可变。<br>
+​		由于字符串的不可变，在<strong>大量拼接字符串</strong>的时候会有效率问题</p>
+<h4 id="根据字符返回位置">根据字符返回位置</h4>
+<p>​		字符串通过基本包装类型可以调用部分方法来操作字符串，以下是返回指定字符的位置的方法：</p>
+<figure data-type="image" tabindex="15"><img src="E:%5CAPTX-4869%5Cmd%5Carray7.png" alt="" loading="lazy"></figure>
+<p>​		案例：查找字符串&quot;abcoefoxyozzopp&quot;中所有o出现的位置以及次数</p>
+<ol>
+<li>先查找第一个o出现的位置</li>
+<li>然后 只要indexOf 返回的结果不是 -1 就继续往后查找</li>
+<li>因为indexOf 只能查找到第一个，所以后面的查找，利用第二个参数，当前索引加1，从而继续查找</li>
+</ol>
+<h4 id="根据位置返回字符">根据位置返回字符</h4>
+<p>​		字符串通过基本包装类型可以调用部分方法来操作字符串，以下是根据位置返回指定位置上的字符：</p>
+<figure data-type="image" tabindex="16"><img src="E:%5CAPTX-4869%5Cmd%5Carray8.png" alt="" loading="lazy"></figure>
+<p>​		在上述方法中，charCodeAt方法返回的是指定位置上字符对应的ASCII码</p>
+<p>​		案例：判断一个字符串 'abcoefoxyozzopp' 中出现次数最多的字符，并统计其次数</p>
+<ol>
+<li>
+<p>核心算法：利用 charAt(） 遍历这个字符串</p>
+</li>
+<li>
+<p>把每个字符都存储给对象， 如果对象没有该属性，就为1，如果存在了就 +1</p>
+</li>
+<li>
+<p>遍历对象，得到最大值和该字符</p>
+<p>​	注意：在遍历的过程中，把字符串中的每个字符作为对象的属性存储在对象总，对应的属性值是该字符出现的次数</p>
+</li>
+</ol>
+<h4 id="字符串操作方法">字符串操作方法</h4>
+<p>​		字符串通过基本包装类型可以调用部分方法来操作字符串，以下是部分操作方法：</p>
+<figure data-type="image" tabindex="17"><img src="E:%5CAPTX-4869%5Cmd%5Cstring10.png" alt="" loading="lazy"></figure>
+<h4 id="replace方法">replace()方法</h4>
+<p>​		replace() 方法用于在字符串中用一些字符替换另一些字符，其使用格式如下：</p>
+<pre><code>字符串.replace(被替换的字符串， 要替换为的字符串)；
+</code></pre>
+<h4 id="split方法">split()方法</h4>
+<p>​		split()方法用于切分字符串，它可以将字符串切分为数组。在切分完毕之后，返回的是一个新数组。</p>
+<p>​		其使用格式如下：</p>
+<pre><code>字符串.split(&quot;分割字符&quot;)
+</code></pre>
+<h2 id="简单数据类型和复杂数据类型">简单数据类型和复杂数据类型</h2>
+<h3 id="简单数据类型-2">简单数据类型</h3>
+<p>​		<strong>简单类型</strong>（<strong>基本数据类型</strong>、<strong>值类型</strong>）：在存储时变量中存储的是值本身，包括string ，number，boolean，undefined，null</p>
+<h3 id="复杂数据类型">复杂数据类型</h3>
+<p>​		<strong>复杂数据类型（引用类型）</strong>：在存储时变量中存储的仅仅是地址（引用），通过 new 关键字创建的对象（系统对象、自定义对象），如 Object、Array、Date等；</p>
+<h3 id="堆栈">堆栈</h3>
+<ul>
+<li>堆栈空间分配区别：</li>
+</ul>
+<p>1、栈（操作系统）：由操作系统自动分配释放存放函数的参数值、局部变量的值等。其操作方式类似于数据结构中的栈；</p>
+<p>简单数据类型存放到栈里面</p>
+<p>2、堆（操作系统）：存储复杂类型(对象)，一般由程序员分配释放，若程序员不释放，由垃圾回收机制回收。</p>
+<ul>
+<li>
+<p>简单数据类型的存储方式</p>
+<p>​		值类型变量的数据直接存放在变量（栈空间）中</p>
+</li>
+<li>
+<p>复杂数据类型的存储方式</p>
+<p>​		引用类型变量（栈空间）里存放的是地址，真正的对象实例存放在堆空间中</p>
+</li>
+</ul>
+<h3 id="简单类型传参">简单类型传参</h3>
+<p>​		函数的形参也可以看做是一个变量，当我们把一个值类型变量作为参数传给函数的形参时，其实是把变量在栈空间里的值复制了一份给形参，那么在方法内部对形参做任何修改，都不会影响到的外部变量。</p>
+<h3 id="复杂数据类型传参">复杂数据类型传参</h3>
+<p>​		函数的形参也可以看做是一个变量，当我们把引用类型变量传给形参时，其实是把变量在栈空间里保存的堆地址复制给了形参，形参和实参其实保存的是同一个堆地址，所以操作的是同一个对象。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[STL]]></title>
+        <id>https://xmweijh.github.io/post/stl/</id>
+        <link href="https://xmweijh.github.io/post/stl/">
+        </link>
+        <updated>2021-02-17T05:13:12.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="stl">STL</h1>
+<h3 id="stl六大组件">STL六大组件</h3>
+<p>容器、算法、迭代器、仿函数、适配器、空间配置器</p>
+<p>STL优点</p>
+<p>内建在C++编译器中，不需要安装额外内容</p>
+<p>不需要了解具体实现内容，只要熟练运用即可</p>
+<p>高复用，可移植，高性能</p>
+<p>容器划分</p>
+<p>序列式容器</p>
+<p>关联式容器  有个key起到索引作用</p>
+<p>算法</p>
+<p>变算法</p>
+<p>非质变算法</p>
+<h3 id="vector容器-vectorintv">vector容器 vector<int>v</h3>
+<p>vector<int>::iterator itBegin = v.begin(); //v.begin() 起始迭代器，指向容器中第一个数据</p>
+<p>vector<int>::iterator itEnd = v.end(); //v.end()；结束迭代器，指向的是容器中最后一个元素的下一个位置</p>
+<p>利用算法遍历容器</p>
+<p>for_each(v.begin(),v.end() , myPrint ) 头文件  algorithm</p>
+<p>容器中存放自定义数据类型</p>
+<p>容器中存放自定义数据类型指针</p>
+<p>容器嵌套容器</p>
+<pre><code class="language-c++">	vector&lt;vector&lt;int&gt;&gt;v;
+
+	vector&lt;int&gt;v1;
+	vector&lt;int&gt;v2;
+	vector&lt;int&gt;v3;
+
+	for (int i = 0; i &lt; 5; i++)
+	{
+		v1.push_back(i + 1);
+		v2.push_back(i + 10);
+		v3.push_back(i + 100);
+	}
+
+	//将小容器放入到大容器中
+	v.push_back(v1);
+	v.push_back(v2);
+	v.push_back(v3);
+
+
+	//遍历大容器
+	for (vector&lt;vector&lt;int&gt;&gt;::iterator it = v.begin(); it != v.end();it++)
+	{
+		// *it ==== vector&lt;int&gt;
+		for (vector&lt;int&gt;::iterator vit = (*it).begin(); vit != (*it).end();vit++)
+		{
+			cout &lt;&lt; *vit &lt;&lt; &quot; &quot;;
+		}
+		cout &lt;&lt; endl;
+	}
+</code></pre>
+<h3 id="string">string</h3>
+<p>构造、赋值</p>
+<p>[]、at 字符存取</p>
+<p>[] 和 at区别 []访问越界 直接挂掉，at抛出out_of_range异常</p>
+<pre><code class="language-c++">string str = &quot;hello world&quot;;
+
+	//for (int i = 0; i &lt; str.size();i++)
+	//{
+	//	//cout &lt;&lt; str[i] &lt;&lt; endl;
+	//	cout &lt;&lt; str.at(i) &lt;&lt; endl;
+	//}
+
+	//[]和at区别，[]访问越界 直接挂掉 ， at访问越界  抛出out_of_range异常
+	try
+	{
+		//cout &lt;&lt; str[100] &lt;&lt; endl;
+		cout &lt;&lt; str.at(100) &lt;&lt; endl;
+	}
+	catch (out_of_range &amp; e)
+	{
+		cout &lt;&lt; e.what() &lt;&lt; endl;
+	}
+	catch (...)
+	{
+		cout &lt;&lt; &quot;异常捕获&quot; &lt;&lt; endl;
+	}
+</code></pre>
+<p>字符串拼接  += append</p>
+<p>查找  find  rfind(从右往左查找)</p>
+<p>替换  replace</p>
+<pre><code class="language-c++">	//替换
+	//string&amp; replace(int pos, int n, const string&amp; str); //替换从pos开始n个字符为字符串str
+	str.replace(1, 3, &quot;11111&quot;);//不是只替换三个1，而是将三个替换为五个
+	//a11111efgde
+	cout &lt;&lt; str &lt;&lt; endl;
+</code></pre>
+<p>比较  compare</p>
+<p>子串  substr</p>
+<pre><code class="language-c++">	string email = &quot;zhangtao@sina.com&quot;;
+
+	int pos = email.find(&quot;@&quot;); // 8
+
+	string userName = email.substr(0, pos);//pos任然是8而非加减，因为截取几个是从1开始的
+
+	cout &lt;&lt; userName &lt;&lt; endl;
+</code></pre>
+<pre><code class="language-c++">	string str = &quot;www.itcast.com.cn&quot;;
+
+	vector&lt;string&gt; v; //将 www  itcast  com  cn 单词截取到 vector容器中
+
+	int start = 0;
+	int pos = -1;
+
+	while (true)
+	{
+		//www.itcast.com.cn
+		pos = str.find(&quot;.&quot;, start);
+
+		if (pos == -1)
+		{
+			//将cn截取出来
+			string tempStr = str.substr(start,str.size() - start);
+			v.push_back(tempStr);
+			break;
+		}
+
+		string tempStr = str.substr(start, pos - start);
+
+		v.push_back(tempStr);
+
+		start = pos + 1;
+	}
+
+	for (vector&lt;string&gt;::iterator it = v.begin(); it != v.end();it++)
+	{
+		cout &lt;&lt; *it &lt;&lt; endl;
+	}
+</code></pre>
+<p>插入 insert</p>
+<p>删除 erase</p>
+<p>string和const char* 转换</p>
+<p>string 转 const char *   .c_str();</p>
+<p>const char * 转string  利用string 有参构造</p>
+<p>const char *可以隐式转换为 string 反之不可以</p>
+<p>小写转大写 toupper</p>
+<p>大写转小写 tolower</p>
+<h3 id="vector容器">vector容器</h3>
+<p>单端数组</p>
+<p>动态数组，自动扩展内存，所谓动态扩展内存，并不是在原有空间后续进行扩展，而是找一个更大的内存空间，将原有数据拷贝到新空间下，并且释放原有空间</p>
+<p>接口</p>
+<p>构造、赋值</p>
+<p>交换 swap</p>
+<p>大小 size</p>
+<p>是否为空 empty</p>
+<p>重置大小 resize</p>
+<p>如果重置的比原来大，有默认值填充新位置</p>
+<p>如果重置的比原来小，超出的部分删除掉</p>
+<p>front 返回容器中第一个元素</p>
+<p>back 返回容器中最后一个元素</p>
+<p>插入 insert （迭代器）</p>
+<p>删除 erase  （迭代器）</p>
+<p>尾插 push_back</p>
+<p>尾删 pop_back</p>
+<p>清空 clear</p>
+<p>案例1 ：巧用swap收缩内存</p>
+<pre><code class="language-c++">vector&lt;int&gt;v;
+	for (int i = 0; i &lt; 100000;i++)
+	{
+		v.push_back(i);
+	}
+	cout &lt;&lt; &quot;v.capacity = &quot; &lt;&lt; v.capacity() &lt;&lt; endl;
+	cout &lt;&lt; &quot;v.size = &quot; &lt;&lt; v.size() &lt;&lt; endl;
+
+	v.resize(3);
+
+	cout &lt;&lt; &quot;v.capacity = &quot; &lt;&lt; v.capacity() &lt;&lt; endl;
+	cout &lt;&lt; &quot;v.size = &quot; &lt;&lt; v.size() &lt;&lt; endl;
+
+	//巧用swap收缩内存
+	vector&lt;int&gt;(v).swap(v);//vector&lt;int&gt;(v) 以v的size创造匿名对象，再与v交换（实际是地址的交换），匿名对象运行后会被释放。
+
+	cout &lt;&lt; &quot;v.capacity = &quot; &lt;&lt; v.capacity() &lt;&lt; endl;
+	cout &lt;&lt; &quot;v.size = &quot; &lt;&lt; v.size() &lt;&lt; endl;
+</code></pre>
+<p>案例2: ： 巧用reserve 预留内存</p>
+<pre><code class="language-c++">vector&lt;int&gt;v;
+	v.reserve(100000);
+	int * p = NULL;
+	int num = 0;
+	for (int i = 0; i &lt; 100000; i++)
+	{
+		v.push_back(i);
+		if (p != &amp;v[0])
+		{
+			p = &amp;v[0];
+			num++;
+		}
+	}
+
+	cout &lt;&lt; &quot;num = &quot; &lt;&lt; num &lt;&lt; endl;
+</code></pre>
+<p>逆序遍历 reverse_iterator  非质变</p>
+<p>判断容器的迭代器是否支持随机访问</p>
+<h3 id="deque容器">deque容器</h3>
+<p>双端数组</p>
+<p>可以对头部进行插入和删除操作，内部有中控器控制数据</p>
+<p>接口</p>
+<p>构造、赋值</p>
+<p>交换 swap</p>
+<p>大小 size</p>
+<p>是否为空 empty</p>
+<p>重置大小 resize</p>
+<p>front 返回容器中第一个元素</p>
+<p>back 返回容器中最后一个元素</p>
+<p>插入 insert （迭代器）</p>
+<p>删除 erase  （迭代器）</p>
+<p>头部插入 push_front</p>
+<p>头部删除 pop_front</p>
+<p>尾插 push_back</p>
+<p>尾删 pop_back</p>
+<p>清空 clear</p>
+<p>​    sort排序 sort(v.begin(),v.end(), 回调函数)</p>
+<h3 id="栈容器-stack">栈容器 Stack</h3>
+<p>符合先进后出的数据结构</p>
+<p>对外接口</p>
+<p>入栈 push</p>
+<p>出栈 pop</p>
+<p>栈顶 top</p>
+<p>是否为空 empty</p>
+<p>栈大小  size</p>
+<h3 id="队列容器-queue">队列容器 Queue</h3>
+<p>符合先进先出的数据结构</p>
+<p>对外接口</p>
+<p>入队 push</p>
+<p>出队 pop</p>
+<p>队头元素 front</p>
+<p>队尾元素 back</p>
+<p>是否为空 empty</p>
+<p>队列大小 size</p>
+<p>list容器</p>
+<p>双向循环链表</p>
+<p>对外接口</p>
+<p>构造、赋值、大小、重置大小、是否为空</p>
+<p>反转 reverse</p>
+<p>排序 sort</p>
+<p>//如果容器的迭代器支持随机访问，可以使用系统提供的标志算法</p>
+<p>//不支持随机访问的迭代器的容器，内部会提供对应的算法接口</p>
+<p>对于自定义数据类型，必须要指定排序规则</p>
+<p>对自定义数据类型做了高级排序</p>
+<p>如果利用remove删除自定义数据类型，需要重载 ==</p>
+<h3 id="set-容器">set 容器</h3>
+<p>关联式容器 key就是value</p>
+<p>默认排好序 从小到大</p>
+<p>插入 insert  大小 size 是否为空 empty</p>
+<p>查找 find 返回值 迭代器</p>
+<p>统计 count  对于set的结果 要么是0 要么是1</p>
+<p>lower_bound(keyElem);//返回第一个key&gt;=keyElem元素的迭代器。</p>
+<p>upper_bound(keyElem);//返回第一个key&gt;keyElem元素的迭代器。</p>
+<p>equal_range(keyElem);//返回容器中key与keyElem相等的上下限的两个迭代器。</p>
+<h3 id="pair对组">pair对组</h3>
+<p>创建方式</p>
+<p><em>pair</em>&lt;<em>string</em>, int&gt; p(&quot;Tom&quot;, 10);</p>
+<p><em>pair</em>&lt;<em>string</em>, int&gt; p2 = <em>make_pair</em>(&quot;Jerry&quot;, 18);</p>
+<p>set.insert的返回值是个对组 pair&lt;iterator, bool&gt; bool代表插入是否成功</p>
+<p>multiset可以插入重复的key值</p>
+<p>可以指定set容器的排序规则，但是必须在插入前指定，利用仿函数的技术</p>
+<p>对于自定义数据类型，set通常都会指定出排序规则</p>
+<h3 id="map容器">map容器</h3>
+<p>关联式容器</p>
+<p>默认按照key从小到大排序</p>
+<p>插入</p>
+<p>m.insert(pair&lt;int, int&gt;(1, 10));</p>
+<p>m.insert(make_pair(2, 20));</p>
+<p>m.insert(map&lt;int, int&gt;::value_type(3, 30));</p>
+<p>m[4] = 40;</p>
+<p>查找 find 返回值 是迭代器</p>
+<p>统计 count</p>
+<p>lower_bound(keyElem);//返回第一个key&gt;=keyElem元素的迭代器。</p>
+<p>upper_bound(keyElem);//返回第一个key&gt;keyElem元素的迭代器。</p>
+<p>equal_range(keyElem);//返回容器中key与keyElem相等的上下限的两个迭代器。</p>
+<p>利用仿函数 实现指定排序规则</p>
+<p>STL容器使用时机</p>
+<h3 id="函数对象">函数对象</h3>
+<p>本质是一个类的对象，因此称为函数对象，也叫仿函数</p>
+<p>函数对象 超出了普通函数的概念，可以拥有自己状态</p>
+<p>函数对象可以作为函数参数</p>
+<h3 id="谓词">谓词</h3>
+<p>普通函数或者仿函数的返回值是bool类型，称为谓词</p>
+<p>一元谓词</p>
+<p>查找容器中大于20的数字  find_if</p>
+<p>二元谓词</p>
+<p>对容器进行排序 sort</p>
+<p>lambda表达式  <a href=""></a>{}</p>
+<pre><code class="language-c++">	//lambda表达式  匿名函数  []代表lambda表达式标志  [](){}
+	for_each(v.begin(), v.end(), [](int val){ cout &lt;&lt; val &lt;&lt; &quot; &quot;; });
+</code></pre>
+<h3 id="内建函数对象">内建函数对象</h3>
+<p>引入头文件 #include&lt; functional&gt;</p>
+<p>取反 negate<int></p>
+<p>加法 plus<int></p>
+<p>大于 greater<int></p>
+<pre><code class="language-c++">//从大到小排序
+	sort(v.begin(), v.end(), greater&lt;int&gt;());
+</code></pre>
+<h3 id="适配器">适配器</h3>
+<p>函数对象适配器</p>
+<p>//1、利用bind2nd 进行绑定</p>
+<p>//2、继承 public binary_function&lt;参数1 类型,参数2类型,返回值类型&gt;</p>
+<p>//3、加const<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
+<pre><code class="language-c++">class MyPrint :public binary_function&lt;int,int,void&gt;
+{
+public:
+	void operator()(int val , int start)const 
+	{
+		cout &lt;&lt; &quot;val = &quot; &lt;&lt; val &lt;&lt; &quot; start = &quot; &lt;&lt; start &lt;&lt;  &quot; sum = &quot; &lt;&lt;val +  start &lt;&lt; endl;
+	}
+};
+	for_each(v.begin(), v.end(), bind2nd( MyPrint(), num ) );
+</code></pre>
+<p>取反适配器</p>
+<p>一元取反 not1</p>
+<p>//1、利用not1进行取反</p>
+<p>//2、继承 public unary_function&lt;int,bool&gt;</p>
+<p>//3、加const</p>
+<pre><code class="language-c++">class GreaterThanFive:public unary_function&lt;int,bool&gt;
+{
+public:
+	bool operator()(int val) const
+	{
+		return val &gt; 5;
+	}
+};
+	//一元取反
+	//vector&lt;int&gt;::iterator pos = find_if(v.begin(), v.end(), not1( GreaterThanFive()));
+</code></pre>
+<p>​	二元取反 not2</p>
+<p>函数指针适配器</p>
+<p>ptr_fun将普通函数指针 适配成函数对象</p>
+<p>​     成员函数适配器<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<pre><code class="language-c++">//利用 mem_fun_ref
+	for_each(v.begin(), v.end(),  mem_fun_ref(&amp;Person::showPerson));
+</code></pre>
+<p>如果存放的是对象实体  mem_fun_ref</p>
+<p>如果存放的是对象指针  mem_fun</p>
+<h3 id="常用遍历算法">常用遍历算法</h3>
+<p><strong>for_each</strong></p>
+<p>用于遍历</p>
+<p>有返回值</p>
+<pre><code class="language-c++">class MyPrint
+{
+public:
+	void operator()(int val)
+	{
+		cout &lt;&lt; val &lt;&lt; endl;
+		m_Count++;
+	}
+
+	int m_Count = 0;
+};
+	MyPrint print = for_each(v.begin(), v.end(), MyPrint());
+
+	cout &lt;&lt; &quot;print.count = &quot; &lt;&lt; print.m_Count &lt;&lt; endl;
+</code></pre>
+<p>可以绑定参数进行输出</p>
+<pre><code class="language-c++">class MyPrint2 :public binary_function&lt;int,int,void&gt;
+{
+public:
+	void operator()(int val , int start) const
+	{
+		cout &lt;&lt; val &lt;&lt; endl;
+		
+	}
+
+};
+</code></pre>
+<p><strong>transform</strong></p>
+<p>搬运</p>
+<p>注意：目标容器要有容量</p>
+<pre><code class="language-c++">class MyTransform
+{
+public:
+	int operator()(int val)
+	{	
+		return val + 10000;
+	}
+};
+void test()
+{
+	vector&lt;int&gt;v;
+	for (int i = 0; i &lt; 10; i++)
+	{
+		v.push_back(i);
+	}
+	vector&lt;int&gt;v2;
+	v2.resize(v.size());//如果不rize把v1向空的v2搬运会报错，v2会动态的扩充内存
+
+	transform(v.begin(), v.end(), v2.begin(), MyTransform());
+
+	for_each(v2.begin(), v2.end(), [](int val){cout &lt;&lt; val &lt;&lt; &quot; &quot;; });
+
+}
+</code></pre>
+<p>常用查找算法</p>
+<p><strong>find</strong> <strong>查找</strong></p>
+<p><strong>find_if</strong> <strong>按条件查找</strong></p>
+<p>adjacent_find算法 查找相邻重复元素</p>
+<p>binary_search算法 二分查找法	注意: 在无序序列中不可用</p>
+<p>**count算法 **统计元素出现次数</p>
+<p><strong>count_if</strong> <strong>按条件进行统计</strong></p>
+<h3 id="常用排序算法">常用排序算法</h3>
+<p>merge 合并</p>
+<p>将两个容器合并到 目标容器中</p>
+<p>注意： 两个容器必须是有序序列</p>
+<p>目标容器必须有容量</p>
+<p><strong>sort</strong> <strong>排序</strong></p>
+<p><strong>random_shuffle</strong> <strong>洗牌</strong></p>
+<p>reverse 反转</p>
+<h3 id="常用的拷贝和替换算法">常用的拷贝和替换算法</h3>
+<p>copy 拷贝</p>
+<p>实现打印 copy(v.begin(),v.end() , ostream_iterator<int>(cout , “ ”));</p>
+<p><code>ostream_iterator需要#include &lt;iterator&gt;</code></p>
+<p>replace 替换</p>
+<p>replace_if 按条件替换</p>
+<p>​    swap 交换</p>
+<h3 id="常用的算数生成算法">常用的算数生成算法</h3>
+<p>头文件 #include <numeric></p>
+<p><strong>accumulate</strong>算法 计算容器元素累计总和</p>
+<p>fill算法 向容器中添加元素</p>
+<h3 id="常用集合算法">常用集合算法</h3>
+<p>set_intersection算法 求两个set集合的交集</p>
+<p>set_union算法 求两个set集合的并集</p>
+<p>set_difference算法 求两个set集合的差集</p>
+<p>注意:两个集合必须是有序序列</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>这个const 修饰的是this指针，表示this指针指向的内存空间不能修改 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>成员函数与成员函数是分开存储的，可不创造对象，找到函数地址调用 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CSS]]></title>
         <id>https://xmweijh.github.io/post/css/</id>
@@ -6727,1031 +8679,6 @@ datalist 元素用于为文本框提供一个可供选择的列表，使用 data
 autocomplete 属性规定表单是否应该启用自动完成功能：自动完成允许浏览器预测对字段的输入，当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。当 autocomplete 属性值为 on 时表示启用自动完成功能，为 off 时表示关闭。autocomplete 属性适用于 <form>，以及下面的 <input> 类型：text, search, url, telephone, email, password, datepickers, range 以及 color。</p>
 <p><strong>autofocus 属性</strong><br>
 autofocus 属性规定在页面加载时，域自动地获得焦点。适用于所有 <input> 标签的类型。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[SQL语言]]></title>
-        <id>https://xmweijh.github.io/post/sql-yu-yan/</id>
-        <link href="https://xmweijh.github.io/post/sql-yu-yan/">
-        </link>
-        <updated>2020-04-28T00:13:13.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="select">SELECT</h3>
-<pre><code>SELECT column_name,column_name FROM table_name;//选出特定列
-
-SELECT * FROM table_name;//选取所有列
-
-SELECT DISTINCT column_name,column_name
-FROM table_name;//返回列中不同值（去除掉重复值）
-
-SELECT column_name new_column_name FROM table_name;使用列别名可以改变查询结果的列标题
-</code></pre>
-<h3 id="where">WHERE</h3>
-<pre><code>SELECT column_name,column_name
-FROM table_name
-WHERE column_name operator value;//提取那些满足指定条件的记录
-</code></pre>
-<p>使用<strong>单引号来环绕文本值</strong>（大部分数据库系统也接受双引号）。如果是<strong>数值字段，请不要使用引号</strong>。</p>
-<p>可以在 WHERE 子句中使用的运算符</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">运算符</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">=</td>
-<td style="text-align:left">等于</td>
-</tr>
-<tr>
-<td style="text-align:left">&lt;&gt;</td>
-<td style="text-align:left">不等于。**注释：**在 SQL 的一些版本中，该操作符可被写成 !=</td>
-</tr>
-<tr>
-<td style="text-align:left">&gt;</td>
-<td style="text-align:left">大于</td>
-</tr>
-<tr>
-<td style="text-align:left">&lt;</td>
-<td style="text-align:left">小于</td>
-</tr>
-<tr>
-<td style="text-align:left">&gt;=</td>
-<td style="text-align:left">大于等于</td>
-</tr>
-<tr>
-<td style="text-align:left">&lt;=</td>
-<td style="text-align:left">小于等于</td>
-</tr>
-<tr>
-<td style="text-align:left">BETWEEN</td>
-<td style="text-align:left">在某个范围内</td>
-</tr>
-<tr>
-<td style="text-align:left">LIKE</td>
-<td style="text-align:left">搜索某种模式</td>
-</tr>
-<tr>
-<td style="text-align:left">IN</td>
-<td style="text-align:left">指定针对某个列的多个可能值</td>
-</tr>
-</tbody>
-</table>
-<p>逻辑运算    not        and         or  （优先级从左到右下降）</p>
-<p>空值判断：  is null</p>
-<h3 id="order-by">ORDER BY</h3>
-<pre><code>SELECT column_name,column_name
-FROM table_name
-ORDER BY column_name,column_name ASC|DESC;//对结果集按照一个列或者多个列进行排序,默认按照升序对记录进行排序。如果需要按照降序对记录进行排序，您可以使用 DESC 关键字。
-ORDER BY 多列的时候，先按照第一个column name排序，再按照第二个column name排序
-desc 或者 asc 只对它紧跟着的第一个列名有效，其他不受影响，仍然是默认的升序。
-</code></pre>
-<h3 id="insert-into">INSERT INTO</h3>
-<pre><code>INSERT INTO table_name
-VALUES (value1,value2,value3,...);//无需指定要插入数据的列名，只需提供被插入的值即可
-
-INSERT INTO table_name (column1,column2,column3,...)
-VALUES (value1,value2,value3,...);//指定列名及被插入的值
-</code></pre>
-<h3 id="update">UPDATE</h3>
-<pre><code>UPDATE table_name
-SET column1=value1,column2=value2,...
-WHERE some_column=some_value;//更新表中已存在的记录。
-如果您省略了 WHERE 子句，所有的记录都将被更新！
-</code></pre>
-<h3 id="delete">DELETE</h3>
-<pre><code>DELETE FROM table_name
-WHERE some_column=some_value;//删除表中的行。
-如果您省略了 WHERE 子句，所有的记录都将被删除！
-</code></pre>
-<h3 id="select-top-limit-rownum-子句">SELECT TOP, LIMIT, ROWNUM 子句</h3>
-<pre><code>SELECT TOP number|percent column_name(s)
-FROM table_name;
-
-SELECT column_name(s)
-FROM table_name
-LIMIT number;
-
-SELECT column_name(s)
-FROM table_name
-WHERE ROWNUM &lt;= number;//用于规定要返回的记录的数目
-</code></pre>
-<h3 id="like">LIKE</h3>
-<pre><code>SELECT column_name(s)
-FROM table_name
-WHERE column_name LIKE pattern;//操作符用于在 WHERE 子句中搜索列中的指定模式。
-</code></pre>
-<p>'%a'   //以a结尾的数据</p>
-<p>'a%'   //以a开头的数据</p>
-<p>'%a%'   //含有a的数据</p>
-<p>‘_a_’   //三位且中间字母是a的</p>
-<p>'_a'   //两位且结尾字母是a的</p>
-<p>'a_'   //两位且开头字母是a的</p>
-<h3 id="sql-通配符">SQL 通配符</h3>
-<p>在 SQL 中，通配符与 SQL LIKE 操作符一起使用。</p>
-<p>SQL 通配符用于搜索表中的数据。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">通配符</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">%</td>
-<td style="text-align:left">替代 0 个或多个字符</td>
-</tr>
-<tr>
-<td style="text-align:left">_</td>
-<td style="text-align:left">替代一个字符</td>
-</tr>
-<tr>
-<td style="text-align:left">[<em>charlist</em>]</td>
-<td style="text-align:left">字符列中的任何单一字符</td>
-</tr>
-<tr>
-<td style="text-align:left">[^<em>charlist</em>] 或 [!<em>charlist</em>]</td>
-<td style="text-align:left">不在字符列中的任何单一字符</td>
-</tr>
-</tbody>
-</table>
-<h3 id="in">IN</h3>
-<pre><code>SELECT column_name(s)
-FROM table_name
-WHERE column_name IN (value1,value2,...);//IN 操作符允许您在 WHERE 子句中规定多个值。
-</code></pre>
-<h3 id="between">BETWEEN</h3>
-<pre><code>SELECT column_name(s)
-FROM table_name
-WHERE column_name BETWEEN value1 AND value2;//用于选取介于两个值之间的数据范围内的值。
-</code></pre>
-<h3 id="sql-别名">SQL 别名</h3>
-<pre><code>SELECT column_name AS alias_name
-FROM table_name;//列的 SQL 别名语法
-
-SELECT column_name(s)
-FROM table_name AS alias_name;//表的 SQL 别名语法
-</code></pre>
-<h3 id="sql-连接join">SQL 连接(JOIN)</h3>
-<ul>
-<li><strong>INNER JOIN</strong>：如果表中有至少一个匹配，则返回行</li>
-<li><strong>LEFT JOIN</strong>：即使右表中没有匹配，也从左表返回所有的行</li>
-<li><strong>RIGHT JOIN</strong>：即使左表中没有匹配，也从右表返回所有的行</li>
-<li><strong>FULL JOIN</strong>：只要其中一个表中存在匹配，则返回行</li>
-</ul>
-<p><strong>SQL INNER JOIN 语法</strong></p>
-<p>INNER JOIN 关键字在表中存在至少一个匹配时返回行。</p>
-<figure data-type="image" tabindex="1"><img src="https://www.runoob.com/wp-content/uploads/2013/09/img_innerjoin.gif" alt="SQL INNER JOIN" loading="lazy"></figure>
-<pre><code>SELECT column_name(s)
-FROM table1
-INNER JOIN table2
-ON table1.column_name=table2.column_name;
-
-SELECT column_name(s)
-FROM table1
-JOIN table2
-ON table1.column_name=table2.column_name;//INNER JOIN 与 JOIN 是相同的。
-</code></pre>
-<p>在使用 <strong>join</strong> 时，<strong>on</strong> 和 <strong>where</strong> 条件的区别如下：</p>
-<ul>
-<li>1、 <strong>on</strong> 条件是在生成临时表时使用的条件，它不管 <strong>on</strong> 中的条件是否为真，都会返回左边表中的记录。</li>
-<li>2、<strong>where</strong> 条件是在临时表生成好后，再对临时表进行过滤的条件。这时已经没有 <strong>left join</strong> 的含义（必须返回左边表的记录）了，条件不为真的就全部过滤掉。</li>
-</ul>
-<p><strong>SQL LEFT JOIN 语法</strong></p>
-<p>LEFT JOIN 关键字从左表（table1）返回所有的行，即使右表（table2）中没有匹配。如果右表中没有匹配，则结果为 NULL。</p>
-<figure data-type="image" tabindex="2"><img src="https://www.runoob.com/wp-content/uploads/2013/09/img_leftjoin.gif" alt="SQL LEFT JOIN" loading="lazy"></figure>
-<pre><code>SELECT column_name(s)
-FROM table1
-LEFT JOIN table2
-ON table1.column_name=table2.column_name;
-
-SELECT column_name(s)
-FROM table1
-LEFT OUTER JOIN table2
-ON table1.column_name=table2.column_name;//在某些数据库中，LEFT JOIN 称为 LEFT 											 //OUTER JOIN。
-</code></pre>
-<p><strong>SQL RIGHT JOIN 语法</strong></p>
-<p>RIGHT JOIN 关键字从右表（table2）返回所有的行，即使左表（table1）中没有匹配。如果左表中没有匹配，则结果为 NULL。</p>
-<figure data-type="image" tabindex="3"><img src="https://www.runoob.com/wp-content/uploads/2013/09/img_rightjoin.gif" alt="SQL RIGHT JOIN" loading="lazy"></figure>
-<pre><code>SELECT column_name(s)
-FROM table1
-RIGHT JOIN table2
-ON table1.column_name=table2.column_name;
-
-SELECT column_name(s)
-FROM table1
-RIGHT OUTER JOIN table2
-ON table1.column_name=table2.column_name;//在某些数据库中，RIGHT JOIN 称为 RIGHT 											 //OUTER JOIN。
-</code></pre>
-<p><strong>SQL FULL OUTER JOIN 语法</strong></p>
-<p>FULL OUTER JOIN 关键字只要左表（table1）和右表（table2）其中一个表中存在匹配，则返回行.</p>
-<p>FULL OUTER JOIN 关键字结合了 LEFT JOIN 和 RIGHT JOIN 的结果。</p>
-<figure data-type="image" tabindex="4"><img src="https://www.runoob.com/wp-content/uploads/2013/09/img_fulljoin.gif" alt="SQL FULL OUTER JOIN" loading="lazy"></figure>
-<pre><code>SELECT column_name(s)
-FROM table1
-FULL OUTER JOIN table2
-ON table1.column_name=table2.column_name;
-</code></pre>
-<h3 id="union">UNION</h3>
-<p>UNION 操作符用于合并两个或多个 SELECT 语句的结果集。</p>
-<p>请注意，UNION 内部的每个 SELECT 语句必须拥有相同数量的列。列也必须拥有相似的数据类型。同时，每个 SELECT 语句中的列的顺序必须相同。</p>
-<pre><code>SELECT column_name(s) FROM table1
-UNION
-SELECT column_name(s) FROM table2;
-//默认地，UNION 操作符选取不同的值。如果允许重复的值，请使用 UNION ALL。
-SELECT column_name(s) FROM table1
-UNION ALL
-SELECT column_name(s) FROM table2;
-</code></pre>
-<h3 id="select-into">SELECT INTO</h3>
-<p>SELECT INTO 语句从一个表复制数据，然后把数据插入到另一个新表中。</p>
-<pre><code>SELECT *
-INTO newtable [IN externaldb]
-FROM table1;
-
-SELECT column_name(s)
-INTO newtable [IN externaldb]
-FROM table1;
-</code></pre>
-<h3 id="insert-into-select">INSERT INTO SELECT</h3>
-<p>INSERT INTO SELECT 语句从一个表复制数据，然后把数据插入到一个已存在的表中。</p>
-<pre><code>INSERT INTO table2
-SELECT * FROM table1;
-
-INSERT INTO table2
-(column_name(s))
-SELECT column_name(s)
-FROM table1;
-</code></pre>
-<h3 id="create-database">CREATE DATABASE</h3>
-<pre><code>CREATE DATABASE dbname;//用于创建数据库。
-</code></pre>
-<h3 id="create-table">CREATE TABLE</h3>
-<pre><code>CREATE TABLE table_name
-(
-column_name1 data_type(size),
-column_name2 data_type(size),
-column_name3 data_type(size),
-....
-);//用于创建数据库中的表。表由行和列组成，每个表都必须有个表名。
-  //column_name 参数规定表中列的名称。
-  //data_type 参数规定列的数据类型（例如 varchar、integer、decimal、date 等等）。
-  //size 参数规定表中列的最大长度。
-</code></pre>
-<h3 id="sql-约束constraints">SQL 约束（Constraints）</h3>
-<pre><code>CREATE TABLE table_name
-(
-column_name1 data_type(size) constraint_name,
-column_name2 data_type(size) constraint_name,
-column_name3 data_type(size) constraint_name,
-....
-);//用于规定表中的数据规则。
-</code></pre>
-<p>在 SQL 中，我们有如下约束：</p>
-<ul>
-<li>
-<p><strong>NOT NULL</strong> - 指示某列不能存储 NULL 值。</p>
-<p>​	NOT NULL 约束强制列不接受 NULL 值。</p>
-<p>​	NOT NULL 约束强制字段始终包含值。这意味着，如果不向字段添加值，就无法插入新记录或	者更新记录。</p>
-</li>
-<li>
-<p><strong>UNIQUE</strong> - 保证某列的每行必须有唯一的值。</p>
-<p>​	UNIQUE 约束唯一标识数据库表中的每条记录。</p>
-<p>​	UNIQUE 和 PRIMARY KEY 约束均为列或列集合提供了唯一性的保证。</p>
-<p>​	PRIMARY KEY 约束拥有自动定义的 UNIQUE 约束。</p>
-<p>​	请注意，每个表可以有多个 UNIQUE 约束，但是每个表只能有一个 PRIMARY KEY 约束。</p>
-</li>
-<li>
-<p><strong>PRIMARY KEY</strong> - NOT NULL 和 UNIQUE 的结合。确保某列（或两个列多个列的结合）有唯一标识，有助于更容易更快速地找到表中的一个特定的记录。</p>
-<p>​	PRIMARY KEY 约束唯一标识数据库表中的每条记录。</p>
-<p>​	主键必须包含唯一的值。</p>
-<p>​	主键列不能包含 NULL 值。</p>
-<p>​	每个表都应该有一个主键，并且每个表只能有一个主键。</p>
-</li>
-<li>
-<p><strong>FOREIGN KEY</strong> - 保证一个表中的数据匹配另一个表中的值的参照完整性。</p>
-</li>
-<li>
-<p><strong>CHECK</strong> - 保证列中的值符合指定的条件。</p>
-<p>​	如果对单个列定义 CHECK 约束，那么该列只允许特定的值。</p>
-<p>​	如果对一个表定义 CHECK 约束，那么此约束会基于行中其他列的值在特定的列中对值进行限	    	制。</p>
-</li>
-<li>
-<p><strong>DEFAULT</strong> - 规定没有给列赋值时的默认值。 如果没有规定其他的值，那么会将默认值添加到所有的新记录。</p>
-</li>
-</ul>
-<h3 id="create-index-语句">CREATE INDEX 语句</h3>
-<p>CREATE INDEX 语句用于在表中创建索引。</p>
-<p>在不读取整个表的情况下，索引使数据库应用程序可以更快地查找数据。</p>
-<pre><code>CREATE INDEX index_name
-ON table_name (column_name)//在表上创建一个简单的索引。允许使用重复的值
-
-CREATE UNIQUE INDEX index_name
-ON table_name (column_name)//在表上创建一个唯一的索引。不允许使用重复的值：唯一的索引意味着						   //两个行不能拥有相同的索引值
-</code></pre>
-<h3 id="drop">DROP</h3>
-<p>通过使用 DROP 语句，可以轻松地删除索引、表和数据库。</p>
-<h3 id="alter-table">ALTER TABLE</h3>
-<p>ALTER TABLE 语句用于在已有的表中添加、删除或修改列。</p>
-<h3 id="sql-alter-table-语法">SQL ALTER TABLE 语法</h3>
-<p>如需在表中添加列，请使用下面的语法:</p>
-<pre><code>ALTER TABLE table_name
-ADD column_name datatype
-</code></pre>
-<p>如需删除表中的列，请使用下面的语法（请注意，某些数据库系统不允许这种在数据库表中删除列的方式）：</p>
-<pre><code>ALTER TABLE table_name
-DROP COLUMN column_name
-</code></pre>
-<h3 id="auto-increment">AUTO INCREMENT</h3>
-<p>Auto-increment 会在新记录插入表中时生成一个唯一的数字。</p>
-<h3 id="视图views">视图（Views）</h3>
-<p>在 SQL 中，视图是基于 SQL 语句的结果集的可视化的表。</p>
-<p>视图包含行和列，就像一个真实的表。视图中的字段就是来自一个或多个数据库中的真实的表中的字段。</p>
-<p>您可以向视图添加 SQL 函数、WHERE 以及 JOIN 语句，也可以呈现数据，就像这些数据来自于某个单一的表一样。</p>
-<p>SQL CREATE VIEW 语法</p>
-<pre><code>CREATE VIEW view_name AS
-SELECT column_name(s)
-FROM table_name
-WHERE condition
-</code></pre>
-<p>**注释：**视图总是显示最新的数据！每当用户查询视图时，数据库引擎通过使用视图的 SQL 语句重建数据。</p>
-<p>您可以使用下面的语法来更新视图：</p>
-<p>SQL CREATE OR REPLACE VIEW 语法</p>
-<pre><code>CREATE OR REPLACE VIEW view_name AS
-SELECT column_name(s)
-FROM table_name
-WHERE condition
-</code></pre>
-<p>您可以通过 DROP VIEW 命令来删除视图。</p>
-<p>SQL DROP VIEW 语法</p>
-<pre><code>DROP VIEW view_name
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Python]]></title>
-        <id>https://xmweijh.github.io/post/python/</id>
-        <link href="https://xmweijh.github.io/post/python/">
-        </link>
-        <updated>2020-04-04T03:00:25.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="基础知识">基础知识</h2>
-<p>print括号中可以单引号或者双引号</p>
-<p>多行打印时,使用三个引号</p>
-<pre><code>print('''
-
-
-
-''')
-</code></pre>
-<p>true类型只用True 和False 注意大小写</p>
-<p>空值 None 表示无，与0 不同</p>
-<p>input（输入）</p>
-<p>当输入输出括号中字符串中还有引号，需要转义符\区别</p>
-<pre><code>&gt;&gt;&gt; string = 'hello_shiyanlou'
-&gt;&gt;&gt; string[0]  # 获取第一个字符
-'h'
-&gt;&gt;&gt; string[-2]  # 获取倒数第二个字符
-'o'
-</code></pre>
-<p>注意负值代表倒数第几个（倒数不从0开始，毕竟 -0 = 0）</p>
-<pre><code>print('你叫'+name+'，今年' + age + '岁了')
-#等价于
-print('你叫{}，今年{}岁了'.format(name,age))
-#下面代码代表保留2位小数
-print(&quot;{:.2f}&quot;.format(3.1415926))
-</code></pre>
-<p>#单行注释</p>
-<p>逻辑运算符 and 	or 	not</p>
-<p>条件判断</p>
-<pre><code>if:
-    ***
-elif:
-	***
-else:
-	***
-</code></pre>
-<p>后面加<strong>冒号</strong>  if下面的代码4个缩进</p>
-<p>input 读取的为字符串类型</p>
-<pre><code>&gt;&gt;&gt; a = 3
-&gt;&gt;&gt; if a&lt;1:
-...     print(&quot;a&lt;1&quot;)
-... else:
-...     pass
-...
-&gt;&gt;&gt; #程序没有报错
-</code></pre>
-<p>pass会跳过这里的代码执行后面的代码</p>
-<pre><code>for 元素 in 集合:
-    do something 
-</code></pre>
-<p>range(x)函数 可以生成一个从0到x-1的整数序列</p>
-<p><code>range()</code> 函数返回的并不是列表而是一种可迭代对象：</p>
-<p>range(a,b)  a 到b-1，包头不包尾</p>
-<pre><code>while condition:
-   do something
-</code></pre>
-<p>所以如果是用空格，就一直用空格缩进，不要使用制表符。</p>
-<p>建议遵守以下约定：</p>
-<ul>
-<li>使用 4 个空格来缩进</li>
-<li>永远不要混用空格和制表符</li>
-<li>在函数之间空一行</li>
-<li>在类之间空两行</li>
-<li>字典，列表，元组以及参数列表中，在 <code>,</code> 后添加一个空格。对于字典，<code>:</code> 后面也添加一个空格</li>
-<li>在赋值运算符和比较运算符周围要有空格（参数列表中除外），但是括号里则不加空格：<code>a = f(1, 2) + g(3, 4)</code></li>
-</ul>
-<p>// 取整除 - 返回商的整数部分（<strong>向下取整</strong>）</p>
-<p><code>divmod(num1, num2)</code> 返回一个元组，这个元组包含两个值，第一个是 num1 和 num2 相整除得到的值，第二个是 num1 和 num2 求余得到的值，然后我们用 <code>*</code> 运算符拆封这个元组，得到这两个值。</p>
-<p>默认情况下，<code>print()</code> 除了打印你提供的字符串之外，还会打印一个换行符   <code>print()</code> 的另一个参数 <code>end</code> 来替换这个换行符</p>
-<pre><code> print(b, end=' ') 
- print(&quot;-&quot; * 50) #打印50个-
-  #列表的元素不必是同一类型
- &gt;&gt;&gt; a = [ 1, 342, 223, 'India', 'Fedora'] 
-</code></pre>
-<p>Python 中有关下标的集合都满足左闭右开原则，切片中也是如此，也就是说集合左边界值能取到，右边界值不能取到。 对于非负索引，如果上下都在边界内，切片长度就是两个索引之差。例如 <code>a[2:4]</code> 是 2。 返回a[2]和a[3]两个</p>
-<p>切片操作还可以设置步长</p>
-<pre><code>&gt;&gt;&gt; a[1::2]
-[342, 'India']
-</code></pre>
-<p>意思是，从切片索引 1 到列表末尾，每隔两个元素取值。</p>
-<p><code>len()</code> 我们可以获得列表的长度</p>
-<p>如果你想要检查列表是否为空</p>
-<pre><code>if list_name: # 列表不为空
-    pass
-else: # 列表为空
-    pass
-</code></pre>
-<h3 id="列表">列表</h3>
-<p><code>a.append(45)</code> 添加元素 <code>45</code> 到列表末尾。有些时候我们需要将数据插入到列表的任何位置，这时我们可以使用列表的 <code>insert()</code> 方法。   <code>count(s)</code> 会返回列表元素中 <code>s</code> 的数量。  如果你想要在列表中移除任意指定值，你需要使用 <code>remove()</code> 方法。  <code>a.reverse()</code> 反转整个列表。 将一个列表的所有元素添加到另一个列表的末尾呢，可以使用列表的 <code>extend()</code> 方法。  给列表排序，我们使用列表的 <code>sort()</code> 方法， 用 <code>del</code> 关键字删除指定位置的列表元素。</p>
-<pre><code>&gt;&gt;&gt; a = [23, 45, 1, -3434, 43624356, 234]
-&gt;&gt;&gt; a.append(45)
-&gt;&gt;&gt;  a.insert(0, 1)
-&gt;&gt;&gt; a.count(45)
-</code></pre>
-<h4 id="栈">栈</h4>
-<p><code>pop()</code>。传入一个参数 i 即 <code>pop(i)</code> 会将第 i 个元素弹出。 栈使用<code>a.pop()</code> 将顶部元素弹出， <code>a.append(x)</code> 入栈</p>
-<h4 id="队列">队列</h4>
-<p><code>a.pop(0)</code> 出队 <code>a.append(x)</code> 入队</p>
-<h4 id="列表推导式">列表推导式</h4>
-<pre><code>squares = [x**2 for x in range(10)]
-&gt;&gt;&gt; [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
-[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
-#等价于
-&gt;&gt;&gt; combs = []
-&gt;&gt;&gt; for x in [1,2,3]:
-...     for y in [3,1,4]:
-...         if x != y:
-...             combs.append((x, y))
-...
-&gt;&gt;&gt; combs
-[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
-</code></pre>
-<p>列表推导式由包含一个表达式的中括号组成，表达式后面跟随一个 for 子句，之后可以有零或多个 for 或 if 子句。结果是一个列表，由表达式依据其后面的 for 和 if 子句上下文计算而来的结果构成。</p>
-<h3 id="元组">元组</h3>
-<p>元组是由数个逗号分割的值组成。</p>
-<pre><code>&gt;&gt;&gt; a = 'Fedora', 'ShiYanLou', 'Kubuntu', 'Pardus'
-&gt;&gt;&gt; a
-('Fedora', 'ShiYanLou', 'Kubuntu', 'Pardus')
-&gt;&gt;&gt; a[1]
-'ShiYanLou'
-&gt;&gt;&gt; for x in a:
-...     print(x, end=' ')
-...
-Fedora ShiYanLou Kubuntu Pardus
-</code></pre>
-<p>以对任何一个元组执行拆封操作并赋值给多个变量</p>
-<pre><code>&gt;&gt;&gt; x, y = divmod(15,2)
-&gt;&gt;&gt; x
-7
-&gt;&gt;&gt; y
-1
-</code></pre>
-<p>元组是不可变类型，这意味着你<strong>不能在元组内删除或添加或编辑</strong>任何值。</p>
-<p>要创建只含有一个元素的元组，在值后面跟一个<strong>逗号</strong>。</p>
-<p>通过内建函数 <code>type()</code> 你可以知道任意变量的数据类型。</p>
-<h3 id="集合">集合</h3>
-<p>集合是一个无序不重复元素的集。基本功能包括关系测试和消除重复元素。集合对象还支持 union（联合），intersection（交），difference（差）和 symmetric difference（对称差集）等数学运算。</p>
-<p>大括号或 set() 函数可以用来创建集合。注意：想要创建空集合，你必须使用 set() 而不是 {}。后者用于创建空字典</p>
-<pre><code>&gt;&gt;&gt; basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
-&gt;&gt;&gt; print(basket)                      # 你可以看到重复的元素被去除
-{'orange', 'banana', 'pear', 'apple'}
-&gt;&gt;&gt; 'orange' in basket
-True
-&gt;&gt;&gt; 'crabgrass' in basket
-False
-
-&gt;&gt;&gt; # 演示对两个单词中的字母进行集合操作
-...
-&gt;&gt;&gt; a = set('abracadabra')
-&gt;&gt;&gt; b = set('alacazam')
-&gt;&gt;&gt; a                                  # a 去重后的字母
-{'a', 'r', 'b', 'c', 'd'}
-&gt;&gt;&gt; a - b                              # a 有而 b 没有的字母
-{'r', 'd', 'b'}
-&gt;&gt;&gt; a | b                              # 存在于 a 或 b 的字母
-{'a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'}
-&gt;&gt;&gt; a &amp; b                              # a 和 b 都有的字母
-{'a', 'c'}
-&gt;&gt;&gt; a ^ b                              # 存在于 a 或 b 但不同时存在的字母
-{'r', 'd', 'b', 'm', 'z', 'l'}
-#添加或弹出元素
-&gt;&gt;&gt; a = {'a','e','h','g'}
-&gt;&gt;&gt; a.pop()  # pop 方法随机删除一个元素并打印
-'h'
-&gt;&gt;&gt; a.add('c')
-&gt;&gt;&gt; a
-{'c', 'e', 'g', 'a'}
-</code></pre>
-<h3 id="字典">字典</h3>
-<p>字典是是无序的键值对（<code>key:value</code>）集合，同一个字典内的键必须是互不相同的。一对大括号 <code>{}</code> 创建一个空字典。初始化字典时，在大括号内放置一组逗号分隔的键：值对，这也是字典输出的方式。我们使用键来检索存储在字典中的数据。</p>
-<pre><code>&gt;&gt;&gt; data = {'kushal':'Fedora', 'kart_':'Debian', 'Jace':'Mac'}
-&gt;&gt;&gt; data
-{'kushal': 'Fedora', 'Jace': 'Mac', 'kart_': 'Debian'}
-&gt;&gt;&gt; data['kart_']
-'Debian'
-&gt;&gt;&gt; data['parthan'] = 'Ubuntu'
-&gt;&gt;&gt; data
-{'kushal': 'Fedora', 'Jace': 'Mac', 'kart_': 'Debian', 'parthan': 'Ubuntu'}
-# 使用del关键字删除任意指定的键值对
-&gt;&gt;&gt; del data['kushal']
-&gt;&gt;&gt; data
-{'Jace': 'Mac', 'kart_': 'Debian', 'parthan': 'Ubuntu'
-# 使用 in 关键字查询指定的键是否在字典中
-&gt;&gt;&gt; 'ShiYanLou' in data
-False
-#必须知道的是，字典中的键必须是不可变类型，比如你不能使用列表作
-#为键。dict() 可以从包含键值对的元组中创建字典。
-&gt;&gt;&gt; dict((('Indian','Delhi'),('Bangladesh','Dhaka')))
-{'Indian': 'Delhi', 'Bangladesh': 'Dhaka'}
-#遍历一个字典，使用字典的 items() 方法。
-&gt;&gt;&gt; data
-{'Kushal': 'Fedora', 'Jace': 'Mac', 'kart_': 'Debian', 'parthan': 'Ubuntu'}
-&gt;&gt;&gt; for x, y in data.items():
-...     print(&quot;{} uses {}&quot;.format(x, y))
-...
-Kushal uses Fedora
-Jace uses Mac
-kart_ uses Debian
-parthan uses Ubuntu
-</code></pre>
-<p>许多时候我们需要往字典中的元素添加数据，我们首先要判断这个元素是否存在，不存在则创建一个默认值。如果在循环里执行这个操作，每次迭代都需要判断一次，降低程序性能。我们可以使用 <code>dict.setdefault(key, default)</code> 更有效率的完成这个事情。</p>
-<pre><code>&gt;&gt;&gt; data = {}
-&gt;&gt;&gt; data.setdefault('names', []).append('Ruby')
-&gt;&gt;&gt; data
-{'names': ['Ruby']}
-&gt;&gt;&gt; data.setdefault('names', []).append('Python')
-&gt;&gt;&gt; data
-{'names': ['Ruby', 'Python']}
-&gt;&gt;&gt; data.setdefault('names', []).append('C')
-&gt;&gt;&gt; data
-{'names': ['Ruby', 'Python', 'C']}
-</code></pre>
-<p>试图索引一个不存在的键将会抛出一个 <em>keyError</em> 错误。我们可以使用 <code>dict.get(key, default)</code> 来索引键，如果键不存在，那么返回指定的 default 值。</p>
-<p>如果你想要在遍历列表（或任何序列类型）的同时获得元素索引值，你可以使用 <code>enumerate()</code>。</p>
-<pre><code>&gt;&gt;&gt; for i, j in enumerate(['a', 'b', 'c']):
-...     print(i, j)
-...
-0 a
-1 b
-2 c
-</code></pre>
-<p>要同时遍历两个序列类型，你可以使用 <code>zip()</code> 函数。</p>
-<pre><code class="language-python">&gt;&gt;&gt; a = ['Pradeepto', 'Kushal']
-&gt;&gt;&gt; b = ['OpenSUSE', 'Fedora']
-&gt;&gt;&gt; for x, y in zip(a, b):
-...     print(&quot;{} uses {}&quot;.format(x, y))
-...
-Pradeepto uses OpenSUSE
-Kushal uses Fedora
-</code></pre>
-<h3 id="字符串">字符串</h3>
-<p><code>title()</code> 返回字符串的标题版本，即单词首字母大写其余字母小写。</p>
-<p>方法 <code>upper()</code> 返回字符串全部大写的版本，反之 <code>lower()</code> 返回字符串的全部小写版本。</p>
-<p>方法 <code>swapcase()</code> 返回字符串大小写交换后的版本</p>
-<p>方法 <code>isalnum()</code> 检查所有字符是否只有字母和数字</p>
-<p>方法 <code>isalpha()</code> 检查字符串之中是否只有字母。</p>
-<pre><code>&gt;&gt;&gt; s = &quot;1234&quot;
-&gt;&gt;&gt; s.isdigit() # 检查字符串是否所有字符为数字
-True
-&gt;&gt;&gt; s = &quot;ShiYanLou is coming&quot;
-&gt;&gt;&gt; s.islower() # 检查字符串是否所有字符为小写
-False
-&gt;&gt;&gt; s = &quot;Shiyanlou Is Coming&quot;
-&gt;&gt;&gt; s.istitle() # To 检查字符串是否为标题样式
-True
-&gt;&gt;&gt; s = &quot;CHINA&quot;
-&gt;&gt;&gt; s.isupper() # 检查字符串是否所有字符为大写
-True
-</code></pre>
-<p><code>split()</code> 分割任意字符串，<code>split()</code> 允许有一个参数，用来指定字符串以什么字符分隔（默认为 <code>&quot; &quot;</code>），它返回一个包含所有分割后的字符串的列表。</p>
-<p><code>join()</code> 使用指定字符连接多个字符串，它需要一个包含字符串元素的列表作为输入然后连接列表内的字符串元素。</p>
-<p>最简单的一个是 <code>strip(chars)</code>，用来剥离字符串首尾中指定的字符，它允许有一个字符串参数，这个参数为剥离哪些字符提供依据。不指定参数则默认剥离掉首尾的空格和换行符</p>
-<p><code>find()</code> 能帮助你找到第一个匹配的子字符串，没有找到则返回 -1</p>
-<p>格式化操作符（%）</p>
-<pre><code>print(&quot;my name is %s.I am %d years old&quot; % ('Shixiaolou',4))
-</code></pre>
-<p>在这个例子中，<code>%s</code> 为第一个格式符，表示一个字符串；<code>%d</code> 为第二个格式符，表示一个整数。格式符为真实值预留位置，并控制显示的格式。常用的有：</p>
-<blockquote>
-<p>%s 字符串（用 str() 函数进行字符串转换）</p>
-</blockquote>
-<blockquote>
-<p>%r 字符串（用 repr() 函数进行字符串转换）</p>
-</blockquote>
-<blockquote>
-<p>%d 十进制整数</p>
-</blockquote>
-<blockquote>
-<p>%f 浮点数</p>
-</blockquote>
-<blockquote>
-<p>%% 字符“%”</p>
-</blockquote>
-<h3 id="函数">函数</h3>
-<p><code>def</code> 来定义一个函数</p>
-<pre><code>def 函数名(参数):
-    语句1
-    语句2
-</code></pre>
-<p><code>global</code> 关键字，对函数中的a标志为全局变量 ， 让函数内部使用全局变量的 a。</p>
-<p>函数的参数变量可以有默认值，也就是说如果我们对指定的参数变量没有给出任何值则会赋其默认值。</p>
-<pre><code>&gt;&gt;&gt; def test(a , b=-99):
-...     if a &gt; b:
-...         return True
-...     else:
-...         return False
-</code></pre>
-<p>在函数的参数列表写出 <code>b = -99</code>。这表示如果调用者未给出 <code>b</code> 的值，那么 <code>b</code> 的值默认为 <code>-99</code>。</p>
-<pre><code>&gt;&gt;&gt; test(12, 23)
-False
-&gt;&gt;&gt; test(12)
-True
-</code></pre>
-<p>有两个非常重要的地方，第一个是具有默认值的参数后面不能再有普通参数，比如 <code>f(a,b=90,c)</code> 就是错误的。</p>
-<p>第二个是默认值只被赋值一次，因此如果默认值是任何可变对象时会有所不同，比如列表、字典或大多数类的实例。</p>
-<pre><code>&gt;&gt;&gt; def f(a, data=[]):
-...     data.append(a)
-...     return data
-...
-&gt;&gt;&gt; print(f(1))
-[1]
-&gt;&gt;&gt; print(f(2))
-[1, 2]
-&gt;&gt;&gt; print(f(3))
-[1, 2, 3]
-</code></pre>
-<pre><code>&gt;&gt;&gt; def f(a, data=None):
-...     if data is None:
-...         data = []
-...     data.append(a)
-...     return data
-...
-&gt;&gt;&gt; print(f(1))
-[1]
-&gt;&gt;&gt; print(f(2))
-[2]
-</code></pre>
-<p>高阶函数（<em>Higher-order function</em>）或仿函数（<em>functor</em>）是可以接受函数作为参数的函数：</p>
-<ul>
-<li>使用一个或多个函数作为参数</li>
-<li>返回另一个函数作为输出</li>
-</ul>
-<p>Python 里的任何函数都可以作为高阶函数</p>
-<pre><code># 创建一个函数，将参数列表中每个元素都变成全大写
-&gt;&gt;&gt; def high(l):
-...     return [i.upper() for i in l]
-...
-# 创建高阶函数，接受一个函数和一个列表作为参数
-&gt;&gt;&gt; def test(h, l):
-...     return h(l)
-...
-&gt;&gt;&gt; l = ['python', 'Linux', 'Git']
-# 运行高阶函数，返回预期的结果
-&gt;&gt;&gt; test(high, l)
-['PYTHON', 'LINUX', 'GIT']
-</code></pre>
-<p><code>map</code> 是一个在 Python 里非常有用的高阶函数。它接受一个函数和一个序列（迭代器）作为输入，然后对序列（迭代器）的每一个值应用这个函数，返回一个序列（迭代器），其包含应用函数后的结果。</p>
-<h3 id="文件">文件</h3>
-<p>使用 <code>open()</code> 函数打开文件。它需要两个参数，第一个参数是文件路径或文件名，第二个是文件的打开模式。模式通常是下面这样的：</p>
-<ul>
-<li>
-<p><code>&quot;r&quot;</code>，以只读模式打开，你只能读取文件但不能编辑/删除文件的任何内容</p>
-</li>
-<li>
-<p><code>&quot;w&quot;</code>，以写入模式打开，如果文件存在将会删除里面的所有内容，然后打开这个文件进行写入</p>
-</li>
-<li>
-<p><code>&quot;a&quot;</code>，以追加模式打开，写入到文件中的任何数据将自动添加到末尾</p>
-<p>默认的模式为只读模式，也就是说如果你不提供任何模式，<code>open()</code> 函数将会以只读模式打开文件。</p>
-<p><code>close()</code> 关闭文件</p>
-<p><code>read()</code> 方法一次性读取整个文件。  <code>read(size)</code> 有一个可选的参数 <code>size</code>，用于指定字符串长度。如果没有指定 <code>size</code> 或者指定为负数，就会读取并返回整个文件。</p>
-</li>
-</ul>
-<p><code>readline()</code> 能帮助你每次读取文件的一行。  使用 <code>readlines()</code> 方法读取所有行到一个列表中。</p>
-<p><code>write()</code> 方法打开一个文件写入一些文本。</p>
-<p>模块 <code>sys</code>。<code>sys.argv</code> 包含所有命令行参数。这个程序的功能完全可以使用 shell 的 <code>cp</code> 命令替代：在 <code>cp</code> 后首先输入被拷贝的文件的文件名，然后输入新文件名。</p>
-<p><code>with</code> 语句处理文件对象，它会在文件用完后会自动关闭，就算发生异常也没关系。它是 try-finally 块的简写</p>
-<p>在 Linux 下你可以使用 <code>lscpu</code> 命令来查看当前电脑的 CPU 相关信息 ， 实际上 <code>lscpu</code> 命令是读取 <code>/proc/cpuinfo</code> 这个文件的信息并美化输出，现在你可以自己写一个 Python 程序以只读模式读取 <code>/proc/cpuinfo</code> 这个文件，然后打印出来，这样你就有自己的一个 Python 版本的 <code>lscpu</code> 命令了 :）</p>
-<h3 id="异常">异常</h3>
-<p>我们使用 <code>try...except</code> 块来处理任意异常。基本的语法像这样：</p>
-<pre><code>try:
-    statements to be inside try clause
-    statement2
-    statement3
-    ...
-except ExceptionName:
-    statements to evaluated in case of ExceptionName happens
-</code></pre>
-<p>使用 <code>raise</code> 语句抛出一个异常。</p>
-<pre><code>&gt;&gt;&gt; try:
-...     raise ValueError(&quot;A value error happened.&quot;)
-... except ValueError:
-...     print(&quot;ValueError in our code.&quot;)
-...
-ValueError in our code.
-</code></pre>
-<p><code>try</code> 语句还有另一个可选的 <code>finally</code> 子句，目的在于定义在任何情况下都一定要执行的功能， 不管有没有发生异常，<code>finally</code> 子句 在程序离开 <code>try</code> 后都一定会被执行。当 <code>try</code> 语句中发生了未被 <code>except</code> 捕获的异常（或者它发生在 <code>except</code> 或 <code>else</code> 子句中），在 <code>finally</code> 子句执行完后它会被重新抛出。</p>
-<p><code>with</code> 语句，它是 <code>try-finally</code> 块的简写，使用 <code>with</code> 语句能保证文件始终被关闭。</p>
-<h3 id="类">类</h3>
-<pre><code>class nameoftheclass(parent_class):
-    statement1
-    statement2
-    statement3
-</code></pre>
-<p>在类的声明中你可以写任何 Python 语句，包括定义函数（在类中我们称为方法）。</p>
-<p>类的实例化使用函数符号。只要将类对象看作是一个返回新的类实例的无参数函数即可。 <code>x = MyClass()</code></p>
-<p>类定义了 <code>__init__()</code> 方法的话，类的实例化操作会自动为新创建的类实例调用 <code>__init__()</code> 方法。</p>
-<pre><code>def __init__(self):
-    self.data = []
-</code></pre>
-<p>一个类可以继承自多个类，具有父类的所有变量和方法，语法如下：</p>
-<pre><code>class MyClass(Parentclass1, Parentclass2,...):
-    def __init__(self):
-        Parentclass1.__init__(self)
-        Parentclass2.__init__(self)
-        ...
-        ...
-</code></pre>
-<p>删除一个对象使用关键字 <code>del</code> 。</p>
-<p>更精确的调整控制属性访问权限，你可以使用 <code>@property</code> 装饰器，<code>@property</code> 装饰器就是负责把一个方法变成属性调用的。</p>
-<h3 id="模块">模块</h3>
-<p>模块是包括 Python 定义和声明的文件。文件名就是模块名加上 <code>.py</code> 后缀。</p>
-<p>从模块中导入指定的函数。这样做：</p>
-<pre><code>&gt;&gt;&gt; from bars import simplebar, starbar
-&gt;&gt;&gt; simplebar(20)
-</code></pre>
-<p>含有 <code>__init__.py</code> 文件的目录可以用来作为一个包，目录里的所有 <code>.py</code> 文件都是这个包的子模块。</p>
-<p><a href="http://docs.python.org/3/library/os.html#module-os"><code>os</code></a> 模块提供了与操作系统相关的功能。<code>getuid()</code> 函数返回当前进程的有效用户 id。<code>getpid()</code> 函数返回当前进程的 id。<code>getppid()</code> 返回父进程的 id。<code>uname()</code> 函数返回识别操作系统的不同信息，在 Linux 中它返回的详细信息可以从 <code>uname -a</code> 命令得到。<code>uname()</code> 返回的对象是一个元组，<code>（sysname, nodename, release, version, machine）</code>。getcwd() 函数返回当前工作目录。<code>chdir(path)</code> 则是更改当前目录到 path。</p>
-<p><a href="http://docs.python-requests.org/zh_CN/latest/">Requests</a> 是一个第三方 Python 模块， 第三方模块并不是默认的模块，意味着你需要安装它，我们使用 <code>pip3</code> 安装它。</p>
-<pre><code>$ sudo apt-get update
-$ sudo apt-get install python3-pip
-$ sudo pip3 install requests
-</code></pre>
-<p>你可以使用 <code>get()</code> 方法获取任意一个网页。</p>
-<pre><code>&gt;&gt;&gt; import requests
-&gt;&gt;&gt; req = requests.get('https://github.com')
-&gt;&gt;&gt; req.status_code
-200
-</code></pre>
-<p><code>req</code> 的 <code>text</code> 属性存有服务器返回的 HTML 网页使用这个知识，让我们写一个能够从指定的 URL 中下载文件的程序。</p>
-<pre><code>#!/usr/bin/env python3
-import requests
-
-def download(url):
-    '''
-    从指定的 URL 中下载文件并存储到当前目录
-    url: 要下载页面内容的网址
-    '''
-    # 检查 URL 是否存在
-    try:
-        req = requests.get(url)
-    except requests.exceptions.MissingSchema:
-        print('Invalid URL &quot;{}&quot;'.format(url))
-        return
-    # 检查是否成功访问了该网站
-    if req.status_code == 403:
-        print('You do not have the authority to access this page.')
-        return
-    filename = url.split('/')[-1]
-    with open(filename, 'w') as fobj:
-        fobj.write(req.content.decode('utf-8'))
-    print(&quot;Download over.&quot;)
-
-if __name__ == '__main__':
-    url = input('Enter a URL: ')
-    download(url)
-</code></pre>
-<p><code>if __name__ == '__main__':</code> 这条语句，它的作用是，只有在当前模块名为 <code>__main__</code> 的时候（即作为脚本执行的时候）才会执行此 <code>if</code> 块内的语句。换句话说，当此文件以模块的形式导入到其它文件中时，<code>if</code> 块内的语句并不会执行。</p>
-<p>命令行传入的所有参数都可以使用 <code>sys.argv</code> 获取。如果希望对参数进行处理可以使用 <code>argparse</code> 模块</p>
-<h4 id="collections-模块">collections  模块</h4>
-<h5 id="counter">Counter</h5>
-<pre><code>&gt;&gt;&gt; from collections import Counter
-&gt;&gt;&gt; import re
-&gt;&gt;&gt; path = '/usr/lib/python3.5/LICENSE.txt'
-&gt;&gt;&gt; words = re.findall('\w+', open(path).read().lower())
-&gt;&gt;&gt; Counter(words).most_common(10)
-[('the', 80), ('or', 78), ('1', 66), ('of', 61), ('to', 50), ('and', 48), ('python', 46), ('in', 38), ('license', 37), ('any', 37)]
-</code></pre>
-<p>Counter 对象有一个叫做 <code>elements()</code> 的方法，其返回的序列中，依照计数重复元素相同次数，元素顺序是无序的。</p>
-<pre><code>&gt;&gt;&gt; c = Counter(a=4, b=2, c=0, d=-2)
-&gt;&gt;&gt; list(c.elements())
-['b','b','a', 'a', 'a', 'a']
-</code></pre>
-<p><code>most_common()</code> 方法返回最常见的元素及其计数，顺序为最常见到最少。</p>
-<pre><code>&gt;&gt;&gt; c = Counter(a=4, b=2, c=0, d=-2)
-&gt;&gt;&gt; list(c.elements())
-['b','b','a', 'a', 'a', 'a']
-</code></pre>
-<h5 id="defaultdict">defaultdict</h5>
-<p><code>defaultdict</code> 是内建 <code>dict</code> 类的子类，它覆写了一个方法并添加了一个可写的实例变量。其余功能与字典相同。  <code>defaultdict()</code> 第一个参数提供了 <code>default_factory</code> 属性的初始值，默认值为 <code>None</code>，<code>default_factory</code> 属性值将作为字典的默认数据类型。所有剩余的参数与字典的构造方法相同，包括关键字参数。  同样的功能使用 <code>defaultdict</code> 比使用 <code>dict.setdefault</code> 方法快。</p>
-<pre><code>&gt;&gt;&gt; from collections import defaultdict
-&gt;&gt;&gt; s = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
-&gt;&gt;&gt; d = defaultdict(list)
-&gt;&gt;&gt; for k, v in s:
-...     d[k].append(v)
-...
-&gt;&gt;&gt; d.items()
-dict_items([('blue', [2, 4]), ('red', [1]), ('yellow', [1, 3])])
-</code></pre>
-<h5 id="namedtuple">namedtuple</h5>
-<p>命名元组有助于对元组每个位置赋予意义，并且让我们的代码有更好的可读性和自文档性。你可以在任何使用元组地方使用命名元组。在例子中我们会创建一个命名元组以展示为元组每个位置保存信息。</p>
-<pre><code>&gt;&gt;&gt; from collections import namedtuple
-&gt;&gt;&gt; Point = namedtuple('Point', ['x', 'y'])  # 定义命名元组
-&gt;&gt;&gt; p = Point(10, y=20)  # 创建一个对象
-&gt;&gt;&gt; p
-Point(x=10, y=20)
-&gt;&gt;&gt; p.x + p.y
-30
-&gt;&gt;&gt; p[0] + p[1]  # 像普通元组那样访问元素
-30
-&gt;&gt;&gt; x, y = p     # 元组拆封
-&gt;&gt;&gt; x
-10
-&gt;&gt;&gt; y
-20
-</code></pre>
-<h3 id="python排版">Python排版</h3>
-<p>每层缩进使用4个空格。</p>
-<p>限制每行的最大长度为79个字符。</p>
-<p>限制每行的最大长度为79个字符。</p>
-<p>顶级函数和类定义上下使用两个空行分隔。</p>
-<p>类内的方法定义使用一个空行分隔。</p>
-<p>顶级函数和类定义上下使用两个空行分隔。</p>
-<p>类内的方法定义使用一个空行分隔。</p>
-<p><code>import</code>语句分组顺序如下：</p>
-<ol>
-<li>导入标准库模块</li>
-<li>导入相关第三方库模块</li>
-<li>导入当前应用程序/库模块</li>
-</ol>
-<p>避免在下列情况中使用多余的空格：</p>
-<ul>
-<li>
-<p>与括号保持紧凑（小括号、中括号、大括号）：</p>
-</li>
-<li>
-<p>与后面的逗号、分号或冒号保持紧凑</p>
-</li>
-<li>
-<p>切片内的冒号就像二元操作符一样，任意一侧应该被等同对待（把它当做一个极低优先级的操作）。在一个可扩展的切片中，冒号两侧必须有相同的空格数量。例外：切片参数省略时，空格也省略。</p>
-</li>
-<li>
-<p>函数名与其后参数列表的左括号应该保持紧凑</p>
-</li>
-<li>
-<p>与切片或索引的左括号保持紧凑</p>
-</li>
-<li>
-<p>在赋值操作符（或其它）的两侧保持多余一个的空格</p>
-</li>
-<li>
-<p>总是在这些二元操作符的两侧加入一个空格：赋值(=)，增量赋值(+=, -= etc.)，比较(==, &lt;, &gt;, !=, &lt;&gt;, &lt;=, &gt;=, in, not in, is, is not)，布尔运算(and, or, not)。</p>
-</li>
-<li>
-<p>在不同优先级之间，考虑在更低优先级的操作符两侧插入空格。用你自己的判断力；但不要使用超过一个空格，并且在二元操作符的两侧有相同的空格数。</p>
-</li>
-<li>
-<p>不要在关键值参数或默认值参数的等号两边加入空格。</p>
-</li>
-<li>
-<p>【注：Python 3】带注释的函数定义中的等号两侧要各插入空格。此外，在冒号后用一个单独的空格，也要在表明函数返回值类型的<code>-&gt;</code>左右各插入一个空格。</p>
-</li>
-<li>
-<p>打消使用复合语句（多条语句在同一行）的念头。</p>
-</li>
-<li>
-<p>有时候把 <code>if/for/while</code> 和一个小的主体放在同一行也是可行的，千万不要在有多条语句的情况下这样做。此外，还要避免折叠，例如长行。</p>
-<p>块注释通常用来说明跟随在其后的代码，应该与那些代码有相同的缩进层次。块注释每一行以<code>#</code>起头，并且<code>#</code>后要跟一个空格（除非是注释内的缩进文本）。</p>
-<p>有节制的使用行内注释。</p>
-<p>一个行内注释与语句在同一行。行内注释应该至少与语句相隔两个空格。以<code>#</code>打头，<code>#</code>后接一个空格。</p>
-<p>无谓的行内注释如果状态明显，会转移注意力。</p>
-<ul>
-<li>为所有的公共模块、函数、类和方法编写文档字符串。对于非公共的方法，文档字符串是不必要的，但是也应该有注释来说明代码是干什么的。这个注释应该放在方法声明的下面。</li>
-<li><a href="https://www.python.org/dev/peps/pep-0257">PEP 257</a> 描述了良好的文档字符串的约定。注意，文档字符串的结尾<code>&quot;&quot;&quot;</code>应该放在单独的一行，例如：</li>
-<li>对于单行的文档字符串，把结尾<code>&quot;&quot;&quot;</code>放在同一行。</li>
-</ul>
-</li>
-</ul>
-<h3 id="迭代器">迭代器</h3>
-<p>Python 迭代器（<em>Iterators</em>）对象在遵守迭代器协议时需要支持如下两种方法。</p>
-<p><code>__iter__()</code>，返回迭代器对象自身。这用在 <code>for</code> 和 <code>in</code> 语句中。</p>
-<p><code>__next__()</code>，返回迭代器的下一个值。如果没有下一个值可以返回，那么应该抛出 <code>StopIteration</code> 异常。</p>
-<pre><code>class Counter(object):
-    def __init__(self, low, high):
-        self.current = low
-        self.high = high
-
-    def __iter__(self):
-        return self
-
-    def __next__(self):
-        #返回下一个值直到当前值大于 high
-        if self.current &gt; self.high:
-            raise StopIteration
-        else:
-            self.current += 1
-            return self.current - 1
-            
-   
-&gt;&gt;&gt; c = Counter(5,10)
-&gt;&gt;&gt; for i in c:
-...   print(i, end=' ')
-...
-5 6 7 8 9 10
-</code></pre>
-<p>请记住迭代器只能被使用一次。这意味着迭代器一旦抛出 <code>StopIteration</code>，它会持续抛出相同的异常。</p>
-<p>Python 生成器（<em>Generators</em>），生成器是更简单的创建迭代器的方法，这通过在函数中使用 <code>yield</code> 关键字完成：</p>
-<pre><code>&gt;&gt;&gt; def my_generator():
-...     print(&quot;Inside my generator&quot;)
-...     yield 'a'
-...     yield 'b'
-...     yield 'c'
-...
-&gt;&gt;&gt; my_generator()
-&lt;generator object my_generator at 0x7fbcfa0a6aa0&gt;
-
-&gt;&gt;&gt; for char in my_generator():
-...     print(char)
-...
-Inside my generator
-a
-b
-c
-
-&gt;&gt;&gt; def counter_generator(low, high):
-...     while low &lt;= high:
-...        yield low
-...        low += 1
-... 
-&gt;&gt;&gt; for i in counter_generator(5,10):
-...     print(i, end=' ')
-... 
-5 6 7 8 9 10
-</code></pre>
-<p>我们会发现生成器的一个特点：它们是不可重复使用的。</p>
-<p>生成器表达式（<em>Generator expressions</em>），生成器表达式是列表推导式和生成器的一个高性能，内存使用效率高的推广。</p>
-<pre><code>&gt;&gt;&gt; sum([x*x for x in range(1,10)])
-</code></pre>
-<p>这个例子实际上首先在内存中创建了一个平方数值的列表，然后遍历这个列表，最终求和后释放内存。</p>
-<pre><code>&gt;&gt;&gt; sum(x*x for x in range(1,10))
-</code></pre>
-<p>生成器表达式的语法要求其总是直接在在一对括号内，并且不能在两边有逗号。</p>
-<p>闭包（<em>Closures</em>）是由另外一个函数返回的函数。我们使用闭包去除重复代码。在下面的例子中我们创建了一个简单的闭包来对数字求和。</p>
-<pre><code>&gt;&gt;&gt; def add_number(num):
-...     def adder(number):
-...         #adder 是一个闭包
-...         return num + number
-...     return adder
-...
-&gt;&gt;&gt; a_10 = add_number(10)
-&gt;&gt;&gt; a_10(21)
-31
-&gt;&gt;&gt; a_10(34)
-44
-&gt;&gt;&gt; a_5 = add_number(5)
-&gt;&gt;&gt; a_5(3)
-8
-</code></pre>
-<p>装饰器（<em>Decorators</em>）用来给一些对象动态的添加一些新的行为，我们使用过的闭包也是这样的。</p>
-<pre><code>&gt;&gt;&gt; def my_decorator(func):
-...     def wrapper(*args, **kwargs):
-...         print(&quot;Before call&quot;)
-...         result = func(*args, **kwargs)
-...         print(&quot;After call&quot;)
-...         return result
-...     return wrapper
-...
-&gt;&gt;&gt; @my_decorator
-... def add(a, b):
-...     #我们的求和函数
-...     return a + b
-...
-&gt;&gt;&gt; add(1, 3)
-Before call
-After call
-4
-</code></pre>
 ]]></content>
     </entry>
 </feed>
