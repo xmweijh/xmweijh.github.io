@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>其他 | 小虾米的记录</title>
+<title>window.onload与setInterval的作用域问题 | 小虾米的记录</title>
 
 <link rel="shortcut icon" href="https://xmweijh.github.io//favicon.ico?v=1615953117886">
 
@@ -33,11 +33,11 @@
 <!--<script src="media/scripts/index.js"></script>-->
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <style>
+    <style>
     /* 导航栏样式 */
     .navbar {
         position: relative;
@@ -198,174 +198,77 @@
         }
     }
 </script>
-        <div class="current-tag-container">
-            <h2 class="title gt-c-content-color-first">
-                #其他
-            </h2>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    window.onload与setInterval的作用域问题
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-02-23 ·
+                    </time>
+                    
+                        <a href="https://xmweijh.github.io/tag/vXmkk1Jyb/" class="post-tags">
+                            # web
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>今天用js做一个黑白块小游戏时，将函数体封装到window.load中时，结果显示</p>
+<pre><code class="language-js">//错误
+Uncaught ReferenceError: start is not defined
+    at HTMLButtonElement.onclick (index.html:15)
+    //代码
+    //&lt;button class=&quot;start&quot; onclick=&quot;start()&quot;&gt;
+</code></pre>
+<p>检查后发现，点击事件在行内式声明，由于作用域的原因是读取不到onload中的start函数的</p>
+<p>然后将点击事件封装在onload中</p>
+<pre><code class="language-js">star.addEventListener('click', start);
+//点击开始游戏按钮 开始游戏
+function start() {
+    if (!flag) {
+        init();
+    } else {
+        alert('游戏已经开始，无须再次点击！');
+    }
+}
+</code></pre>
+<p>本以为解决了问题，兴致勃勃的打开浏览器。等来的却是又一个错误TAT</p>
+<pre><code class="language-js">VM28:1 Uncaught ReferenceError: move is not defined
+    at &lt;anonymous&gt;:1:1
+</code></pre>
+<p>又是作用域的原因！结果调试发现在定时器这里出问题了</p>
+<pre><code> clock = window.setInterval('move()', 30);
+</code></pre>
+<p>通过查阅资料得知，setInterval这个方法是<strong>window对象</strong>的方法，window对象，window对象，window对象！！！（重要的事情说三遍,而且他前面明明这么大的<strong>window.</strong>)，没错！又是作用域的问题！也就是说这个方法是执行在全局作用域下，而我定义的方法没有在全局作用域下，肯定找不到了。</p>
+<p>window.onload = function(){};是一个作用域i，函数调用在window.onload这个作用域的外面调用就会出错</p>
+<p>所以再写代码的时候一定要注意<strong>作用域</strong>！</p>
+<p>最后乖乖的去掉了onload，将js引用在下面，果然一举成功！🐂</p>
+<p>还有一点值得注意的是</p>
+<pre><code>window.onload = function () {};    // JavaScript 
+$(document).ready(function () {}); // jQuery
+</code></pre>
+<p>二者的区别，window.onload只能用一次，第二次会覆盖第一次的执行。而$(function() {});可以多次使用 ，且只是DOM元素加载完就执行。</p>
+
+                </div>
+            </article>
         </div>
-        <div class="post-list-container">
-    <div class="post-inner">
+
         
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://xmweijh.github.io/post/za-ji/">
-                            <span class="post-title gt-c-content-color-first">杂记</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2021-03-17 ·
-                        </time>
-                        
-                            <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="post-tag">
-                                # 其他
-                            </a>
-                        
-                    </div>
-                </div>
-                
-                    <a href="https://xmweijh.github.io/post/za-ji/" class="post-feature-image"
-                       style="background-image: url('https://imgs.aixifan.com/o_1f0t071491gin1fua17i17um18ld0.jpeg?imageView2/1/w/200/h/110')">
-                    </a>
-                
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://xmweijh.github.io/post/js-xu/" class="post-title gt-a-link">
+                    JS续
+                </a>
             </div>
         
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://xmweijh.github.io/post/sql-yu-yan/">
-                            <span class="post-title gt-c-content-color-first">SQL语言</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2020-04-28 ·
-                        </time>
-                        
-                            <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="post-tag">
-                                # 其他
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
+
         
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://xmweijh.github.io/post/git/">
-                            <span class="post-title gt-c-content-color-first">Git</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2020-03-21 ·
-                        </time>
-                        
-                            <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="post-tag">
-                                # 其他
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
+
         
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://xmweijh.github.io/post/linux-chang-yong-cao-zuo/">
-                            <span class="post-title gt-c-content-color-first">Linux常用操作</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2020-03-21 ·
-                        </time>
-                        
-                            <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="post-tag">
-                                # 其他
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
+
         
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://xmweijh.github.io/post/matlab-de-yi-xie-dian/">
-                            <span class="post-title gt-c-content-color-first">Matlab的一些点</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2020-03-14 ·
-                        </time>
-                        
-                            <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="post-tag">
-                                # 其他
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://xmweijh.github.io/post/hui-bian-yu-yan-de-yi-xie-ji-chu-zhi-shi/">
-                            <span class="post-title gt-c-content-color-first">汇编语言的一些基础知识</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2020-03-14 ·
-                        </time>
-                        
-                            <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="post-tag">
-                                # 其他
-                            </a>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        
-    </div>
-</div>
-        <div class="pagination-container">
-    
-    
-</div>
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">努力成就自我</div>

@@ -1,0 +1,1143 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>杂记 | 小虾米的记录</title>
+
+<link rel="shortcut icon" href="https://xmweijh.github.io//favicon.ico?v=1615953117886">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://xmweijh.github.io//styles/main.css">
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
+
+<style>
+    hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <style>
+    /* 导航栏样式 */
+    .navbar {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    .navbar-brand {
+        display: inline-block;
+        padding-top: 0.3125rem;
+        padding-bottom: 0.3125rem;
+        margin-right: 1rem;
+        font-size: 1.25rem;
+        line-height: inherit;
+        white-space: nowrap;
+    }
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        text-decoration: none;
+    }
+
+    .navbar-nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+    .navbar-collapse {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .navbar-toggler {
+        padding: 0.25rem 0.75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+    }
+
+    .navbar-toggler:hover,
+    .navbar-toggler:focus {
+        text-decoration: none;
+    }
+
+    @media (min-width: 992px) {
+        .navbar-expand-lg {
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+        }
+
+        .navbar-expand-lg .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .navbar-expand-lg .navbar-collapse {
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -ms-flex-preferred-size: auto;
+            flex-basis: auto;
+        }
+
+        .navbar-expand-lg .navbar-toggler {
+            display: none;
+        }
+    }
+
+    @media (max-width: 991px) {
+        #navbarSupportedContent {
+            display: none;
+        }
+    }
+</style>
+<nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            小虾米的记录
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+            <div class="nav-item">
+                
+                <a href="/" class="menu gt-a-link">
+                    首页
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/archives" class="menu gt-a-link">
+                    归档
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/tags" class="menu gt-a-link">
+                    标签
+                </a>
+                
+            </div>
+            
+            <div class="nav-item">
+                
+                <a href="/post/about" class="menu gt-a-link">
+                    关于
+                </a>
+                
+            </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1615953117886"
+                action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function () {
+        var element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    }
+</script>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    杂记
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-03-17 ·
+                    </time>
+                    
+                        <a href="https://xmweijh.github.io/tag/JFXI2yDAQ/" class="post-tags">
+                            # 其他
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>平常做题 写代码遇到的一些问题</p>
+<h1 id="test">TEST</h1>
+<h3 id="阶乘计算升级版"><strong>阶乘计算升级版</strong></h3>
+<p>本题要求实现一个打印非负整数阶乘的函数。</p>
+<p>函数接口定义：</p>
+<pre><code class="language-c++">void Print_Factorial ( const int N );
+</code></pre>
+<p>其中<code>N</code>是用户传入的参数，其值不超过1000。如果<code>N</code>是非负整数，则该函数必须在一行中打印出<code>N</code>!的值，否则打印“Invalid input”。</p>
+<p>首先想到的方法是</p>
+<pre><code class="language-c">void Print_Factorial ( const int N )
+{
+    long long sum = 1;
+    if(N == 0)
+        printf(&quot;%lld&quot;,sum);
+    else if (N &gt;0)
+    {
+        int i;
+        for(i = 1;i&lt;=N;i++)
+        {
+                sum = sum *i;
+        }
+         printf(&quot;%lld&quot;,sum);
+    }
+    else
+        printf(&quot;Invalid input&quot;);
+}
+
+</code></pre>
+<p>但是 N取最大时不能正确运行。重点在与阶乘的结果很大，即便是long long int 任然不够<code>，*long long int的范围最大为10的18次方，使用斯特林公式计算可知，n为12时，结果的位数已经为9,故N取1000一定远远超过了long long Int的范围*</code>， 因此需要另辟蹊径。</p>
+<hr>
+<p><strong>求大数n！的位数。</strong></p>
+<p>根据n! = (int)log(n!)+1</p>
+<p>方法1：</p>
+<p>log(n!) = log(1<em>2</em>3*...*n) = log1+log2+...+logn</p>
+<p>方法2：</p>
+<p>斯大林公式：</p>
+<p>n! = sqrt(2<em>PI</em>n)*(n/e)^n</p>
+<p>两侧取对数有</p>
+<p>log10(n!) = 1/2log(2<em>PI</em>n) + n*log(n/e)</p>
+<hr>
+<p>利用类似乘法竖式计算的方法逐位相乘</p>
+<pre><code class="language-c">else if(N&gt;12&amp;&amp;N&lt;=1000){
+		int num[3000] = {0};
+		num[0] = 1;
+		int k=1;  //位数
+		int n=0;  //进位
+		int temp;
+		for(int i=2 ;i&lt;=N ;i++){
+			for(int j=0;j&lt;k;j++){
+				temp = num[j]*i+n;  //每一位相乘 再+进位
+				num[j] = temp%10;	//更新每一位的数字
+				n = temp/10;		//判断能否进位
+			}	
+			while(n!=0){  //如果可以进位
+				num[k] = n%10;  //新增一位
+				n /=10;  //继续判断能否进位
+				k++;
+			}
+		}
+		for(int x=k-1;x&gt;=0;x--){		//输出数字
+			printf(&quot;%d&quot;,num[x]);
+		}
+	}
+
+</code></pre>
+<h3 id="单链表逆转">单链表逆转</h3>
+<pre><code class="language-c">List Reverse( List L )
+{
+    List head,next,prev;
+    prev = NULL;
+    head = L;
+    while(head != NULL)
+    {
+        next = head-&gt;Next;
+        head-&gt;Next = prev;
+        prev = head;
+        head = next;
+    }
+    return prev;
+}
+</code></pre>
+<h3 id="链式表操作集">链式表操作集</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define ERROR NULL
+typedef int ElementType;
+typedef struct LNode *PtrToLNode;
+struct LNode {
+    ElementType Data;
+    PtrToLNode Next;
+};
+typedef PtrToLNode Position;
+typedef PtrToLNode List;
+
+Position Find( List L, ElementType X );
+List Insert( List L, ElementType X, Position P );
+List Delete( List L, Position P );
+
+int main()
+{
+    List L;
+    ElementType X;
+    Position P, tmp;
+    int N;
+
+    L = NULL;
+    scanf(&quot;%d&quot;, &amp;N);
+    while ( N-- ) {
+        scanf(&quot;%d&quot;, &amp;X);
+        L = Insert(L, X, L);
+        if ( L==ERROR ) printf(&quot;Wrong Answer\n&quot;);
+    }
+    scanf(&quot;%d&quot;, &amp;N);
+    while ( N-- ) {
+        scanf(&quot;%d&quot;, &amp;X);
+        P = Find(L, X);
+        if ( P == ERROR )
+            printf(&quot;Finding Error: %d is not in.\n&quot;, X);
+        else {
+            L = Delete(L, P);
+            printf(&quot;%d is found and deleted.\n&quot;, X);
+            if ( L==ERROR )
+                printf(&quot;Wrong Answer or Empty List.\n&quot;);
+        }
+    }
+    L = Insert(L, X, NULL);
+    if ( L==ERROR ) printf(&quot;Wrong Answer\n&quot;);
+    else
+        printf(&quot;%d is inserted as the last element.\n&quot;, X);
+    P = (Position)malloc(sizeof(struct LNode));
+    tmp = Insert(L, X, P);
+    if ( tmp!=ERROR ) printf(&quot;Wrong Answer\n&quot;);
+    tmp = Delete(L, P);
+    if ( tmp!=ERROR ) printf(&quot;Wrong Answer\n&quot;);
+    for ( P=L; P; P = P-&gt;Next ) printf(&quot;%d &quot;, P-&gt;Data);
+    return 0;
+}
+
+/* 你的代码将被嵌在这里 */
+Position Find( List L, ElementType X ){
+    while(L!=NULL){
+        if(L-&gt;Data == X){
+            return L;
+        }
+        L = L-&gt;Next;
+    }
+    return ERROR;
+}
+List Insert( List L, ElementType X, Position P ){
+    List head = L;
+    List p = (List)malloc(sizeof(List));
+    p-&gt;Data=X;
+    p-&gt;Next=NULL;
+    if(L==P){
+        p-&gt;Next=L;
+        return p;
+    }
+    while(L){
+        if(P==L-&gt;Next){
+            p-&gt;Next=L-&gt;Next;
+            L-&gt;Next=p;
+            return head;
+        }
+        L=L-&gt;Next;
+    }
+    printf(&quot;Wrong Position for Insertion\n&quot;);
+     return ERROR;
+}
+List Delete( List L, Position P ){
+    if(L==P){
+        L=L-&gt;Next;
+        return L;
+    }
+    List head = L;
+    while(L){
+        if(L-&gt;Next==P){
+            L-&gt;Next=P-&gt;Next;
+            return head;
+        }
+        L=L-&gt;Next;
+    }
+    printf(&quot;Wrong Position for Deletion\n&quot;);
+    return ERROR;
+}
+
+</code></pre>
+<h3 id="带头结点的链式表操作集">带头结点的链式表操作集</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define ERROR NULL
+typedef enum {false, true} bool;
+typedef int ElementType;
+typedef struct LNode *PtrToLNode;
+struct LNode {
+    ElementType Data;
+    PtrToLNode Next;
+};
+typedef PtrToLNode Position;
+typedef PtrToLNode List;
+
+List MakeEmpty();
+Position Find( List L, ElementType X );
+bool Insert( List L, ElementType X, Position P );
+bool Delete( List L, Position P );
+
+int main()
+{
+    List L;
+    ElementType X;
+    Position P;
+    int N;
+    bool flag;
+
+    L = MakeEmpty();
+    scanf(&quot;%d&quot;, &amp;N);
+    while ( N-- ) {
+        scanf(&quot;%d&quot;, &amp;X);
+        flag = Insert(L, X, L-&gt;Next);
+        if ( flag==false ) printf(&quot;Wrong Answer\n&quot;);
+    }
+    scanf(&quot;%d&quot;, &amp;N);
+    while ( N-- ) {
+        scanf(&quot;%d&quot;, &amp;X);
+        P = Find(L, X);
+        if ( P == ERROR )
+            printf(&quot;Finding Error: %d is not in.\n&quot;, X);
+        else {
+            flag = Delete(L, P);
+            printf(&quot;%d is found and deleted.\n&quot;, X);
+            if ( flag==false )
+                printf(&quot;Wrong Answer.\n&quot;);
+        }
+    }
+    flag = Insert(L, X, NULL);
+    if ( flag==false ) printf(&quot;Wrong Answer\n&quot;);
+    else
+        printf(&quot;%d is inserted as the last element.\n&quot;, X);
+    P = (Position)malloc(sizeof(struct LNode));
+    flag = Insert(L, X, P);
+    if ( flag==true ) printf(&quot;Wrong Answer\n&quot;);
+    flag = Delete(L, P);
+    if ( flag==true ) printf(&quot;Wrong Answer\n&quot;);
+    for ( P=L-&gt;Next; P; P = P-&gt;Next ) printf(&quot;%d &quot;, P-&gt;Data);
+    return 0;
+}
+/* 你的代码将被嵌在这里 */
+List MakeEmpty() {
+    List L = (List)malloc(sizeof(List));
+    L-&gt;Next=NULL;
+    return L;
+}
+Position Find( List L, ElementType X ) {
+    L=L-&gt;Next;
+    while(L) {
+        if(L-&gt;Data==X) {
+            return L;
+        }
+        L=L-&gt;Next;
+    }
+    return ERROR;
+}
+
+bool Insert( List L, ElementType X, Position P ) {
+    List p = (List)malloc(sizeof(List));
+    p-&gt;Data=X;
+    p-&gt;Next=NULL;
+    List k=L;
+    while(k) {
+        if(k-&gt;Next==P) {
+            p-&gt;Next=P;
+            k-&gt;Next=p;
+            return true;
+        }
+        k=k-&gt;Next;
+    }
+    printf(&quot;Wrong Position for Insertion\n&quot;);
+    return false;
+}
+
+
+bool Delete( List L, Position P ){
+    if(L==P){
+        L=L-&gt;Next;
+        return true;
+    }
+    while(L){
+        if(L-&gt;Next==P){
+            L-&gt;Next=P-&gt;Next;
+            return true;
+        }
+        L=L-&gt;Next;
+    }
+    printf(&quot;Wrong Position for Deletion\n&quot;);
+    return false;
+}
+
+</code></pre>
+<h3 id="在一个数组中实现两个堆栈"><strong>在一个数组中实现两个堆栈</strong></h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define ERROR 1e8
+typedef int ElementType;
+typedef enum { push, pop, end } Operation;
+typedef enum { false, true } bool;
+typedef int Position;
+struct SNode {
+    ElementType *Data;
+    Position Top1, Top2;
+    int MaxSize;
+};
+typedef struct SNode *Stack;
+
+Stack CreateStack( int MaxSize );
+bool Push( Stack S, ElementType X, int Tag );
+ElementType Pop( Stack S, int Tag );
+
+Operation GetOp();  /* details omitted */
+void PrintStack( Stack S, int Tag ); /* details omitted */
+
+int main()
+{
+    int N, Tag, X;
+    Stack S;
+    int done = 0;
+
+    scanf(&quot;%d&quot;, &amp;N);
+    S = CreateStack(N);
+    while ( !done ) {
+        switch( GetOp() ) {
+        case push:
+            scanf(&quot;%d %d&quot;, &amp;Tag, &amp;X);
+            if (!Push(S, X, Tag)) printf(&quot;Stack %d is Full!\n&quot;, Tag);
+            break;
+        case pop:
+            scanf(&quot;%d&quot;, &amp;Tag);
+            X = Pop(S, Tag);
+            if ( X==ERROR ) printf(&quot;Stack %d is Empty!\n&quot;, Tag);
+            break;
+        case end:
+            PrintStack(S, 1);
+            PrintStack(S, 2);
+            done = 1;
+            break;
+        }
+    }
+    return 0;
+}
+
+/* 你的代码将被嵌在这里 */
+Stack CreateStack(int MaxSize) {
+    Stack stack = (Stack)malloc(sizeof(Stack));
+    stack-&gt;Data = (ElementType *)malloc(sizeof(ElementType)*MaxSize);
+    stack-&gt;Top1 = -1;
+    stack-&gt;Top2 = MaxSize;
+    stack-&gt;MaxSize = MaxSize;
+    return stack;
+}
+bool Push( Stack S, ElementType X, int Tag ) {
+    if (S == NULL)return false;
+    if (S-&gt;Top1+1==S-&gt;Top2) {
+        printf(&quot;Stack Full\n&quot;);
+        return false;
+    }
+    if (Tag == 1)
+        S-&gt;Data[++S-&gt;Top1] = X;
+    else
+        S-&gt;Data[--S-&gt;Top2] = X;
+    return true;
+}
+ElementType Pop( Stack S, int Tag ) {
+    if(S==NULL)
+        return ERROR;
+    if(Tag == 1) {
+        if(S-&gt;Top1==-1) {
+            printf(&quot;Stack 1 Empty\n&quot;);
+            return ERROR;
+        }
+        return S-&gt;Data[S-&gt;Top1--];
+    } else {
+        if(S-&gt;Top2==S-&gt;MaxSize) {
+            printf(&quot;Stack 2 Empty\n&quot;);
+            return ERROR;
+        }
+        return S-&gt;Data[S-&gt;Top2++];
+    }
+}
+
+</code></pre>
+<h3 id="二叉树高度">二叉树高度</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef char ElementType;
+typedef struct TNode *Position;
+typedef Position BinTree;
+struct TNode{
+    ElementType Data;
+    BinTree Left;
+    BinTree Right;
+};
+
+BinTree CreatBinTree(); /* 实现细节忽略 */
+int GetHeight( BinTree BT );
+
+int main()
+{
+    BinTree BT = CreatBinTree();
+    printf(&quot;%d\n&quot;, GetHeight(BT));
+    return 0;
+}
+/* 你的代码将被嵌在这里 */
+int GetHeight( BinTree BT )
+{
+    int hl = 0,hr = 0;
+    if(!BT)
+        return 0;
+    if(BT)
+    {
+        hl = GetHeight(BT-&gt;Left);
+        hr = GetHeight(BT-&gt;Right);
+        return (hl &gt;= hr ? hl:hr) + 1;
+    }
+}
+
+</code></pre>
+<h3 id="二叉树的遍历">二叉树的遍历</h3>
+<pre><code class="language-c">void InorderTraversal( BinTree BT )//中序遍历
+{
+    //①中序遍历其左子树；②访问根节点；③中序遍历其右子树
+    if(BT)
+    {
+        InorderTraversal(BT-&gt;Left);
+        printf(&quot; %c&quot;,BT-&gt;Data);
+        InorderTraversal(BT-&gt;Right);
+    }
+}
+void PreorderTraversal( BinTree BT )//先序遍历
+{
+    //①访问根节点；②先序遍历其左子树；③先序遍历其右子树
+    if(BT)
+    {
+        printf(&quot; %c&quot;,BT-&gt;Data);
+        PreorderTraversal(BT-&gt;Left);
+        PreorderTraversal(BT-&gt;Right);
+    }
+}
+void PostorderTraversal( BinTree BT )//后序遍历
+{
+    //①后序遍历其左子树；②后序遍历其右子树；③访问根节点
+    if(BT)
+    {
+        PostorderTraversal(BT-&gt;Left);
+        PostorderTraversal(BT-&gt;Right);
+        printf(&quot; %c&quot;,BT-&gt;Data);
+    }
+}
+void LevelorderTraversal( BinTree BT )//层次遍历
+{
+    /*
+    ①从队列中取出一个元素；
+    ②访问该元素所指结点（出队）；
+    ③若该元素所指结点的左、右孩子结点非空，则将其左、右孩子的指针顺序入队。
+    */
+    if(!BT)
+        return;//空树返回
+    BinTree q[100];
+    int head=0,rear=0;
+    q[rear++] = BT;
+    while(head&lt;rear)
+    {//队列非空
+        if(q[head]-&gt;Left) 
+            q[rear++] = q[head]-&gt;Left;
+        if(q[head]-&gt;Right) 
+            q[rear++] = q[head]-&gt;Right;
+        printf(&quot; %c&quot;,q[head++]-&gt;Data);
+    }
+}
+
+</code></pre>
+<h3 id="二分查找">二分查找</h3>
+<pre><code class="language-c">Position BinarySearch(List L,ElementType x)
+{
+        int low=0,high=L-&gt;Last;
+        while(low&lt;=high){
+            int mid=(low+high)/2;
+            //这一步得记住
+            if(L-&gt;Data[mid]==x){
+                return mid;
+            }
+            if(L-&gt;Data[mid]&gt;x){
+                high=mid-1;
+            }
+            if(L-&gt;Data[mid]&lt;x){
+                low=mid+1;
+            }
+        }
+        return NotFound;
+}
+
+</code></pre>
+<h3 id="二叉搜索树">二叉搜索树</h3>
+<pre><code class="language-c">BinTree Insert( BinTree BST, ElementType X ){
+// 函数Insert将X插入二叉搜索树BST并返回结果树的根结点指针；
+    if(BST==NULL){
+        BST=(BinTree)malloc(sizeof(struct TNode));
+        BST-&gt;Data=X;
+        BST-&gt;Left=NULL;
+        BST-&gt;Right=NULL;
+        return BST;
+    }
+    BinTree BT=(BinTree)malloc(sizeof(struct TNode));
+    BT=BST;
+    int flag=0;
+    while(BT!=NULL){
+        if(X&gt;BT-&gt;Data){
+            if(BT-&gt;Right!=NULL){
+                BT=BT-&gt;Right;
+            }else{
+                flag=1;
+                break;
+            }
+        }else{
+            if(BT-&gt;Left!=NULL){
+                BT=BT-&gt;Left;
+            }else{
+                flag=2;
+                break;
+            }
+        }
+    }
+    if(flag==2){
+        BT-&gt;Left=(BinTree)malloc(sizeof(struct TNode));
+        BT-&gt;Left-&gt;Data=X;
+        BT-&gt;Left-&gt;Left=NULL;
+        BT-&gt;Left-&gt;Right=NULL;
+    }else if(flag==1){
+        BT-&gt;Right=(BinTree)malloc(sizeof(struct TNode));
+        BT-&gt;Right-&gt;Data=X;
+        BT-&gt;Right-&gt;Left=NULL;
+        BT-&gt;Right-&gt;Right=NULL;
+    }
+    return BST;
+}
+Position Find( BinTree BST, ElementType X ){
+// 函数Find在二叉搜索树BST中找到X，返回该结点的指针；如果找不到则返回空指针；
+    while(BST!=NULL){
+        if(X&gt;BST-&gt;Data){
+            BST=BST-&gt;Right;
+        }else if(X&lt;BST-&gt;Data){
+            BST=BST-&gt;Left;
+        }else{
+            break;
+        }
+    }
+    return BST;
+}
+BinTree Delete( BinTree BST, ElementType X ){
+// 函数Delete将X从二叉搜索树BST中删除，并返回结果树的根结点指针；如果X不在树中，则打印一行Not Found并返回原树的根结点指针；
+    if(BST==NULL){
+        printf(&quot;Not Found\n&quot;);
+        return BST;
+    }
+    if(BST-&gt;Data==X){
+        if(BST-&gt;Left!=NULL &amp;&amp; BST-&gt;Right!=NULL){
+            BinTree insert=(BinTree)malloc(sizeof(struct TNode));
+            insert=BST-&gt;Right;
+            BinTree father=(BinTree)malloc(sizeof(struct TNode));
+            father=BST-&gt;Left;
+            BST=BST-&gt;Left;
+            while(father-&gt;Right!=NULL){
+                father=father-&gt;Right;
+            }
+            father-&gt;Right=insert;
+            return BST;
+        }else if(BST-&gt;Left!=NULL &amp;&amp; BST-&gt;Right==NULL){
+            return BST-&gt;Left;
+        }else if(BST-&gt;Left==NULL &amp;&amp; BST-&gt;Right!=NULL){
+            return BST-&gt;Right;
+        }else{
+            return NULL;
+        }
+    }
+    int flag=0;
+    BinTree father=(BinTree)malloc(sizeof(struct TNode));
+    father=BST;
+    while(father!=NULL){
+        if(father-&gt;Left!=NULL &amp;&amp; father-&gt;Left-&gt;Data==X){
+            flag=1;
+            break;
+        }
+        if(father-&gt;Right!=NULL &amp;&amp; father-&gt;Right-&gt;Data==X){
+            flag=2;
+            break;
+        }
+        if(father-&gt;Data&lt;X){
+            father=father-&gt;Right;
+        }else{
+            father=father-&gt;Left;
+        }
+    }
+    if(father==NULL){
+        printf(&quot;Not Found\n&quot;);
+        return BST;
+    }
+    if(flag==1){
+        if(father-&gt;Left-&gt;Left!=NULL &amp;&amp; father-&gt;Left-&gt;Right!=NULL){
+            BinTree insert=(BinTree)malloc(sizeof(struct TNode));
+            insert=father-&gt;Left-&gt;Right;
+            BinTree move=(BinTree)malloc(sizeof(struct TNode));
+            move=father-&gt;Left-&gt;Left;
+            father-&gt;Left=move;
+            while(move-&gt;Right!=NULL){
+                move=move-&gt;Right;
+            }
+            move-&gt;Right=insert;
+            return BST;
+        }else if(father-&gt;Left-&gt;Left==NULL &amp;&amp; father-&gt;Left-&gt;Right!=NULL){
+            father-&gt;Left=father-&gt;Left-&gt;Right;
+            return BST;
+        }else if(father-&gt;Left-&gt;Left!=NULL &amp;&amp; father-&gt;Left-&gt;Right==NULL){
+            father-&gt;Left=father-&gt;Left-&gt;Left;
+            return BST;
+        }else{
+            father-&gt;Left=NULL;
+            return BST;
+        }
+    }else{
+        if(father-&gt;Right-&gt;Left!=NULL &amp;&amp; father-&gt;Right-&gt;Right!=NULL){
+            BinTree insert=(BinTree)malloc(sizeof(struct TNode));
+            insert=father-&gt;Right-&gt;Right;
+            BinTree move=(BinTree)malloc(sizeof(struct TNode));
+            move=father-&gt;Right-&gt;Left;
+            father-&gt;Right=move;
+            while(move-&gt;Right!=NULL){
+                move=move-&gt;Right;
+            }
+            move-&gt;Right=insert;
+            return BST;
+        }else if(father-&gt;Right-&gt;Left==NULL &amp;&amp; father-&gt;Right-&gt;Right!=NULL){
+            father-&gt;Right=father-&gt;Right-&gt;Right;
+            return BST;
+        }else if(father-&gt;Right-&gt;Left!=NULL &amp;&amp; father-&gt;Right-&gt;Right==NULL){
+            father-&gt;Right=father-&gt;Right-&gt;Left;
+            return BST;
+        }else{
+            father-&gt;Right=NULL;
+            return BST;
+        }
+    }
+}
+Position FindMin( BinTree BST ){
+// 函数FindMin返回二叉搜索树BST中最小元结点的指针；
+    if(BST==NULL){
+        return NULL;
+    }
+    while(BST-&gt;Left!=NULL){
+        BST=BST-&gt;Left;
+    }
+    return BST;
+}
+Position FindMax( BinTree BST ){
+// 函数FindMax返回二叉搜索树BST中最大元结点的指针。
+    if(BST==NULL){
+        return NULL;
+    }
+    while(BST-&gt;Right!=NULL){
+        BST=BST-&gt;Right;
+    }
+    return BST;
+}
+
+</code></pre>
+<h3 id="公约数公倍数">公约数公倍数</h3>
+<p>两个自然数的乘积等于这两个自然数的最大公约数和最小公倍数的乘积。公倍数辗转相除法</p>
+<p>1不是完数完数的定义决定了。定义:某自然数<strong>除它本身以外</strong>的所有因子之和等于该数,则该数被称为完数。</p>
+<p>输出所有Fibonacci数，相邻数字间有一个空格，行末不得有多余空格。利用计数器控制</p>
+<p>第一个直接输出，后续的加上空格</p>
+<pre><code class="language-c">if(count==1)
+        {
+           printf(&quot;%d&quot;,fib(i));
+        }
+        else
+        {
+              printf(&quot; %d&quot;,fib(i));
+        }
+</code></pre>
+<h3 id="数组循环右移"><strong>数组循环右移</strong></h3>
+<p><em>注意考虑m=n,m&gt;n,m=kn(k为N</em>)的情况.</p>
+<pre><code class="language-c">int ArrayShift( int a[], int n, int m )
+{
+	int i;
+	if(!(m%n)){/*记住优先级单目高于双目所以 !m%n 是错的*/	
+		return 0;//如果 m 为 n 的倍数不操作 
+	}
+	else
+		if(m%n){
+		m%=n;
+	}
+		int b[MAXN]={0};
+		for(i=0;i&lt;m;++i){
+			b[m-i-1]=a[n-1-i];//先把右侧被挤出的存起来,存在数组b的相应位置,存b[0]~b[m-1]; 	
+		}
+		for(i=0;i&lt;n-m;++i){
+			b[i+m]=a[i];//把左侧要向右移动的存到数组b的相应位置	
+			//若 a[i+m]=a[i];右边数组用到之前自己改变自己元素了 ,所以错了. 
+	
+		}
+		for(i=0;i&lt;n;++i){
+			a[i]=b[i];//把b里正确的顺序赋给a 
+		}	
+}
+
+
+
+
+</code></pre>
+<h3 id="报数">报数</h3>
+<p>报数游戏是这样的：有<em>n</em>个人围成一圈，按顺序从1到<em>n</em>编好号。从第一个人开始报数，报到<em>m</em>（&lt;<em>n</em>）的人退出圈子；下一个人从1开始报数，报到<em>m</em>的人退出圈子。如此下去，直到留下最后一个人。</p>
+<pre><code class="language-c">void CountOff( int n, int m, int out[] ){
+    int k,i,j=0;
+    for(i=0;i&lt;n;i++)out[i]=0;
+
+    for(i=0;i&lt;n;i++){
+        k=0;//k记录报数值
+        while(j&gt;=0){
+            j%=n;//j记录当前位置
+            if(out[j]==0)k++;//为0说明还没出去，此时k才加加
+            if(k==m){
+                out[j]=i+1;
+                break;//报数成功，跳出while循环，进行下次报数
+            }
+            j++;
+        }
+    }
+}
+</code></pre>
+<p>if 是条件判断语句,当其中一个条件成立时,另外<strong>同级别的条件语句(else if)就不再去判断了</strong>，所以可以不用continue。</p>
+<p>if-else语句中，if和else的配对原则都是在同一个复合语句括号“{}”作用域内就近配对的原则。如果不属于同一个复合语句括号“{}”作用域内，则不会被配对，此时如果配对存在问题，会报语法错误。</p>
+<pre><code class="language-c">if(表达式1)
+	if(表达式2)
+	语句1;
+	else
+	语句2;
+else 
+语句3;
+
+
+</code></pre>
+<p>此题故意将格式错乱，让读者以为else if 和第一个if匹配，实则是最里面的if匹配。但不影响输出，用就近原则处理。</p>
+<pre><code class="language-c">int main()
+{
+    int x=10,a=10,b=20,ok1=5,ok2=0;
+    if(a&lt;b)
+    	if(b!=15)
+    		if(!ok1)
+    		x=1;
+    else if(ok2)
+    x=10;
+    else x=-1;
+    printf(&quot;%d&quot;,x);
+    return 0;
+}
+
+</code></pre>
+<p>实则为</p>
+<pre><code class="language-c">int main()
+{
+    int x=10,a=10,b=20,ok1=5,ok2=0;
+    if(a&lt;b)
+        if(b!=15)
+            if(!ok1)
+                x=1;
+            else if(ok2)
+                x=10;
+            else x=-1;
+    printf(&quot;%d&quot;,x);
+    return 0;
+}
+</code></pre>
+<p>所以输出结果为-1</p>
+<h3 id="最长公共前缀">最长公共前缀</h3>
+<p>编写一个函数来查找字符串数组中的最长公共前缀。</p>
+<p>如果不存在公共前缀，返回空字符串 <code>&quot;&quot;</code>。</p>
+<p>将第一个作为返回结果 不断与后面比较，每次不同时更新结果，最终找到公共前缀。</p>
+<pre><code class="language-c">char * longestCommonPrefix(char ** strs, int strsSize){
+    if(strsSize == 0)
+        return &quot;&quot;;
+    char *ans = strs[0];
+    int i, j;
+    for(i = 1; i &lt; strsSize; i++){
+        j = 0;
+        for(; ans[j] != '\0' &amp;&amp; strs[i][j] != '\0'; j++){
+            if(ans[j] != strs[i][j]){
+                break;
+            }
+        }
+        ans[j] = '\0';
+        if(ans == NULL){
+            return &quot;&quot;;
+        }
+    }
+    return ans;
+
+}
+
+</code></pre>
+<p>数组内存分配连续的，且从高位到低位分配</p>
+<pre><code class="language-c">int main()
+{
+    char a[4]={0};
+    char b[4]={0};
+    b[0]=1;b[1]=2;b[2]=3;b[3]=4;b[4]=5;
+    printf(&quot;%d,%d,%d,%d&quot;,a[0],a[1],a[2],a[3]);
+    return 0;
+}
+
+</code></pre>
+<p>所以b[4]地址为a[0]地址。</p>
+<h3 id="cahr">cahr*</h3>
+<p>对于 char *str = &quot;resource&quot;;*</p>
+<p>把&quot;resource&quot;的值----也就是字符串常量字面值，也就是&quot;resource&quot;的地址，准确来说是起始地址----赋给字符指针 str，Linux下，&quot;resource&quot;字符串常量是存放于<strong>只读数据区</strong>的，一般来说，32位机器上，在Linux中，堆，全局数据，常量等都是存放于从0x8048000开始的内存地址，向上增长。可以打印一下&quot;resource&quot;的地址来进行验证。char *str = &quot;resource&quot;，就是把&quot;resource&quot;的首地址赋给str，所以str 存放的是一个只读数据区的地址，对只读区的数据进行写操作是禁止，具体由相应的操作系统进行判断以及处理。</p>
+<p>这篇文章作了详细解释:</p>
+<p>https://www.cnblogs.com/yylqinghao/archive/2010/04/27/1721752.html</p>
+<h3 id="1003-我要通过"><strong>1003 我要通过！</strong></h3>
+<p>得到“<strong>答案正确</strong>”的条件是：</p>
+<ol>
+<li>字符串中必须仅有 <code>P</code>、 <code>A</code>、 <code>T</code>这三种字符，不可以包含其它字符；</li>
+<li>任意形如 <code>xPATx</code> 的字符串都可以获得“<strong>答案正确</strong>”，其中 <code>x</code> 或者是空字符串，或者是仅由字母 <code>A</code> 组成的字符串；</li>
+<li>如果 <code>aPbTc</code> 是正确的，那么 <code>aPbATca</code> 也是正确的，其中 <code>a</code>、 <code>b</code>、 <code>c</code> 均或者是空字符串，或者是仅由字母 <code>A</code> 组成的字符串。</li>
+</ol>
+<p>现在就请你为 PAT 写一个自动裁判程序，判定哪些字符串是可以获得“<strong>答案正确</strong>”的。</p>
+<p>a.条件1：字符串中必须仅有  P、 A、 T  这三种字符，不可以包含其它字符；</p>
+<p>b.由条件2可得：PAT   或   A(n个)+PAT+A(n个)</p>
+<p>c.由条件3可得：</p>
+<p>a P b T c	a P bA T ca<br>
+A(0个)+  P+  A（1个）  +T  +A(0个)	A(0个)+  P+  A(1个)+A(n个)  +T  +1个<em>A(0个)+n个</em>A(0个)<br>
+A(n个)+  P+  A（1个）+  T  +A(n个)	A(n个)+  P+  A(1个)+A(n个)   +T  +1个<em>A(n个)+n个</em>A(n个)<br>
+d.结论：（只能由条件1、2（原型）根据条件3（规则）推得的字符串才是YES）</p>
+<p>（1）只能有P、A、T；（2）P和T只能有一个，且中间至少一个A；（3）首项A个数*中间A个数==尾项。</p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+ 
+int main()
+{
+	int n;
+	scanf(&quot;%d\n&quot;,&amp;n);//这里的\n是为了下面的getchar而使用
+	char ch;
+	for(int i=0;i&lt;n;i++)
+	{
+		int position=0,aa[3]={0}; 
+		while((ch=getchar())!='\n')//该处理方式主要在于，通过每位读取，成功限定了
+		{                          //每位的表达，不是我们需要的表达，直接NO
+                                           //是我们需要的表达，我们就记录下
+			if(ch=='A') aa[position]++;//每个A的位置所在
+			else if(ch=='P'&amp;&amp;position==0) position=1;   //遇到P就转移了，
+			else if(ch=='T'&amp;&amp;position==1) position=2; //再次遇到就break
+			else break;//相当于ch=='P'&amp;&amp;position==1，这是不在前三个if中的
+		}
+		if(ch=='\n'&amp;&amp;position==2&amp;&amp;aa[1]&amp;&amp;aa[2]==aa[0]*aa[1])//条件的判定
+			printf(&quot;%s\n&quot;,&quot;YES&quot;);
+		else printf(&quot;%s\n&quot;,&quot;NO&quot;);
+		if(ch!='\n')//若中途停止，剩下的也要读完哦！！！
+			while((ch=getchar())!='\n');
+	}
+	return 0;
+}
+</code></pre>
+<p><strong>test.cpp:8:5: error: use of undeclared identifier 'vector'</strong></p>
+<p>#include <vector></p>
+<p>要加上using namespace std;才行</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://xmweijh.github.io/post/windowonload-yu-setinterval-de-zuo-yong-yu-wen-ti/" class="post-title gt-a-link">
+                    window.onload与setInterval的作用域问题
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">努力成就自我</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://xmweijh.github.io//atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
