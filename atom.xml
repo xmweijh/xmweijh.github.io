@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xmweijh.github.io/</id>
     <title>小虾米的记录</title>
-    <updated>2021-06-26T08:37:53.894Z</updated>
+    <updated>2021-07-04T09:13:33.997Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xmweijh.github.io/"/>
     <link rel="self" href="https://xmweijh.github.io/atom.xml"/>
@@ -10,6 +10,1022 @@
     <logo>https://xmweijh.github.io/images/avatar.png</logo>
     <icon>https://xmweijh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 小虾米的记录</rights>
+    <entry>
+        <title type="html"><![CDATA[Linux基础]]></title>
+        <id>https://xmweijh.github.io/post/linux-ji-chu/</id>
+        <link href="https://xmweijh.github.io/post/linux-ji-chu/">
+        </link>
+        <updated>2021-07-04T09:12:14.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="linux基础">Linux基础</h2>
+<h3 id="终端命令">终端命令</h3>
+<p><strong>command</strong> [-options] [parameter]</p>
+<ul>
+<li>command：命令名, 比如: ls、pwd</li>
+<li>[-options]：选项，可以有零个、一个或者多个选项，多个选项可以合并，比如使用的 -r 就是选项。</li>
+<li>[parameter]：参数，可以有零个、一个 或者 多个参数， 比如: touch 文件名、mkdir 目录名、cd 目标目录(路径)，这些文件名和目录名都是参数。</li>
+<li>[]：代表可选</li>
+<li>对于命令，它的选项和参数一般情况下没有顺序要求，但是scp命令是必须先选项然后在跟上参数。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ls</td>
+<td style="text-align:left">查看当前目录信息（只能查看当层目录信息）</td>
+</tr>
+<tr>
+<td style="text-align:left">tree</td>
+<td style="text-align:left">以树状方式显示目录信息(可以查看多层目录信息)</td>
+</tr>
+<tr>
+<td style="text-align:left">pwd</td>
+<td style="text-align:left">查看当前目录路径</td>
+</tr>
+<tr>
+<td style="text-align:left">clear</td>
+<td style="text-align:left">清除终端内容</td>
+</tr>
+<tr>
+<td style="text-align:left">cd 目录</td>
+<td style="text-align:left">切换到指定目录(cd 空白也是同功能)</td>
+</tr>
+<tr>
+<td style="text-align:left">cd ~</td>
+<td style="text-align:left">切换到当前用户的主目录</td>
+</tr>
+<tr>
+<td style="text-align:left">cd ..</td>
+<td style="text-align:left">切换到上一级目录</td>
+</tr>
+<tr>
+<td style="text-align:left">cd .</td>
+<td style="text-align:left">切换到当前目录</td>
+</tr>
+<tr>
+<td style="text-align:left">cd -</td>
+<td style="text-align:left">切换到上一次目录</td>
+</tr>
+<tr>
+<td style="text-align:left">./</td>
+<td style="text-align:left">当前路径</td>
+</tr>
+<tr>
+<td style="text-align:left">../</td>
+<td style="text-align:left">上一路径</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">touch 文件名</td>
+<td style="text-align:left">创建指定文件</td>
+</tr>
+<tr>
+<td style="text-align:left">mkdir 目录名</td>
+<td style="text-align:left">创建目录(文件夹)</td>
+</tr>
+<tr>
+<td style="text-align:left">rm 文件名或者目录名</td>
+<td style="text-align:left">删除指定文件或者目录<strong>rm命令想要删除目录需要加上-r选项</strong>，-r表示递归删除目录及其内容</td>
+</tr>
+<tr>
+<td style="text-align:left">rmdir 目录名</td>
+<td style="text-align:left">删除空目录</td>
+</tr>
+<tr>
+<td style="text-align:left">cp</td>
+<td style="text-align:left">拷贝文件、拷贝目录    拷贝目录需要加上-r选项</td>
+</tr>
+<tr>
+<td style="text-align:left">mv</td>
+<td style="text-align:left">移动文件、移动目录、重命名</td>
+</tr>
+</tbody>
+</table>
+<h3 id="看命令帮助方式">看命令帮助方式</h3>
+<ul>
+<li>--help 使用说明: 命令 --help</li>
+<li>man 使用说明: man 命令</li>
+</ul>
+<p><strong>man命令的说明:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">操作键</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">空格</td>
+<td style="text-align:left">显示下一屏信息</td>
+</tr>
+<tr>
+<td style="text-align:left">回车</td>
+<td style="text-align:left">显示下一行信息</td>
+</tr>
+<tr>
+<td style="text-align:left">b</td>
+<td style="text-align:left">显示上一屏信息</td>
+</tr>
+<tr>
+<td style="text-align:left">f</td>
+<td style="text-align:left">显示下一屏信息</td>
+</tr>
+<tr>
+<td style="text-align:left">q</td>
+<td style="text-align:left">退出</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ls命令选项使用">ls命令选项使用</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令选项</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-l</td>
+<td style="text-align:left">以列表方式显示</td>
+</tr>
+<tr>
+<td style="text-align:left">-h</td>
+<td style="text-align:left">件大小单位显示，默认是字节</td>
+</tr>
+<tr>
+<td style="text-align:left">-a</td>
+<td style="text-align:left">显示隐藏文件和隐藏目录</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>ls不同选项会呈现不同的显示方式，其中-l和-a选项最常用</li>
+<li>可以 ls -alh 三者功能都有</li>
+</ul>
+<h3 id="mkdir命令选项">mkdir命令选项</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令选项</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-p</td>
+<td style="text-align:left">创建所依赖的文件夹</td>
+</tr>
+</tbody>
+</table>
+<p>如直接 mkdir -p AA/BB/C.txt  会自动创建前面需要的文件夹AA/BB/</p>
+<h3 id="rm命令选项">rm命令选项</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令选项</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-i</td>
+<td style="text-align:left">交互式提示  没有重名会直接覆盖 有则会提示</td>
+</tr>
+<tr>
+<td style="text-align:left">-r</td>
+<td style="text-align:left">递归删除目录及其内容</td>
+</tr>
+<tr>
+<td style="text-align:left">-f</td>
+<td style="text-align:left">强制删除，忽略不存在的文件，无需提示</td>
+</tr>
+<tr>
+<td style="text-align:left">-d</td>
+<td style="text-align:left">删除空目录</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>创建嵌套文件夹使用 <strong>“mkdir –p”</strong> 嵌套目录</li>
+<li>删除空目录使用 <strong>“rmdir 目录名”</strong> 或者 <strong>“rm –d 目录名”</strong></li>
+<li>删除非空目录使用 <strong>“rm –r 目录名”</strong></li>
+</ul>
+<h3 id="cp命令选项">cp命令选项</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令选项</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-i</td>
+<td style="text-align:left">交互式提示</td>
+</tr>
+<tr>
+<td style="text-align:left">-r</td>
+<td style="text-align:left">递归拷贝目录及其内容</td>
+</tr>
+<tr>
+<td style="text-align:left">-v</td>
+<td style="text-align:left">显示拷贝后的路径描述</td>
+</tr>
+<tr>
+<td style="text-align:left">-a</td>
+<td style="text-align:left">保留文件的原有权限   而且可以拷贝文件夹同时保留里面文件权限只需要-a  而不需要-ar</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mv命令选项">mv命令选项</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令选项</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-i</td>
+<td style="text-align:left">交互式提示</td>
+</tr>
+<tr>
+<td style="text-align:left">-v</td>
+<td style="text-align:left">显示移动后的路径描述</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>拷贝文件防止覆盖使用 <strong>“cp –i”</strong> 操作</li>
+<li>拷贝文件夹使用 <strong>“cp –r”</strong> 操作，拷贝文件夹并且文件权限不丢失使用 <strong>“cp –a”</strong> 操作。</li>
+<li>移动文件防止覆盖使用 <strong>“mv –i”</strong> 操作</li>
+<li>移动文件夹直接使用 <strong>“mv”</strong> 即可，<strong>“mv”</strong> 还可以给文件和文件夹重命名。</li>
+</ul>
+<h3 id="重定向命令">重定向命令</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">&gt;</td>
+<td style="text-align:left">如果文件存在会覆盖原有文件内容，相当于文件操作中的‘w’模式</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;&gt;</td>
+<td style="text-align:left">如果文件存在会追加写入文件末尾，相当于文件操作中的‘a’ 模式</td>
+</tr>
+</tbody>
+</table>
+<p>重定向也称为输出重定向，把在终端执行命令的结果保存到目标文件。</p>
+<p>如  ls xx  &gt;1.txt</p>
+<h3 id="查看文件内容命令">查看文件内容命令</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">cat</td>
+<td style="text-align:left">查看小型文件</td>
+</tr>
+<tr>
+<td style="text-align:left">more</td>
+<td style="text-align:left">分屏查看大型文件</td>
+</tr>
+</tbody>
+</table>
+<p>控制命令与man相同</p>
+<ul>
+<li>gedit 文件编辑命令，可以查看和编辑文件</li>
+</ul>
+<p>管道(|)：一个命令的输出可以通过管道做为另一个命令的输入，可以理解成是一个容器，存放在终端显示的内容。</p>
+<p>管道(|)一般结合 more 命令使用，主要是分配查看终端显示内容。</p>
+<p>is/bin | more</p>
+<h3 id="链接命令">链接命令</h3>
+<p>链接命令是创建链接文件，链接文件分为:</p>
+<ul>
+<li>软链接</li>
+<li>硬链接</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ln -s</td>
+<td style="text-align:left">创建软链接</td>
+</tr>
+<tr>
+<td style="text-align:left">ln</td>
+<td style="text-align:left">创建硬链接</td>
+</tr>
+</tbody>
+</table>
+<p>ll相当于ls -la</p>
+<ul>
+<li><strong>软链接的作用是方便文件的快速访问，比如:给一个复杂路径下的文件创建一个软链接，以后就可以通过软链接完成快速访问操作。</strong></li>
+<li><strong>创建软链接命令格式: ln -s 源文件路径(使用绝对路径) 软链接(你输入什么他就怎么找)</strong></li>
+<li><strong>删除源文件则软链接失效</strong></li>
+<li><strong>可以给目录创建软链接</strong></li>
+</ul>
+<p><strong>硬链接</strong></p>
+<p>类似于<strong>源文件的一个别名</strong>，也就是说这两个名字指向的是同一个文件数据。(修改都要变化  与cp拷贝不同)</p>
+<ul>
+<li><strong>创建硬链接使用相对路径和绝对路径都可以</strong></li>
+<li><strong>删除源文件，硬链接还可以访问到数据。</strong></li>
+<li><strong>创建硬链接，硬链接数会加1，删除源文件或者硬链接，硬链接数会减1。</strong></li>
+<li><strong>创建软链接，硬链接数不会加1</strong></li>
+<li><strong>不能给目录创建硬链接</strong></li>
+</ul>
+<p><strong>硬链接数:</strong></p>
+<p><strong>硬链接数就是文件数据被文件名使用的次数, 好比引用计数</strong></p>
+<ul>
+<li>硬链接的作用是可以给重要文件创建硬链接，能够防止文件数据被误删。</li>
+<li>删除源文件，软链接失效，但是硬链接依然可以使用。</li>
+<li>创建硬链接命令格式: ln 源文件路径 硬链接</li>
+</ul>
+<h3 id="文本搜索命令">文本搜索命令</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">grep</td>
+<td style="text-align:left">文本搜索</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">命令选项</td>
+<td style="text-align:left">说明</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">-i</td>
+<td style="text-align:left">忽略大小写</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">-n</td>
+<td style="text-align:left">显示匹配行号</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">-v</td>
+<td style="text-align:left">显示不包含匹配文本的所有行</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">正则表达式</td>
+<td style="text-align:left">说明</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">^</td>
+<td style="text-align:left">以指定字符串开头</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">$</td>
+<td style="text-align:left">以指定字符串结尾</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>grep</strong> 命令还可以文本搜索管道中的内容，比如: <strong>ls / | grep ‘lib’</strong></li>
+<li>在使用 <strong>grep</strong> 命令的时候还可以省略搜索内容的引号，比如: <strong>ls / | grep lib</strong>， <strong>grep hello 1.txt</strong></li>
+</ul>
+<h3 id="查找文件命令">查找文件命令</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">find</td>
+<td style="text-align:left">在指定目录下查找文件(包括目录)</td>
+</tr>
+<tr>
+<td style="text-align:left">-name</td>
+<td style="text-align:left">根据文件名(包括目录名)字查找</td>
+</tr>
+<tr>
+<td style="text-align:left">通配符</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">代表0个或多个任意字符</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">代表任意一个字符</td>
+</tr>
+</tbody>
+</table>
+<p>通配符不仅能结合 <strong>find</strong> 命令使用，还可以结合其它命令使用, 比如: <strong>ls、mv、cp</strong> 等，这里需要注意只有 <strong>find</strong> 命令使用通配符需要加上引号。</p>
+<h3 id="压缩和解压缩命令">压缩和解压缩命令</h3>
+<p>Linux默认支持的压缩格式:</p>
+<ul>
+<li>.gz</li>
+<li>.bz2</li>
+<li>.zip</li>
+<li>.gz和.bz2的压缩包需要使用tar命令来压缩和解压缩</li>
+<li>.zip的压缩包需要使用zip命令来压缩，使用unzip命令来解压缩</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">tar</td>
+<td style="text-align:left">压缩和解压缩命令</td>
+</tr>
+<tr>
+<td style="text-align:left">选项</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left">-c</td>
+<td style="text-align:left">创建打包文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-v</td>
+<td style="text-align:left">显示打包或者解包的详细信息</td>
+</tr>
+<tr>
+<td style="text-align:left">-f</td>
+<td style="text-align:left">指定文件名称, 必须放到所有选项后面</td>
+</tr>
+<tr>
+<td style="text-align:left">-z</td>
+<td style="text-align:left">压缩或解压缩(.gz)</td>
+</tr>
+<tr>
+<td style="text-align:left">-j</td>
+<td style="text-align:left">压缩或解压缩(.bz2)</td>
+</tr>
+<tr>
+<td style="text-align:left">-x</td>
+<td style="text-align:left">解包</td>
+</tr>
+<tr>
+<td style="text-align:left">-C</td>
+<td style="text-align:left">解压缩到指定目录</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">zip</td>
+<td style="text-align:left">压缩成.zip格式文件</td>
+</tr>
+<tr>
+<td style="text-align:left">unzip</td>
+<td style="text-align:left">解压缩.zip格式文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-d</td>
+<td style="text-align:left">解压缩到指定目录</td>
+</tr>
+</tbody>
+</table>
+<h3 id="文件权限命令">文件权限命令</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">chmod</td>
+<td style="text-align:left">修改文件权限</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>u</th>
+<th>user, 表示该文件的所有者</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>g</td>
+<td>group, 表示用户组</td>
+</tr>
+<tr>
+<td>o</td>
+<td>other, 表示其他用户</td>
+</tr>
+<tr>
+<td>a</td>
+<td>all, 表示所有用户</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">操作符</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">增加权限</td>
+</tr>
+<tr>
+<td style="text-align:left">-</td>
+<td style="text-align:left">撤销权限</td>
+</tr>
+<tr>
+<td style="text-align:left">=</td>
+<td style="text-align:left">设置权限</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">权限</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">r</td>
+<td style="text-align:left">可读</td>
+</tr>
+<tr>
+<td style="text-align:left">w</td>
+<td style="text-align:left">可写</td>
+</tr>
+<tr>
+<td style="text-align:left">x</td>
+<td style="text-align:left">可执行</td>
+</tr>
+<tr>
+<td style="text-align:left">-</td>
+<td style="text-align:left">无任何权限</td>
+</tr>
+</tbody>
+</table>
+<p><strong>chmod 数字法的使用</strong></p>
+<p>数字法就是“rwx” 这些权限也可以用<strong>数字来代替</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">权限</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">r</td>
+<td style="text-align:left">可读，权限值是4</td>
+</tr>
+<tr>
+<td style="text-align:left">-</td>
+<td style="text-align:left">无任何权限，权限值是0</td>
+</tr>
+<tr>
+<td style="text-align:left">w</td>
+<td style="text-align:left">可写，权限值是2</td>
+</tr>
+<tr>
+<td style="text-align:left">x</td>
+<td style="text-align:left">可执行，权限值是1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="获取管理员权限的相关命令获取管理员权限的相关命令">获取管理员权限的相关命令获取管理员权限的相关命令</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">sudo -s</td>
+<td style="text-align:left">切换到root用户，获取管理员权限</td>
+</tr>
+<tr>
+<td style="text-align:left">sudo</td>
+<td style="text-align:left">某个命令的执行需要获取管理员权限可以在执行命令前面加上sudo</td>
+</tr>
+<tr>
+<td style="text-align:left">whoami</td>
+<td style="text-align:left">查看当前用户限</td>
+</tr>
+<tr>
+<td style="text-align:left">exit</td>
+<td style="text-align:left">退出登录用户</td>
+</tr>
+<tr>
+<td style="text-align:left">who</td>
+<td style="text-align:left">查看所有的登录用户</td>
+</tr>
+<tr>
+<td style="text-align:left">passwd</td>
+<td style="text-align:left">修改用户密码，不指定用户默认修改当前登录用户密码</td>
+</tr>
+<tr>
+<td style="text-align:left">which</td>
+<td style="text-align:left">查看命令位置</td>
+</tr>
+<tr>
+<td style="text-align:left">shutdown –h now</td>
+<td style="text-align:left">立刻关机</td>
+</tr>
+<tr>
+<td style="text-align:left">reboot</td>
+<td style="text-align:left">重启</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>sudo 是临时获取管理员权限</li>
+<li>sudo -s 是切换到管理员用户，一直使用管理员权限，需要谨慎操作。</li>
+<li>exit 是退出当前用户</li>
+<li>passwd 默认修改当前用户密码</li>
+</ul>
+<h3 id="用户相关操作">用户相关操作</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">useradd</td>
+<td style="text-align:left">创建(添加)用户</td>
+</tr>
+<tr>
+<td style="text-align:left">选项</td>
+<td style="text-align:left">说明</td>
+</tr>
+<tr>
+<td style="text-align:left">-m</td>
+<td style="text-align:left">自动创建用户主目录,主目录的名字就是用户名</td>
+</tr>
+<tr>
+<td style="text-align:left">-g</td>
+<td style="text-align:left">指定用户所属的用户组，默认不指定会自动创建一个同名的用户组</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>useradd</strong> 命令的使用需要使用管理员权限，前面需要加上 <strong>sudo</strong></li>
+<li>创建用户如果不指定用户组，默认会自动创建一个同名的用户组</li>
+<li>查看用户是否创建成功，可以查看**/etc/passwd**这个文件</li>
+<li>查看用户组是否创建成功，可以查看**/etc/group**这个文件</li>
+</ul>
+<p><strong>id命令查看用户信息:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">查看用户信息</td>
+</tr>
+</tbody>
+</table>
+<p>给其它用户设置密码，需要使用: <strong>sudo passwd 用户名</strong></p>
+<p><strong>切换用户</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">su</td>
+<td style="text-align:left">切换用户</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">usermod</td>
+<td style="text-align:left">修改用户信息</td>
+</tr>
+</tbody>
+</table>
+<p><strong>usermod选项:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-G</td>
+<td style="text-align:left">设置一个附加组</td>
+</tr>
+<tr>
+<td style="text-align:left">-g</td>
+<td style="text-align:left">修改用户组</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">gpasswd</td>
+<td style="text-align:left">添加和删除附加组信息</td>
+</tr>
+</tbody>
+</table>
+<p><strong>gpasswd命令选项:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-a 用户名</td>
+<td style="text-align:left">给用户添加附加组</td>
+</tr>
+<tr>
+<td style="text-align:left">-d 用户名</td>
+<td style="text-align:left">给用户删除附加组</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">userdel</td>
+<td style="text-align:left">删除用户</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-r 用户名</td>
+<td style="text-align:left">删除用户主目录，必须要设置，否则用户主目录不会删除</td>
+</tr>
+</tbody>
+</table>
+<h3 id="用户组相关操作">用户组相关操作</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">groupadd</td>
+<td style="text-align:left">创建(添加)用户组</td>
+</tr>
+<tr>
+<td style="text-align:left">groupdel</td>
+<td style="text-align:left">删除用户组</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>创建用户组使用: <strong>sudo groupadd 用户组名</strong></li>
+<li>创建用户并指定用户组使用: <strong>sudo useradd -m -g 用户组 用户名</strong></li>
+<li>修改用户组使用: <strong>sudo usermod -g 用户组 用户名</strong></li>
+<li>删除用户组使用: <strong>sudo groupdel 用户组名</strong></li>
+</ul>
+<h3 id="远程登录-远程拷贝命令">远程登录、远程拷贝命令</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ssh</td>
+<td style="text-align:left">远程登录</td>
+</tr>
+<tr>
+<td style="text-align:left">scp</td>
+<td style="text-align:left">远程拷贝   拷贝文件夹需要加-r选项。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>大量的文件上传和下载可以通过可视化工具FileZilla来完成。</li>
+</ul>
+<h3 id="vim">vim</h3>
+<ul>
+<li>命令模式       按i进入编辑模式   :进入 末行模式</li>
+<li>编辑模式     ESC退出到命令模式</li>
+<li>末行模式     ESC退出到命令模式</li>
+</ul>
+<p><strong>说明:</strong></p>
+<p>vim 打开文件进入的是命令模式</p>
+<p><strong>末行模式命令</strong></p>
+<ul>
+<li>:w 保存</li>
+<li>:wq 保存退出</li>
+<li>:x 保存退出</li>
+<li>:q! 强制退出</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>yy</strong></td>
+<td style="text-align:left"><strong>复制光标所在行</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>p</strong></td>
+<td style="text-align:left"><strong>粘贴</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>dd</strong></td>
+<td style="text-align:left"><strong>删除/剪切当前行</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>V</strong></td>
+<td style="text-align:left"><strong>按行选中</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>u</strong></td>
+<td style="text-align:left"><strong>撤销</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">ctr+r</td>
+<td style="text-align:left">反撤销</td>
+</tr>
+<tr>
+<td style="text-align:left">&gt;&gt;</td>
+<td style="text-align:left">往右缩进</td>
+</tr>
+<tr>
+<td style="text-align:left">&lt;&lt;</td>
+<td style="text-align:left">往左缩进</td>
+</tr>
+<tr>
+<td style="text-align:left">:/搜索的内容</td>
+<td style="text-align:left">搜索指定内容</td>
+</tr>
+<tr>
+<td style="text-align:left">:%s/要替换的内容/替换后的内容/g</td>
+<td style="text-align:left">全局替换</td>
+</tr>
+<tr>
+<td style="text-align:left">:开始行数,结束行数s/要替换的内容/替换后的内容</td>
+<td style="text-align:left">局部替换</td>
+</tr>
+<tr>
+<td style="text-align:left">.</td>
+<td style="text-align:left">重复上一次命令操作</td>
+</tr>
+<tr>
+<td style="text-align:left">G</td>
+<td style="text-align:left">回到最后一行</td>
+</tr>
+<tr>
+<td style="text-align:left">gg</td>
+<td style="text-align:left">回到第一行</td>
+</tr>
+<tr>
+<td style="text-align:left">数字+G</td>
+<td style="text-align:left">回到指定行</td>
+</tr>
+<tr>
+<td style="text-align:left">shift+6</td>
+<td style="text-align:left">回到当前行的行首</td>
+</tr>
+<tr>
+<td style="text-align:left">shift+4</td>
+<td style="text-align:left">回到当前行的行末</td>
+</tr>
+<tr>
+<td style="text-align:left">ctr+f</td>
+<td style="text-align:left">下一屏</td>
+</tr>
+<tr>
+<td style="text-align:left">ctr+b</td>
+<td style="text-align:left">上一屏</td>
+</tr>
+</tbody>
+</table>
+<p>Ubuntu 操作系统安装软件有两种方式:</p>
+<ul>
+<li>
+<p><strong>sudo dpkg -i 安装包</strong> 命令</p>
+</li>
+<li>
+<p><strong>sudo apt-get install 安装包</strong> 命令卸载</p>
+</li>
+<li>
+<p>Ubuntu 操作系统卸载软件有两种方式:</p>
+<ul>
+<li><strong>dpkg -r 安装包</strong> 命令</li>
+<li><strong>apt-get remove 安装包</strong> 命令卸载</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[机器学习Coursera-ML]]></title>
         <id>https://xmweijh.github.io/post/ji-qi-xue-xi-coursera-ml/</id>
@@ -10666,447 +11682,6 @@ temp = null;
 <p>​		函数的形参也可以看做是一个变量，当我们把一个值类型变量作为参数传给函数的形参时，其实是把变量在栈空间里的值复制了一份给形参，那么在方法内部对形参做任何修改，都不会影响到的外部变量。</p>
 <h3 id="复杂数据类型传参">复杂数据类型传参</h3>
 <p>​		函数的形参也可以看做是一个变量，当我们把引用类型变量传给形参时，其实是把变量在栈空间里保存的堆地址复制给了形参，形参和实参其实保存的是同一个堆地址，所以操作的是同一个对象。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[STL]]></title>
-        <id>https://xmweijh.github.io/post/stl/</id>
-        <link href="https://xmweijh.github.io/post/stl/">
-        </link>
-        <updated>2021-02-17T05:13:12.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="stl">STL</h1>
-<h3 id="stl六大组件">STL六大组件</h3>
-<p>容器、算法、迭代器、仿函数、适配器、空间配置器</p>
-<p>STL优点</p>
-<p>内建在C++编译器中，不需要安装额外内容</p>
-<p>不需要了解具体实现内容，只要熟练运用即可</p>
-<p>高复用，可移植，高性能</p>
-<p>容器划分</p>
-<p>序列式容器</p>
-<p>关联式容器  有个key起到索引作用</p>
-<p>算法</p>
-<p>变算法</p>
-<p>非质变算法</p>
-<h3 id="vector容器-vectorintv">vector容器 vector<int>v</h3>
-<p>vector<int>::iterator itBegin = v.begin(); //v.begin() 起始迭代器，指向容器中第一个数据</p>
-<p>vector<int>::iterator itEnd = v.end(); //v.end()；结束迭代器，指向的是容器中最后一个元素的下一个位置</p>
-<p>利用算法遍历容器</p>
-<p>for_each(v.begin(),v.end() , myPrint ) 头文件  algorithm</p>
-<p>容器中存放自定义数据类型</p>
-<p>容器中存放自定义数据类型指针</p>
-<p>容器嵌套容器</p>
-<pre><code class="language-c++">	vector&lt;vector&lt;int&gt;&gt;v;
-
-	vector&lt;int&gt;v1;
-	vector&lt;int&gt;v2;
-	vector&lt;int&gt;v3;
-
-	for (int i = 0; i &lt; 5; i++)
-	{
-		v1.push_back(i + 1);
-		v2.push_back(i + 10);
-		v3.push_back(i + 100);
-	}
-
-	//将小容器放入到大容器中
-	v.push_back(v1);
-	v.push_back(v2);
-	v.push_back(v3);
-
-
-	//遍历大容器
-	for (vector&lt;vector&lt;int&gt;&gt;::iterator it = v.begin(); it != v.end();it++)
-	{
-		// *it ==== vector&lt;int&gt;
-		for (vector&lt;int&gt;::iterator vit = (*it).begin(); vit != (*it).end();vit++)
-		{
-			cout &lt;&lt; *vit &lt;&lt; &quot; &quot;;
-		}
-		cout &lt;&lt; endl;
-	}
-</code></pre>
-<h3 id="string">string</h3>
-<p>构造、赋值</p>
-<p>[]、at 字符存取</p>
-<p>[] 和 at区别 []访问越界 直接挂掉，at抛出out_of_range异常</p>
-<pre><code class="language-c++">string str = &quot;hello world&quot;;
-
-	//for (int i = 0; i &lt; str.size();i++)
-	//{
-	//	//cout &lt;&lt; str[i] &lt;&lt; endl;
-	//	cout &lt;&lt; str.at(i) &lt;&lt; endl;
-	//}
-
-	//[]和at区别，[]访问越界 直接挂掉 ， at访问越界  抛出out_of_range异常
-	try
-	{
-		//cout &lt;&lt; str[100] &lt;&lt; endl;
-		cout &lt;&lt; str.at(100) &lt;&lt; endl;
-	}
-	catch (out_of_range &amp; e)
-	{
-		cout &lt;&lt; e.what() &lt;&lt; endl;
-	}
-	catch (...)
-	{
-		cout &lt;&lt; &quot;异常捕获&quot; &lt;&lt; endl;
-	}
-</code></pre>
-<p>字符串拼接  += append</p>
-<p>查找  find  rfind(从右往左查找)</p>
-<p>替换  replace</p>
-<pre><code class="language-c++">	//替换
-	//string&amp; replace(int pos, int n, const string&amp; str); //替换从pos开始n个字符为字符串str
-	str.replace(1, 3, &quot;11111&quot;);//不是只替换三个1，而是将三个替换为五个
-	//a11111efgde
-	cout &lt;&lt; str &lt;&lt; endl;
-</code></pre>
-<p>比较  compare</p>
-<p>子串  substr</p>
-<pre><code class="language-c++">	string email = &quot;zhangtao@sina.com&quot;;
-
-	int pos = email.find(&quot;@&quot;); // 8
-
-	string userName = email.substr(0, pos);//pos任然是8而非加减，因为截取几个是从1开始的
-
-	cout &lt;&lt; userName &lt;&lt; endl;
-</code></pre>
-<pre><code class="language-c++">	string str = &quot;www.itcast.com.cn&quot;;
-
-	vector&lt;string&gt; v; //将 www  itcast  com  cn 单词截取到 vector容器中
-
-	int start = 0;
-	int pos = -1;
-
-	while (true)
-	{
-		//www.itcast.com.cn
-		pos = str.find(&quot;.&quot;, start);
-
-		if (pos == -1)
-		{
-			//将cn截取出来
-			string tempStr = str.substr(start,str.size() - start);
-			v.push_back(tempStr);
-			break;
-		}
-
-		string tempStr = str.substr(start, pos - start);
-
-		v.push_back(tempStr);
-
-		start = pos + 1;
-	}
-
-	for (vector&lt;string&gt;::iterator it = v.begin(); it != v.end();it++)
-	{
-		cout &lt;&lt; *it &lt;&lt; endl;
-	}
-</code></pre>
-<p>插入 insert</p>
-<p>删除 erase</p>
-<p>string和const char* 转换</p>
-<p>string 转 const char *   .c_str();</p>
-<p>const char * 转string  利用string 有参构造</p>
-<p>const char *可以隐式转换为 string 反之不可以</p>
-<p>小写转大写 toupper</p>
-<p>大写转小写 tolower</p>
-<h3 id="vector容器">vector容器</h3>
-<p>单端数组</p>
-<p>动态数组，自动扩展内存，所谓动态扩展内存，并不是在原有空间后续进行扩展，而是找一个更大的内存空间，将原有数据拷贝到新空间下，并且释放原有空间</p>
-<p>接口</p>
-<p>构造、赋值</p>
-<p>交换 swap</p>
-<p>大小 size</p>
-<p>是否为空 empty</p>
-<p>重置大小 resize</p>
-<p>如果重置的比原来大，有默认值填充新位置</p>
-<p>如果重置的比原来小，超出的部分删除掉</p>
-<p>front 返回容器中第一个元素</p>
-<p>back 返回容器中最后一个元素</p>
-<p>插入 insert （迭代器）</p>
-<p>删除 erase  （迭代器）</p>
-<p>尾插 push_back</p>
-<p>尾删 pop_back</p>
-<p>清空 clear</p>
-<p>案例1 ：巧用swap收缩内存</p>
-<pre><code class="language-c++">vector&lt;int&gt;v;
-	for (int i = 0; i &lt; 100000;i++)
-	{
-		v.push_back(i);
-	}
-	cout &lt;&lt; &quot;v.capacity = &quot; &lt;&lt; v.capacity() &lt;&lt; endl;
-	cout &lt;&lt; &quot;v.size = &quot; &lt;&lt; v.size() &lt;&lt; endl;
-
-	v.resize(3);
-
-	cout &lt;&lt; &quot;v.capacity = &quot; &lt;&lt; v.capacity() &lt;&lt; endl;
-	cout &lt;&lt; &quot;v.size = &quot; &lt;&lt; v.size() &lt;&lt; endl;
-
-	//巧用swap收缩内存
-	vector&lt;int&gt;(v).swap(v);//vector&lt;int&gt;(v) 以v的size创造匿名对象，再与v交换（实际是地址的交换），匿名对象运行后会被释放。
-
-	cout &lt;&lt; &quot;v.capacity = &quot; &lt;&lt; v.capacity() &lt;&lt; endl;
-	cout &lt;&lt; &quot;v.size = &quot; &lt;&lt; v.size() &lt;&lt; endl;
-</code></pre>
-<p>案例2: ： 巧用reserve 预留内存</p>
-<pre><code class="language-c++">vector&lt;int&gt;v;
-	v.reserve(100000);
-	int * p = NULL;
-	int num = 0;
-	for (int i = 0; i &lt; 100000; i++)
-	{
-		v.push_back(i);
-		if (p != &amp;v[0])
-		{
-			p = &amp;v[0];
-			num++;
-		}
-	}
-
-	cout &lt;&lt; &quot;num = &quot; &lt;&lt; num &lt;&lt; endl;
-</code></pre>
-<p>逆序遍历 reverse_iterator  非质变</p>
-<p>判断容器的迭代器是否支持随机访问</p>
-<h3 id="deque容器">deque容器</h3>
-<p>双端数组</p>
-<p>可以对头部进行插入和删除操作，内部有中控器控制数据</p>
-<p>接口</p>
-<p>构造、赋值</p>
-<p>交换 swap</p>
-<p>大小 size</p>
-<p>是否为空 empty</p>
-<p>重置大小 resize</p>
-<p>front 返回容器中第一个元素</p>
-<p>back 返回容器中最后一个元素</p>
-<p>插入 insert （迭代器）</p>
-<p>删除 erase  （迭代器）</p>
-<p>头部插入 push_front</p>
-<p>头部删除 pop_front</p>
-<p>尾插 push_back</p>
-<p>尾删 pop_back</p>
-<p>清空 clear</p>
-<p>​    sort排序 sort(v.begin(),v.end(), 回调函数)</p>
-<h3 id="栈容器-stack">栈容器 Stack</h3>
-<p>符合先进后出的数据结构</p>
-<p>对外接口</p>
-<p>入栈 push</p>
-<p>出栈 pop</p>
-<p>栈顶 top</p>
-<p>是否为空 empty</p>
-<p>栈大小  size</p>
-<h3 id="队列容器-queue">队列容器 Queue</h3>
-<p>符合先进先出的数据结构</p>
-<p>对外接口</p>
-<p>入队 push</p>
-<p>出队 pop</p>
-<p>队头元素 front</p>
-<p>队尾元素 back</p>
-<p>是否为空 empty</p>
-<p>队列大小 size</p>
-<p>list容器</p>
-<p>双向循环链表</p>
-<p>对外接口</p>
-<p>构造、赋值、大小、重置大小、是否为空</p>
-<p>反转 reverse</p>
-<p>排序 sort</p>
-<p>//如果容器的迭代器支持随机访问，可以使用系统提供的标志算法</p>
-<p>//不支持随机访问的迭代器的容器，内部会提供对应的算法接口</p>
-<p>对于自定义数据类型，必须要指定排序规则</p>
-<p>对自定义数据类型做了高级排序</p>
-<p>如果利用remove删除自定义数据类型，需要重载 ==</p>
-<h3 id="set-容器">set 容器</h3>
-<p>关联式容器 key就是value</p>
-<p>默认排好序 从小到大</p>
-<p>插入 insert  大小 size 是否为空 empty</p>
-<p>查找 find 返回值 迭代器</p>
-<p>统计 count  对于set的结果 要么是0 要么是1</p>
-<p>lower_bound(keyElem);//返回第一个key&gt;=keyElem元素的迭代器。</p>
-<p>upper_bound(keyElem);//返回第一个key&gt;keyElem元素的迭代器。</p>
-<p>equal_range(keyElem);//返回容器中key与keyElem相等的上下限的两个迭代器。</p>
-<h3 id="pair对组">pair对组</h3>
-<p>创建方式</p>
-<p><em>pair</em>&lt;<em>string</em>, int&gt; p(&quot;Tom&quot;, 10);</p>
-<p><em>pair</em>&lt;<em>string</em>, int&gt; p2 = <em>make_pair</em>(&quot;Jerry&quot;, 18);</p>
-<p>set.insert的返回值是个对组 pair&lt;iterator, bool&gt; bool代表插入是否成功</p>
-<p>multiset可以插入重复的key值</p>
-<p>可以指定set容器的排序规则，但是必须在插入前指定，利用仿函数的技术</p>
-<p>对于自定义数据类型，set通常都会指定出排序规则</p>
-<h3 id="map容器">map容器</h3>
-<p>关联式容器</p>
-<p>默认按照key从小到大排序</p>
-<p>插入</p>
-<p>m.insert(pair&lt;int, int&gt;(1, 10));</p>
-<p>m.insert(make_pair(2, 20));</p>
-<p>m.insert(map&lt;int, int&gt;::value_type(3, 30));</p>
-<p>m[4] = 40;</p>
-<p>查找 find 返回值 是迭代器</p>
-<p>统计 count</p>
-<p>lower_bound(keyElem);//返回第一个key&gt;=keyElem元素的迭代器。</p>
-<p>upper_bound(keyElem);//返回第一个key&gt;keyElem元素的迭代器。</p>
-<p>equal_range(keyElem);//返回容器中key与keyElem相等的上下限的两个迭代器。</p>
-<p>利用仿函数 实现指定排序规则</p>
-<p>STL容器使用时机</p>
-<h3 id="函数对象">函数对象</h3>
-<p>本质是一个类的对象，因此称为函数对象，也叫仿函数</p>
-<p>函数对象 超出了普通函数的概念，可以拥有自己状态</p>
-<p>函数对象可以作为函数参数</p>
-<h3 id="谓词">谓词</h3>
-<p>普通函数或者仿函数的返回值是bool类型，称为谓词</p>
-<p>一元谓词</p>
-<p>查找容器中大于20的数字  find_if</p>
-<p>二元谓词</p>
-<p>对容器进行排序 sort</p>
-<p>lambda表达式  <a href=""></a>{}</p>
-<pre><code class="language-c++">	//lambda表达式  匿名函数  []代表lambda表达式标志  [](){}
-	for_each(v.begin(), v.end(), [](int val){ cout &lt;&lt; val &lt;&lt; &quot; &quot;; });
-</code></pre>
-<h3 id="内建函数对象">内建函数对象</h3>
-<p>引入头文件 #include&lt; functional&gt;</p>
-<p>取反 negate<int></p>
-<p>加法 plus<int></p>
-<p>大于 greater<int></p>
-<pre><code class="language-c++">//从大到小排序
-	sort(v.begin(), v.end(), greater&lt;int&gt;());
-</code></pre>
-<h3 id="适配器">适配器</h3>
-<p>函数对象适配器</p>
-<p>//1、利用bind2nd 进行绑定</p>
-<p>//2、继承 public binary_function&lt;参数1 类型,参数2类型,返回值类型&gt;</p>
-<p>//3、加const<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup></p>
-<pre><code class="language-c++">class MyPrint :public binary_function&lt;int,int,void&gt;
-{
-public:
-	void operator()(int val , int start)const 
-	{
-		cout &lt;&lt; &quot;val = &quot; &lt;&lt; val &lt;&lt; &quot; start = &quot; &lt;&lt; start &lt;&lt;  &quot; sum = &quot; &lt;&lt;val +  start &lt;&lt; endl;
-	}
-};
-	for_each(v.begin(), v.end(), bind2nd( MyPrint(), num ) );
-</code></pre>
-<p>取反适配器</p>
-<p>一元取反 not1</p>
-<p>//1、利用not1进行取反</p>
-<p>//2、继承 public unary_function&lt;int,bool&gt;</p>
-<p>//3、加const</p>
-<pre><code class="language-c++">class GreaterThanFive:public unary_function&lt;int,bool&gt;
-{
-public:
-	bool operator()(int val) const
-	{
-		return val &gt; 5;
-	}
-};
-	//一元取反
-	//vector&lt;int&gt;::iterator pos = find_if(v.begin(), v.end(), not1( GreaterThanFive()));
-</code></pre>
-<p>​	二元取反 not2</p>
-<p>函数指针适配器</p>
-<p>ptr_fun将普通函数指针 适配成函数对象</p>
-<p>​     成员函数适配器<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
-<pre><code class="language-c++">//利用 mem_fun_ref
-	for_each(v.begin(), v.end(),  mem_fun_ref(&amp;Person::showPerson));
-</code></pre>
-<p>如果存放的是对象实体  mem_fun_ref</p>
-<p>如果存放的是对象指针  mem_fun</p>
-<h3 id="常用遍历算法">常用遍历算法</h3>
-<p><strong>for_each</strong></p>
-<p>用于遍历</p>
-<p>有返回值</p>
-<pre><code class="language-c++">class MyPrint
-{
-public:
-	void operator()(int val)
-	{
-		cout &lt;&lt; val &lt;&lt; endl;
-		m_Count++;
-	}
-
-	int m_Count = 0;
-};
-	MyPrint print = for_each(v.begin(), v.end(), MyPrint());
-
-	cout &lt;&lt; &quot;print.count = &quot; &lt;&lt; print.m_Count &lt;&lt; endl;
-</code></pre>
-<p>可以绑定参数进行输出</p>
-<pre><code class="language-c++">class MyPrint2 :public binary_function&lt;int,int,void&gt;
-{
-public:
-	void operator()(int val , int start) const
-	{
-		cout &lt;&lt; val &lt;&lt; endl;
-		
-	}
-
-};
-</code></pre>
-<p><strong>transform</strong></p>
-<p>搬运</p>
-<p>注意：目标容器要有容量</p>
-<pre><code class="language-c++">class MyTransform
-{
-public:
-	int operator()(int val)
-	{	
-		return val + 10000;
-	}
-};
-void test()
-{
-	vector&lt;int&gt;v;
-	for (int i = 0; i &lt; 10; i++)
-	{
-		v.push_back(i);
-	}
-	vector&lt;int&gt;v2;
-	v2.resize(v.size());//如果不rize把v1向空的v2搬运会报错，v2会动态的扩充内存
-
-	transform(v.begin(), v.end(), v2.begin(), MyTransform());
-
-	for_each(v2.begin(), v2.end(), [](int val){cout &lt;&lt; val &lt;&lt; &quot; &quot;; });
-
-}
-</code></pre>
-<p>常用查找算法</p>
-<p><strong>find</strong> <strong>查找</strong></p>
-<p><strong>find_if</strong> <strong>按条件查找</strong></p>
-<p>adjacent_find算法 查找相邻重复元素</p>
-<p>binary_search算法 二分查找法	注意: 在无序序列中不可用</p>
-<p>**count算法 **统计元素出现次数</p>
-<p><strong>count_if</strong> <strong>按条件进行统计</strong></p>
-<h3 id="常用排序算法">常用排序算法</h3>
-<p>merge 合并</p>
-<p>将两个容器合并到 目标容器中</p>
-<p>注意： 两个容器必须是有序序列</p>
-<p>目标容器必须有容量</p>
-<p><strong>sort</strong> <strong>排序</strong></p>
-<p><strong>random_shuffle</strong> <strong>洗牌</strong></p>
-<p>reverse 反转</p>
-<h3 id="常用的拷贝和替换算法">常用的拷贝和替换算法</h3>
-<p>copy 拷贝</p>
-<p>实现打印 copy(v.begin(),v.end() , ostream_iterator<int>(cout , “ ”));</p>
-<p><code>ostream_iterator需要#include &lt;iterator&gt;</code></p>
-<p>replace 替换</p>
-<p>replace_if 按条件替换</p>
-<p>​    swap 交换</p>
-<h3 id="常用的算数生成算法">常用的算数生成算法</h3>
-<p>头文件 #include <numeric></p>
-<p><strong>accumulate</strong>算法 计算容器元素累计总和</p>
-<p>fill算法 向容器中添加元素</p>
-<h3 id="常用集合算法">常用集合算法</h3>
-<p>set_intersection算法 求两个set集合的交集</p>
-<p>set_union算法 求两个set集合的并集</p>
-<p>set_difference算法 求两个set集合的差集</p>
-<p>注意:两个集合必须是有序序列</p>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>这个const 修饰的是this指针，表示this指针指向的内存空间不能修改 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
-</li>
-<li id="fn2" class="footnote-item"><p>成员函数与成员函数是分开存储的，可不创造对象，找到函数地址调用 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
-</li>
-</ol>
-</section>
 ]]></content>
     </entry>
 </feed>
